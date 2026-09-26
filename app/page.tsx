@@ -1,10 +1,10 @@
-import { ArrowDownRight, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Mail, MapPin } from 'lucide-react';
 
 const highlights = [
-  { value: '3.72', label: '累積 GPA', note: '滿分 4.3' },
-  { value: 'B2', label: '英語能力', note: 'IELTS 6.0' },
+  { value: '2024–27', label: '經歷年表', note: '依年份向下瀏覽' },
   { value: '2', label: '國際交換', note: '漢陽大學・羅蘭大學' },
-  { value: '9', label: '獎項與獎學金', note: '法治・文學・學習表現' },
+  { value: '10', label: '獎項與競賽', note: '法治・文學・青年影響力' },
+  { value: '7', label: '實務角色', note: '研究・倡議・教育・服務' },
 ];
 
 type TimelineItem = {
@@ -52,6 +52,12 @@ const timeline: TimelineGroup[] = [
         category: '青年培力',
         title: '國際青年人才培育計畫',
         organization: '新北市政府青年局',
+      },
+      {
+        date: '2026',
+        category: '競賽',
+        title: '2026 Impact Star 青年影響力競賽',
+        organization: '入圍出賽・大專組全國前十名',
       },
       {
         date: 'Jul. — Sep.',
@@ -282,11 +288,6 @@ export default function Home() {
               <p>輔系人文社會學系</p>
             </div>
             <div className="profile-group">
-              <p className="mini-label">ACADEMIC</p>
-              <p>累積 GPA 3.72 / 4.3</p>
-              <p>IELTS Overall 6.0・CEFR B2</p>
-            </div>
-            <div className="profile-group">
               <p className="mini-label">INTERESTS</p>
               <p>刑事司法・人權倡議・人類學</p>
               <p>文化轉譯・公共溝通・教育陪伴</p>
@@ -344,14 +345,6 @@ export default function Home() {
               <span>
                 <small>EMAIL</small>
                 7777ath@gmail.com
-              </span>
-              <ArrowUpRight size={18} aria-hidden="true" />
-            </a>
-            <a href="tel:+886907485932">
-              <Phone size={18} aria-hidden="true" />
-              <span>
-                <small>PHONE</small>
-                +886 907 485 932
               </span>
               <ArrowUpRight size={18} aria-hidden="true" />
             </a>
