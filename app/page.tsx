@@ -3,11 +3,25 @@ import { ArrowDownRight, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
 const highlights = [
   { value: '3.72', label: '累積 GPA', note: '滿分 4.3' },
   { value: 'B2', label: '英語能力', note: 'IELTS 6.0' },
-  { value: '2027', label: '交換計畫', note: '春季・羅蘭大學' },
+  { value: '2', label: '國際交換', note: '漢陽大學・羅蘭大學' },
   { value: '9', label: '獎項與獎學金', note: '法治・文學・學習表現' },
 ];
 
-const timeline = [
+type TimelineItem = {
+  date: string;
+  category: string;
+  title: string;
+  organization?: string;
+  location?: string;
+  description?: string;
+};
+
+type TimelineGroup = {
+  year: string;
+  items: TimelineItem[];
+};
+
+const timeline: TimelineGroup[] = [
   {
     year: '2027',
     items: [
@@ -26,10 +40,12 @@ const timeline = [
       {
         date: 'Aug. — Present',
         category: '研究',
-        title: '研究獎助生',
-        organization: '國立陽明交通大學人文社會學系・新竹',
+        title: '國立陽明交通大學人文社會學系 研究獎助生',
+        organization:
+          '研究計畫：「從櫻花蝦到下雜魚：臺灣近海拖網漁業的價值階序與公共性建構」・計畫主持人：吳映青老師',
+        location: '新竹・人類學',
         description:
-          '參與「從櫻花蝦到下雜魚：臺灣近海拖網漁業的價值階序與公共性建構」研究計畫；建置 EndNote 書目資料庫，並檢索日治時期飲食文化與進出口史料。',
+          '協助建置 EndNote 學術書目資料庫，進行書目核對、文獻分類與標籤管理；檢索《臺灣日日新報》，蒐集日治時期蝦米、乾蝦之飲食文化、料理應用與進出口貿易史料。',
       },
       {
         date: 'Aug.',
@@ -40,10 +56,10 @@ const timeline = [
       {
         date: 'Jul. — Sep.',
         category: '實習',
-        title: '實習生',
-        organization: '財團法人台灣冤獄平反協會・台北',
+        title: '財團法人台灣冤獄平反協會 實習生',
+        location: '台北・刑事司法／人權倡議',
         description:
-          '製作冤案救援與刑事司法議題社群文案，轉譯案件背景與倡議重點；蒐集新聞、判決資料與相關報導，支援倡議活動與行政作業。',
+          '製作冤案救援與刑事司法議題社群文案，協助轉譯案件背景與倡議重點；蒐集冤案新聞、判決資料與相關報導，支援資料彙整、行政庶務與倡議活動。',
       },
       {
         date: 'Jul.',
@@ -66,25 +82,34 @@ const timeline = [
       {
         date: 'Jun. — Jul.',
         category: '工作',
-        title: '暑期專案課程工讀學伴',
-        organization: '國立臺灣師範大學國語教學中心・台北',
+        title: '國立臺灣師範大學國語教學中心 暑期專案課程工讀學伴',
+        location: '台北・華語教育',
         description:
-          '協助外籍學員參與校園導覽、文化交流與校外教學，並支援出缺勤管理、影像紀錄及團隊協調。',
+          '協助外籍學員參與校園導覽、文化交流與校外教學活動，增進其在臺學習與生活體驗；支援活動行政與現場執行，包括出缺勤管理、影像紀錄及團隊協調作業。',
       },
       {
         date: 'Jun. — Present',
         category: '領導',
-        title: '首屆社長',
-        organization: 'NYCU LIFE 數碼寶貝社・新竹',
+        title: 'NYCU LIFE 數碼寶貝社 首屆社長',
+        location: '新竹・數位開發',
         description:
-          '推動 NYCU LIFE 校園資訊整合平台，統籌社團營運、進度追蹤、對外溝通與跨組協作。',
+          '推動「NYCU LIFE 校園資訊整合平台」專案，致力於改善陽明交大學生所面臨的資訊落差；統籌社團營運與行政事務，負責進度追蹤、對外溝通及跨組協作。',
+      },
+      {
+        date: '114-2 — 暑假',
+        category: '交換',
+        title: '韓國漢陽大學 暑期線上交換',
+        organization: '한양대학교（Hanyang University）',
+        location: '線上・韓國',
+        description: '於 114 學年度第 2 學期至暑假參與漢陽大學暑期線上交換。',
       },
       {
         date: 'May — Aug.',
         category: '公共參與',
         title: '新北文化大使',
-        organization: '新北市・地方創生／文化推廣',
-        description: '以青年視角轉譯在地歷史與文化，設計文化互動遊戲及體驗內容。',
+        location: '新北・地方創生／文化推廣',
+        description:
+          '參與新北市文化推廣與地方創生專案，以青年視角轉譯在地歷史與文化；設計文化互動遊戲及體驗內容，提升地方文化推廣之互動性。',
       },
       {
         date: 'Apr.',
@@ -130,18 +155,18 @@ const timeline = [
       {
         date: 'Oct. — Present',
         category: '工作',
-        title: '校園服務代表',
-        organization: '台灣積體電路製造股份有限公司・新竹',
+        title: '台灣積體電路製造股份有限公司 校園服務代表',
+        location: '新竹・半導體製造',
         description:
-          '協助陽明交大與台積電產學合作行政業務與公文送簽，運用 Excel 維護合作資料，確保資訊準確與即時。',
+          '協助陽明交大與台積電產學合作相關事宜，處理公文送簽與行政業務；利用 MS Excel 進行合作相關資料之鍵入與彙整，維持資料庫之精確性與即時性。',
       },
       {
         date: 'Jun. — Dec.',
         category: '志工',
-        title: '教學志工',
-        organization: '惠瑜慈善協會・線上',
+        title: '惠瑜慈善協會 教學志工',
+        location: '線上・教育陪伴／公益服務',
         description:
-          '以一對一方式為偏鄉弱勢學童提供課後輔導，依學習進度調整教學內容與互動方式。',
+          '以線上一對一的形式，為偏鄉弱勢學童提供課後輔導及長期陪伴；依學生的學習進度調整教學內容與互動方式，提升其對課業的理解及學習意願。',
       },
       {
         date: 'Jun.',
@@ -275,7 +300,7 @@ export default function Home() {
           <div className="section-heading timeline-heading">
             <p className="eyebrow">SELECTED TIMELINE</p>
             <h2>所有經歷，按年份向下閱讀</h2>
-            <p>由近到遠整理研究、工作、實習、公共參與、獎項與青年培力。</p>
+            <p>由近到遠整理研究、交換、工作、實習、公共參與、獎項與青年培力。</p>
           </div>
 
           <div className="timeline">
@@ -293,7 +318,8 @@ export default function Home() {
                       </div>
                       <div className="timeline-content">
                         <h4>{item.title}</h4>
-                        <p className="organization">{item.organization}</p>
+                        {item.location ? <p className="location">地點｜{item.location}</p> : null}
+                        {item.organization ? <p className="organization">{item.organization}</p> : null}
                         {item.description ? <p className="description">{item.description}</p> : null}
                       </div>
                     </article>
