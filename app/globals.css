@@ -390,7 +390,7 @@ nav a:focus-visible {
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 128px minmax(0, 1fr);
+  grid-template-columns: 155px minmax(0, 1fr);
   gap: 26px;
   padding: 32px 0 32px 34px;
   border-bottom: 1px solid var(--line);
@@ -432,8 +432,8 @@ nav a:focus-visible {
   letter-spacing: -0.025em;
 }
 
-.location {
-  margin: 8px 0 0;
+.timeline-location {
+  margin: 0;
   color: var(--accent);
   font-size: 10px;
   font-weight: 670;
@@ -454,6 +454,21 @@ nav a:focus-visible {
   color: var(--muted);
   font-size: 12px;
   line-height: 1.85;
+}
+
+.bullet-list {
+  display: grid;
+  gap: 8px;
+  max-width: 660px;
+  margin: 15px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.bullet-list li::marker {
+  color: var(--accent);
 }
 
 .site-footer {
@@ -512,6 +527,7 @@ nav a:focus-visible {
 
   .timeline-meta {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 10px;
   }

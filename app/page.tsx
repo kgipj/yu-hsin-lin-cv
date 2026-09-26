@@ -30,6 +30,7 @@ type TimelineItem = {
   organization?: string;
   location?: string;
   description?: string;
+  bullets?: string[];
 };
 
 type TimelineGroup = {
@@ -57,11 +58,13 @@ const timeline: TimelineGroup[] = [
         date: 'Aug. — Present',
         category: '研究',
         title: '國立陽明交通大學人文社會學系 研究獎助生',
-        organization:
-          '研究計畫：「從櫻花蝦到下雜魚：臺灣近海拖網漁業的價值階序與公共性建構」・計畫主持人：吳映青老師',
         location: '新竹・人類學',
-        description:
-          '協助建置 EndNote 學術書目資料庫，進行書目核對、文獻分類與標籤管理；檢索《臺灣日日新報》，蒐集日治時期蝦米、乾蝦之飲食文化、料理應用與進出口貿易史料。',
+        bullets: [
+          '研究計畫：「從櫻花蝦到下雜魚：臺灣近海拖網漁業的價值階序與公共性建構」',
+          '計畫主持人：吳映青老師',
+          '協助系上吳映青教授建置 EndNote 學術書目資料庫，進行書目核對、文獻分類與標籤管理',
+          '檢索《臺灣日日新報》，蒐集日治時期蝦米、乾蝦之飲食文化、料理應用與進出口貿易史料',
+        ],
       },
       {
         date: 'Aug.',
@@ -80,8 +83,10 @@ const timeline: TimelineGroup[] = [
         category: '實習',
         title: '財團法人台灣冤獄平反協會 實習生',
         location: '台北・刑事司法／人權倡議',
-        description:
-          '製作冤案救援與刑事司法議題社群文案，協助轉譯案件背景與倡議重點；蒐集冤案新聞、判決資料與相關報導，支援資料彙整、行政庶務與倡議活動。',
+        bullets: [
+          '製作冤案救援與刑事司法議題社群文案，協助轉譯案件背景與倡議重點',
+          '蒐集冤案新聞、判決資料與相關報導，支援資料彙整、行政庶務與倡議活動',
+        ],
       },
       {
         date: 'Jul.',
@@ -106,16 +111,20 @@ const timeline: TimelineGroup[] = [
         category: '工作',
         title: '國立臺灣師範大學國語教學中心 暑期專案課程工讀學伴',
         location: '台北・華語教育',
-        description:
-          '協助外籍學員參與校園導覽、文化交流與校外教學活動，增進其在臺學習與生活體驗；支援活動行政與現場執行，包括出缺勤管理、影像紀錄及團隊協調作業。',
+        bullets: [
+          '協助外籍學員參與校園導覽、文化交流與校外教學活動，增進其在臺學習與生活體驗',
+          '支援活動行政與現場執行，包括出缺勤管理、影像紀錄及團隊協調作業',
+        ],
       },
       {
         date: 'Jun. — Present',
         category: '領導',
         title: 'NYCU LIFE 數碼寶貝社 首屆社長',
         location: '新竹・數位開發',
-        description:
-          '推動「NYCU LIFE 校園資訊整合平台」專案，致力於改善陽明交大學生所面臨的資訊落差；統籌社團營運與行政事務，負責進度追蹤、對外溝通及跨組協作。',
+        bullets: [
+          '推動「NYCU LIFE 校園資訊整合平台」專案，致力於改善陽明交大學生所面臨的資訊落差',
+          '統籌社團營運與行政事務，負責進度追蹤、對外溝通及跨組協作',
+        ],
       },
       {
         date: '114-2 — 暑假',
@@ -130,8 +139,10 @@ const timeline: TimelineGroup[] = [
         category: '公共參與',
         title: '新北文化大使',
         location: '新北・地方創生／文化推廣',
-        description:
-          '參與新北市文化推廣與地方創生專案，以青年視角轉譯在地歷史與文化；設計文化互動遊戲及體驗內容，提升地方文化推廣之互動性。',
+        bullets: [
+          '參與新北市文化推廣與地方創生專案，以青年視角轉譯在地歷史與文化',
+          '設計文化互動遊戲及體驗內容，提升地方文化推廣之互動性',
+        ],
       },
       {
         date: 'Apr.',
@@ -179,16 +190,20 @@ const timeline: TimelineGroup[] = [
         category: '工作',
         title: '台灣積體電路製造股份有限公司 校園服務代表',
         location: '新竹・半導體製造',
-        description:
-          '協助陽明交大與台積電產學合作相關事宜，處理公文送簽與行政業務；利用 MS Excel 進行合作相關資料之鍵入與彙整，維持資料庫之精確性與即時性。',
+        bullets: [
+          '協助陽明交大與台積電產學合作相關事宜，處理公文送簽與行政業務',
+          '利用 MS Excel 進行合作相關資料之鍵入與彙整，維持資料庫之精確性與即時性',
+        ],
       },
       {
         date: 'Jun. — Dec.',
         category: '志工',
         title: '惠瑜慈善協會 教學志工',
         location: '線上・教育陪伴／公益服務',
-        description:
-          '以線上一對一的形式，為偏鄉弱勢學童提供課後輔導及長期陪伴；依學生的學習進度調整教學內容與互動方式，提升其對課業的理解及學習意願。',
+        bullets: [
+          '以線上一對一的形式，為偏鄉弱勢學童提供課後輔導及長期陪伴',
+          '依學生的學習進度調整教學內容與互動方式，提升其對課業的理解及學習意願',
+        ],
       },
       {
         date: 'Jun.',
@@ -347,13 +362,20 @@ export default function Home() {
                     <article className="timeline-item" key={`${group.year}-${item.date}-${item.title}`}>
                       <div className="timeline-meta">
                         <time>{item.date}</time>
+                        {item.location ? <p className="timeline-location">{item.location}</p> : null}
                         <span>{item.category}</span>
                       </div>
                       <div className="timeline-content">
                         <h4>{item.title}</h4>
-                        {item.location ? <p className="location">地點｜{item.location}</p> : null}
                         {item.organization ? <p className="organization">{item.organization}</p> : null}
                         {item.description ? <p className="description">{item.description}</p> : null}
+                        {item.bullets ? (
+                          <ul className="bullet-list">
+                            {item.bullets.map((bullet) => (
+                              <li key={bullet}>{bullet}</li>
+                            ))}
+                          </ul>
+                        ) : null}
                       </div>
                     </article>
                   ))}
