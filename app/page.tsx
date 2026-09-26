@@ -57,7 +57,7 @@ const timeline: TimelineGroup[] = [
         date: '2026',
         category: '競賽',
         title: '2026 Impact Star 青年影響力競賽',
-        organization: '入圍出賽・大專組全國前十名',
+        organization: '入圍初賽・大專組全國前十名',
       },
       {
         date: 'Jul. — Sep.',
