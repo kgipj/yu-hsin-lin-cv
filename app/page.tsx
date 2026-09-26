@@ -247,7 +247,7 @@ export default function Home() {
         <figure className="portrait-wrap">
           <img
             className="portrait"
-            src="/profile.jpeg"
+            src="/profile.jpeg?v=blue-20260927"
             alt="林雨欣個人照片"
             width={2113}
             height={3170}
