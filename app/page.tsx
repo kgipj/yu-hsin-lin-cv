@@ -1,10 +1,26 @@
-import { ArrowDownRight, ArrowUpRight, Mail, MapPin } from 'lucide-react';
+import { ArrowDownRight, Mail } from 'lucide-react';
 
-const highlights = [
-  { value: '2024–27', label: '經歷年表', note: '依年份向下瀏覽' },
-  { value: '2', label: '國際交換', note: '漢陽大學・羅蘭大學' },
-  { value: '10', label: '獎項與競賽', note: '法治・文學・青年影響力' },
-  { value: '7', label: '實務角色', note: '研究・倡議・教育・服務' },
+const representativeHonors = [
+  {
+    year: '2026',
+    title: 'Impact Star 青年影響力競賽',
+    result: '入圍初賽・大專組全國前十名',
+  },
+  {
+    year: '2025',
+    title: '大專校院法治教育創新行動方案競賽',
+    result: '銀獎・司法院 114 年度',
+  },
+  {
+    year: '2026',
+    title: '藍花楹創作獎',
+    result: '小說組首獎',
+  },
+  {
+    year: '2024',
+    title: '第二十屆謝東閔先生紀念文學獎',
+    result: '散文組貳獎',
+  },
 ];
 
 type TimelineItem = {
@@ -217,9 +233,9 @@ export default function Home() {
         </a>
         <nav aria-label="主要導覽">
           <a href="#about">關於我</a>
+          <a href="#honors">代表榮耀</a>
           <a href="#timeline">經歷年表</a>
           <a href="#profile">學歷</a>
-          <a href="#contact">聯絡</a>
         </nav>
       </header>
 
@@ -235,8 +251,8 @@ export default function Home() {
             我的經驗橫跨刑事司法、人類學研究、華語教育與校園資訊服務；關注制度如何被理解，也在意知識如何被轉譯成可被使用的內容。
           </p>
           <div className="hero-actions">
-            <a className="button primary" href="#timeline">
-              按年份瀏覽 <ArrowDownRight size={16} aria-hidden="true" />
+            <a className="button primary" href="#honors">
+              查看代表榮耀 <ArrowDownRight size={16} aria-hidden="true" />
             </a>
             <a className="button quiet" href="mailto:7777ath@gmail.com">
               <Mail size={15} aria-hidden="true" /> Email
@@ -254,16 +270,6 @@ export default function Home() {
             loading="eager"
           />
         </figure>
-      </section>
-
-      <section className="metrics shell" aria-label="履歷重點">
-        {highlights.map((item) => (
-          <article className="metric" key={item.label}>
-            <strong>{item.value}</strong>
-            <span>{item.label}</span>
-            <small>{item.note}</small>
-          </article>
-        ))}
       </section>
 
       <section className="section shell" id="about">
@@ -286,6 +292,10 @@ export default function Home() {
               <h3>國立陽明交通大學</h3>
               <p>百川學士學位學程・核心法律</p>
               <p>輔系人文社會學系</p>
+              <div className="education-entry">
+                <h3>韓國漢陽大學</h3>
+                <p>暑期線上交換・114-2 至暑假</p>
+              </div>
             </div>
             <div className="profile-group">
               <p className="mini-label">INTERESTS</p>
@@ -293,6 +303,28 @@ export default function Home() {
               <p>文化轉譯・公共溝通・教育陪伴</p>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section className="honors-section" id="honors">
+        <div className="shell">
+          <div className="section-heading honors-heading">
+            <p className="eyebrow">REPRESENTATIVE HONORS</p>
+            <h2>代表性榮耀</h2>
+            <p>精選法治、文學與青年影響力領域的重要成果。</p>
+          </div>
+          <div className="honors-grid">
+            {representativeHonors.map((honor, index) => (
+              <article className="honor-card" key={`${honor.year}-${honor.title}`}>
+                <span className="honor-index">{String(index + 1).padStart(2, '0')}</span>
+                <div>
+                  <p className="honor-year">{honor.year}</p>
+                  <h3>{honor.title}</h3>
+                  <p className="honor-result">{honor.result}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -328,33 +360,6 @@ export default function Home() {
                 </div>
               </section>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="contact-section" id="contact">
-        <div className="shell contact-grid">
-          <div>
-            <p className="eyebrow">CONTACT</p>
-            <h2>保持聯絡</h2>
-            <p>歡迎就研究、公共參與、校園專案或合作機會與我聯繫。</p>
-          </div>
-          <div className="contact-links">
-            <a href="mailto:7777ath@gmail.com">
-              <Mail size={18} aria-hidden="true" />
-              <span>
-                <small>EMAIL</small>
-                7777ath@gmail.com
-              </span>
-              <ArrowUpRight size={18} aria-hidden="true" />
-            </a>
-            <div className="contact-location">
-              <MapPin size={18} aria-hidden="true" />
-              <span>
-                <small>BASED IN</small>
-                Hsinchu, Taiwan
-              </span>
-            </div>
           </div>
         </div>
       </section>

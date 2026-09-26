@@ -178,12 +178,8 @@ nav a:focus-visible {
 }
 
 .portrait-wrap {
-  position: relative;
   width: min(100%, 265px);
   margin: 0 auto;
-  padding: 10px;
-  border-radius: 16px;
-  background: var(--accent-soft);
 }
 
 .portrait {
@@ -196,47 +192,6 @@ nav a:focus-visible {
   object-position: 50% 37%;
 }
 
-.metrics {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--surface);
-  box-shadow: 0 8px 30px rgba(27, 43, 51, 0.035);
-}
-
-.metric {
-  display: grid;
-  min-height: 132px;
-  padding: 24px;
-  border-right: 1px solid var(--line);
-}
-
-.metric:last-child {
-  border-right: 0;
-}
-
-.metric strong {
-  color: #9bb8c5;
-  font-size: 35px;
-  font-weight: 780;
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-
-.metric span {
-  align-self: end;
-  margin-top: 16px;
-  font-size: 11px;
-  font-weight: 740;
-}
-
-.metric small {
-  margin-top: 4px;
-  color: var(--muted-light);
-  font-size: 9px;
-}
-
 .section {
   padding-block: 110px;
   scroll-margin-top: 62px;
@@ -246,8 +201,7 @@ nav a:focus-visible {
   margin-bottom: 52px;
 }
 
-.section-heading h2,
-.contact-section h2 {
+.section-heading h2 {
   max-width: 720px;
   margin: 0;
   font-size: clamp(32px, 4.7vw, 52px);
@@ -314,11 +268,79 @@ nav a:focus-visible {
   line-height: 1.65;
 }
 
+.education-entry {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
 .mini-label {
   color: #90aebb;
   font-size: 8px;
   font-weight: 800;
   letter-spacing: 0.16em;
+}
+
+.honors-section {
+  padding-block: 110px;
+  scroll-margin-top: 62px;
+  border-top: 1px solid var(--line);
+  background: var(--surface-soft);
+}
+
+.honors-heading > p:last-child {
+  max-width: 520px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.honors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line-strong);
+  border-left: 1px solid var(--line-strong);
+}
+
+.honor-card {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 22px;
+  min-height: 190px;
+  padding: 30px;
+  border-right: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  background: var(--surface);
+}
+
+.honor-index {
+  color: #9bb3bd;
+  font-size: 13px;
+  font-weight: 760;
+}
+
+.honor-year {
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 780;
+  letter-spacing: 0.12em;
+}
+
+.honor-card h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 760;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+}
+
+.honor-result {
+  margin: 13px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.65;
 }
 
 .timeline-section {
@@ -434,66 +456,6 @@ nav a:focus-visible {
   line-height: 1.85;
 }
 
-.contact-section {
-  padding-block: 105px;
-  scroll-margin-top: 62px;
-  border-top: 1px solid var(--line);
-  background: #f1f6f8;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(340px, 0.75fr);
-  gap: 100px;
-  align-items: start;
-}
-
-.contact-grid > div:first-child > p:last-child {
-  max-width: 500px;
-  margin: 20px 0 0;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-.contact-links {
-  border-top: 1px solid #cddce2;
-}
-
-.contact-links > a,
-.contact-location {
-  display: grid;
-  grid-template-columns: 22px minmax(0, 1fr) 22px;
-  gap: 14px;
-  align-items: center;
-  min-height: 74px;
-  border-bottom: 1px solid #cddce2;
-}
-
-.contact-links > a {
-  transition: padding 150ms ease, color 150ms ease;
-}
-
-.contact-links > a:hover,
-.contact-links > a:focus-visible {
-  padding-inline: 7px;
-  color: var(--accent);
-}
-
-.contact-links span {
-  display: grid;
-  gap: 4px;
-  font-size: 11px;
-  font-weight: 680;
-}
-
-.contact-links small {
-  color: var(--accent);
-  font-size: 7px;
-  font-weight: 780;
-  letter-spacing: 0.13em;
-}
-
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -518,27 +480,19 @@ nav a:focus-visible {
     margin-left: 0;
   }
 
-  .metrics {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .metric:nth-child(2) {
-    border-right: 0;
-  }
-
-  .metric:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--line);
-  }
-
   .section,
+  .honors-section,
   .timeline-section {
     padding-block: 84px;
   }
 
-  .about-grid,
-  .contact-grid {
+  .about-grid {
     grid-template-columns: 1fr;
     gap: 52px;
+  }
+
+  .honors-grid {
+    grid-template-columns: 1fr;
   }
 
   .year-group {
@@ -562,9 +516,6 @@ nav a:focus-visible {
     gap: 10px;
   }
 
-  .contact-section {
-    padding-block: 84px;
-  }
 }
 
 @media (max-width: 460px) {
@@ -578,11 +529,6 @@ nav a:focus-visible {
 
   .hero h1 {
     font-size: 55px;
-  }
-
-  .metric {
-    min-height: 126px;
-    padding: 20px 17px;
   }
 
   .year-group {
@@ -604,9 +550,11 @@ nav a:focus-visible {
     padding-left: 0;
   }
 
-  .contact-links > a,
-  .contact-location {
-    grid-template-columns: 21px minmax(0, 1fr) 18px;
+  .honor-card {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 15px;
+    min-height: auto;
+    padding: 24px 20px;
   }
 }
 
