@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
-import { Noto_Sans_TC, Noto_Serif_TC } from 'next/font/google';
+import { Geist, Noto_Sans_TC } from 'next/font/google';
 import './globals.css';
 
-const sans = Noto_Sans_TC({
-  variable: '--font-sans',
+const geist = Geist({
+  variable: '--font-geist',
   subsets: ['latin'],
   display: 'swap',
 });
 
-const serif = Noto_Serif_TC({
-  variable: '--font-serif',
+const sans = Noto_Sans_TC({
+  variable: '--font-sans',
   subsets: ['latin'],
   display: 'swap',
 });
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="zh-Hant">
-      <body className={`${sans.variable} ${serif.variable}`}>{children}</body>
+      <body className={`${geist.variable} ${sans.variable}`}>{children}</body>
     </html>
   );
 }
