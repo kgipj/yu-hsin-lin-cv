@@ -264,13 +264,13 @@ const timeline: TimelineGroup[] = [
         date: 'May',
         category: '文學獎',
         title: '第二十屆謝東閔先生紀念文學獎・散文組貳獎',
-        organization: '文學創作',
+        organization: '實踐大學',
       },
       {
         date: 'Apr.',
         category: '文學獎',
         title: '第二十三屆水煙紗漣文學獎・圖文組參獎',
-        organization: '文學創作',
+        organization: '國立暨南大學',
       },
       {
         date: 'Mar.',
