@@ -41,14 +41,46 @@ const education = [
 
 const selectedHonors = [
   {
+    category: '法治教育',
+    date: 'Dec. 2025',
     title: '司法院114年大專校院法治教育創新行動方案競賽',
+    distinction: '銀獎',
   },
   {
+    category: '青年影響力',
+    date: '2026',
+    title: '2026 Impact Star 青年影響力啟動賽',
+    distinction: '入圍初賽・大專組全國前十名',
+  },
+  {
+    category: '文學創作',
+    date: 'Mar. 2026',
     title: '2025年藍花楹創作獎',
-    emphasis: '小說組首獎',
+    distinction: '小說組首獎',
   },
   {
-    title: 'NYCU LIFE 數碼寶貝社 社長',
+    category: '校園領導',
+    date: 'Jun. 2026 — Present',
+    title: 'NYCU LIFE 數碼寶貝社',
+    distinction: '首屆社長',
+  },
+  {
+    category: '獎助學金',
+    date: 'Mar. 2026',
+    title: '張俊彥校長紀念獎助學金',
+    distinction: '國立陽明交通大學',
+  },
+  {
+    category: '文學創作',
+    date: 'May 2024',
+    title: '第二十屆謝東閔先生紀念文學獎',
+    distinction: '散文組貳獎',
+  },
+  {
+    category: '文學創作',
+    date: 'Apr. 2024',
+    title: '第二十三屆水煙紗漣文學獎',
+    distinction: '圖文組參獎',
   },
 ];
 
@@ -212,7 +244,6 @@ const timeline: TimelineGroup[] = [
         location: '新竹・半導體製造',
         bullets: [
           '協助陽明交大與台積電產學合作相關事宜，處理公文送簽與行政業務',
-          '利用 MS Excel 進行合作相關資料之鍵入與彙整，維持資料庫之精確性與即時性',
         ],
       },
       {
@@ -222,7 +253,6 @@ const timeline: TimelineGroup[] = [
         location: '線上・教育陪伴／公益服務',
         bullets: [
           '以線上一對一的形式，為偏鄉弱勢學童提供課後輔導及長期陪伴',
-          '依學生的學習進度調整教學內容與互動方式，提升其對課業的理解及學習意願',
         ],
       },
       {
@@ -336,16 +366,21 @@ export default function Home() {
       </section>
 
       <section className="section honors-section" id="honors" aria-labelledby="honors-title">
-        <div className="shell">
-          <SectionHeading id="honors-title" english="SELECTED HONORS" title="代表性榮耀" />
+        <div className="shell honors-layout">
+          <header className="honors-intro">
+            <p>SELECTED HONORS</p>
+            <h2 id="honors-title">代表性榮耀</h2>
+            <span>精選法治、青年影響力、文學創作、校園領導與獎助學金成果。</span>
+          </header>
           <ul className="honors-list">
             {selectedHonors.map((honor) => (
               <li key={honor.title}>
-                <span className="honor-bullet" aria-hidden="true">•</span>
-                <h3>
-                  {honor.title}
-                  {honor.emphasis ? <> <strong>{honor.emphasis}</strong></> : null}
-                </h3>
+                <div className="honor-meta">
+                  <span>{honor.category}</span>
+                  <time>{honor.date}</time>
+                </div>
+                <h3>{honor.title}</h3>
+                <p>{honor.distinction}</p>
               </li>
             ))}
           </ul>
