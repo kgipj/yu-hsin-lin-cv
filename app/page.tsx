@@ -24,7 +24,7 @@ const education = [
     program: '百川學士學位學程 核心法律\n輔系人文社會學系',
   },
   {
-    date: '2026/2–8',
+    date: 'Feb. - Aug. 2026',
     institution: '韓國漢陽大學',
     englishName: '한양대학교 · Hanyang University',
     program: '社會學系',
