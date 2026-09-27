@@ -226,6 +226,7 @@ nav a.active::after {
   color: var(--text-secondary);
   font-size: 15px;
   line-height: 1.8;
+  white-space: pre-line;
 }
 
 .hero-links {
@@ -287,7 +288,7 @@ nav a.active::after {
 
 .portrait-wrap {
   width: 100%;
-  margin: 0;
+  margin: 0 0 0 -28px;
   animation: fade-up 520ms 80ms ease both;
 }
 
@@ -790,6 +791,7 @@ nav a.active::after {
   .portrait-wrap {
     grid-row: 1;
     width: 180px;
+    margin-left: 0;
   }
 
   .hero-copy {
