@@ -328,7 +328,7 @@ export default function Home() {
             </div>
 
             <figure className="portrait-wrap">
-              <p className="hero-label">LAW · HUMANITIES · PUBLIC ENGAGEMENT</p>
+              <p className="hero-label">LAW ＆ HUMANITIES AND SOCIAL SCIENCES</p>
               <Image
                 className="portrait"
                 src="/profile.jpeg?v=academic-20260927"
