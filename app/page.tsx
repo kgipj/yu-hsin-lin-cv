@@ -54,6 +54,9 @@ const translations: Record<string, string> = {
   '青年影響力': 'Youth Impact',
   '2026 Impact Star 青年影響力啟動賽': '2026 Youth Impact Star: Action Challenge',
   '入圍初賽・大專組全國前十名': 'Preliminary Round Finalist · National Top 10, University Division',
+  '出題組織：Teach for Taiwan 為台灣而教': 'Challenge Provider: Teach For Taiwan',
+  '作品名稱：起跑線上的共鳴': 'Project: “Resonance at the Starting Line”',
+  '指導老師：曾聖凱教授': 'Faculty Adviser: Professor Sheng-Kai Tseng',
   '文學創作': 'Creative Writing',
   '2025 年藍花楹創作獎': '2025 Jacaranda Creative Writing Award',
   '小說組首獎': 'First Prize · Fiction',
@@ -257,6 +260,11 @@ const timeline: TimelineGroup[] = [
         category: '競賽',
         title: '2026 Impact Star 青年影響力啟動賽',
         organization: '入圍初賽・大專組全國前十名',
+        bullets: [
+          '出題組織：Teach for Taiwan 為台灣而教',
+          '作品名稱：起跑線上的共鳴',
+          '指導老師：曾聖凱教授',
+        ],
       },
       {
         date: 'Jul. — Sep.',
