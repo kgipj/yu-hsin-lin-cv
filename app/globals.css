@@ -78,6 +78,13 @@ time {
   letter-spacing: -0.02em;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 24px;
+}
+
 nav {
   display: flex;
   align-items: stretch;
@@ -117,6 +124,41 @@ nav a.active {
 nav a.active::after {
   opacity: 1;
   transform: scaleX(1);
+}
+
+.language-toggle {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-tertiary);
+  background: rgba(255, 255, 255, 0.6);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.language-toggle:hover,
+.language-toggle:focus-visible {
+  border-color: #b9cbd9;
+  color: var(--accent-dark);
+  background: var(--surface);
+}
+
+.language-toggle:focus-visible {
+  outline: 2px solid rgba(23, 111, 175, 0.28);
+  outline-offset: 3px;
+}
+
+.language-toggle .active {
+  color: var(--accent-dark);
+  font-weight: 760;
 }
 
 .hero-section {
@@ -222,6 +264,7 @@ nav a.active::after {
   width: 100%;
   aspect-ratio: 4 / 5;
   border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(30, 41, 59, 0.12);
   object-fit: cover;
   object-position: 50% 37%;
 }
@@ -290,6 +333,29 @@ nav a.active::after {
   border: 0;
   border-radius: 0;
   box-shadow: none;
+}
+
+.education-card {
+  margin-top: 8px;
+  padding: 16px 22px 4px;
+}
+
+.education-card .education-item {
+  padding: 14px 0 16px;
+}
+
+.education-card h2 {
+  margin-bottom: 3px;
+  font-size: 14px;
+}
+
+.education-card .education-item h3 {
+  font-size: 17px;
+}
+
+.education-card .education-program {
+  font-size: 14px;
+  line-height: 1.55;
 }
 
 .record-card h2 {
@@ -770,11 +836,20 @@ nav a.active::after {
   }
 
   nav {
-    gap: 12px;
+    gap: 10px;
   }
 
   nav a {
     font-size: 10.5px;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .language-toggle {
+    padding: 4px 6px;
+    font-size: 10px;
   }
 
   .hero-section {
@@ -819,6 +894,11 @@ nav a.active::after {
     font-size: 14px;
   }
 
+  .education-card {
+    margin-top: 0;
+    padding: 16px 20px 4px;
+  }
+
   .honors-list li {
     grid-template-columns: 1fr;
     gap: 6px;
@@ -848,11 +928,20 @@ nav a.active::after {
   }
 
   nav {
-    gap: 9px;
+    gap: 7px;
   }
 
   nav a {
     font-size: 10px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .language-toggle {
+    padding-inline: 5px;
+    font-size: 9.5px;
   }
 
   .hero-copy h1 {

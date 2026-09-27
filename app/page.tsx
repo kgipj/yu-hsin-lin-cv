@@ -1,5 +1,10 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import SiteHeader from './site-header';
 import Image from 'next/image';
+
+export type Language = 'zh' | 'en';
 
 type TimelineItem = {
   date: string;
@@ -16,6 +21,137 @@ type TimelineGroup = {
   items: TimelineItem[];
 };
 
+const translations: Record<string, string> = {
+  '陽明交大百川學士學位學程學生': 'Student, Arete Honors Program, National Yang Ming Chiao Tung University',
+  '跨域法律與社會科學領域': 'Interdisciplinary Focus in Law and Social Sciences',
+  '我的經驗橫跨刑事司法、人類學研究、華語教育與校園資訊服務；關注制度如何被理解，也在意知識如何被轉譯成可被使用的內容。':
+    'My experience spans criminal justice, anthropological research, Mandarin education, and campus information services. I am interested in how institutions are understood and how knowledge can be translated into accessible, practical forms.',
+  '外部連結': 'External links',
+  '林雨欣個人照片': 'Portrait of Yu-Hsin Lin',
+  '學歷與代表性榮耀': 'Education and Selected Honors',
+  '代表性榮耀': 'Selected Honors',
+  '跨年度最具代表性的成果。': 'A selection of achievements across different years.',
+  '學歷與交換經驗': 'Education & Exchange',
+  '經歷年表（2024 至今）': 'Experience Timeline (2024–Present)',
+  '由近到遠整理研究、交換、工作、實習、公共參與、獎項與青年培力。':
+    'Research, exchanges, employment, internships, public engagement, honors, and youth development, listed in reverse chronological order.',
+  '保持聯絡': 'Get in Touch',
+  '歡迎就研究、公共參與、校園專案或合作機會與我聯繫。':
+    'Feel free to contact me about research, public engagement, campus initiatives, or opportunities to collaborate.',
+  '回到頁首 ↑': 'Back to top ↑',
+  '國立陽明交通大學': 'National Yang Ming Chiao Tung University',
+  '百川學士學位學程 核心法律\n輔系人文社會學系':
+    'Arete Honors Program · Legal Studies Core\nMinor in Humanities and Social Sciences',
+  '韓國漢陽大學': 'Hanyang University',
+  '社會學系': 'Department of Sociology',
+  '匈牙利羅蘭大學': 'Eötvös Loránd University',
+  '社會科學院交換學生': 'Exchange Student · Faculty of Social Sciences',
+  '法治教育': 'Legal Education',
+  '司法院 114 年度大專校院法治教育創新行動方案競賽':
+    '2025 Judicial Yuan Legal Education and Innovation Project Competition for University Students',
+  '銀獎': 'Silver Award',
+  '青年影響力': 'Youth Impact',
+  '2026 Impact Star 青年影響力啟動賽': '2026 Youth Impact Star: Action Challenge',
+  '入圍初賽・大專組全國前十名': 'Preliminary Round Finalist · National Top 10, University Division',
+  '文學創作': 'Creative Writing',
+  '2025 年藍花楹創作獎': '2025 Jacaranda Creative Writing Award',
+  '小說組首獎': 'First Prize · Fiction',
+  '校園領導': 'Campus Leadership',
+  'NYCU LIFE 數碼寶貝社': 'NYCU LIFE Digimon Club',
+  '首屆社長': 'Founding President',
+  '獎助學金': 'Scholarship',
+  '張俊彥校長紀念獎助學金': 'President Chang Chun-Yen Memorial Scholarship',
+  '第二十屆謝東閔先生紀念文學獎': '20th Mr. Shieh Tung-min Memorial Literary Award',
+  '散文組貳獎': 'Second Prize · Prose',
+  '第二十三屆水煙紗漣文學獎': '23rd Shui Sha Lian Literary Award',
+  '圖文組參獎': 'Third Prize · Illustrated Works',
+  '交換': 'Exchange',
+  '赴匈牙利羅蘭大學交換': 'Exchange at Eötvös Loránd University',
+  '通過校內交換甄選，預計於 2027 年春季前往匈牙利進行交換學習。':
+    'Selected through NYCU’s internal exchange program; scheduled to study in Hungary in spring 2027.',
+  '研究': 'Research',
+  '國立陽明交通大學人文社會學系 研究獎助生':
+    'Research Assistant, Department of Humanities and Social Sciences, National Yang Ming Chiao Tung University',
+  '新竹・人類學': 'Hsinchu · Anthropology',
+  '研究計畫：「從櫻花蝦到下雜魚：臺灣近海拖網漁業的價值階序與公共性建構」':
+    'Research project: “From Sakura Shrimp to Trash Fish: Hierarchies of Value and the Construction of Publicness in Taiwan’s Coastal Trawl Fisheries”',
+  '計畫主持人：吳映青教授': 'Principal Investigator: Professor Ying-ching Wu',
+  '青年培力': 'Youth Development',
+  '國際青年人才培育計畫': 'International Youth Talent Development Program',
+  '新北市政府青年局': 'New Taipei City Government Youth Department',
+  '競賽': 'Competition',
+  '實習': 'Internship',
+  '台灣冤獄平反協會 實習生': 'Intern, Taiwan Innocence Project',
+  '台北・刑事司法／人權倡議': 'Taipei · Criminal Justice / Human Rights Advocacy',
+  '製作冤案救援與刑事司法議題社群文案，協助轉譯案件背景與倡議重點':
+    'Produced social media copy on wrongful-conviction relief and criminal justice, translating case backgrounds and advocacy priorities for public audiences.',
+  '獎學金': 'Scholarship',
+  '新北市獎學金': 'New Taipei City Scholarship',
+  '新北市政府': 'New Taipei City Government',
+  '第四屆鹿農實習生半日體驗營': '4th Deer Farming Internship Half-Day Experience Program',
+  '中華民國養鹿協會': 'Taiwan Deer Association',
+  '春雨創生行動營': 'Spring Rain Regional Revitalization Action Camp',
+  '財團法人春雨文教基金會': 'Spring Rain Culture and Education Foundation',
+  '工作': 'Employment',
+  '國立臺灣師範大學國語教學中心 暑期專案課程工讀學伴':
+    'Summer Program Work-Study Peer Mentor, Mandarin Training Center, National Taiwan Normal University',
+  '台北・華語教育': 'Taipei · Mandarin Education',
+  '領導': 'Leadership',
+  'NYCU LIFE 數碼寶貝社 首屆社長': 'Founding President, NYCU LIFE Digimon Club',
+  '新竹・數位開發': 'Hsinchu · Digital Development',
+  '推動「NYCU LIFE 校園資訊整合平台」專案，致力於改善陽明交大學生所面臨的資訊落差':
+    'Led the NYCU LIFE campus information platform initiative to reduce information gaps among NYCU students.',
+  '韓國漢陽大學 線上交換': 'Online Exchange, Hanyang University',
+  '線上・韓國': 'Online · South Korea',
+  '한양대학교（Hanyang University）': 'Hanyang University',
+  'Eötvös Loránd University・Budapest, Hungary': 'Eötvös Loránd University · Budapest, Hungary',
+  '公共參與': 'Public Engagement',
+  '新北文化大使': 'New Taipei Culture Ambassador',
+  '新北・地方創生／文化推廣': 'New Taipei · Regional Revitalization / Cultural Promotion',
+  '參與新北市文化推廣與地方創生專案，以青年視角轉譯在地歷史與文化':
+    'Contributed to cultural promotion and regional revitalization projects in New Taipei City, interpreting local history and culture from a youth perspective.',
+  '台北市關渡宮獎助學金': 'Taipei Guandu Temple Scholarship',
+  '2025 年藍花楹創作獎・小說組首獎': '2025 Jacaranda Creative Writing Award · First Prize in Fiction',
+  '民主小火青年培力營': 'Democracy Spark Youth Development Camp',
+  '潔伴同行挺台灣協會': 'Jieban Tongxing Ting Taiwan Association',
+  '司法院 114 年度大專校院法治教育創新行動方案競賽・銀獎':
+    '2025 Judicial Yuan Legal Education and Innovation Project Competition for University Students · Silver Award',
+  '作品名稱：「網」顧兒少－我國數位性剝削下的無法可依':
+    'Project: “Safeguarding Children Online: The Legal Void in Taiwan’s Response to Digital Sexual Exploitation”',
+  '指導老師：劉邦揚教授': 'Faculty Adviser: Professor Bang-Yang Liu',
+  '徵文': 'Writing Competition',
+  'Stan up！青開麥 Podcast 節目熱寫徵文・獲獎':
+    '“Stand Up! Youth Mic” Podcast Essay Competition · Award Recipient',
+  '新竹縣政府教育局': 'Education Bureau, Hsinchu County Government',
+  '秋季獎助學金': 'Autumn Scholarship',
+  '正德社會福利慈善基金會': 'Chengte Social Welfare and Charity Foundation',
+  '台灣積體電路製造股份有限公司 校園服務代表':
+    'Campus Service Representative, Taiwan Semiconductor Manufacturing Company (TSMC)',
+  '新竹・半導體製造': 'Hsinchu · Semiconductor Manufacturing',
+  '協助陽明交大與台積電產學合作相關事宜，處理公文送簽與行政業務':
+    'Supported administrative work for industry–academia collaboration between NYCU and TSMC, including document routing and approval procedures.',
+  '志工': 'Volunteer Service',
+  '惠瑜慈善協會 教學志工': 'Teaching Volunteer, Michelle Chiou Foundation',
+  '線上・教育陪伴／公益服務': 'Online · Educational Support / Community Service',
+  '以線上一對一的形式，為偏鄉弱勢學童提供課後輔導及長期陪伴':
+    'Provided one-on-one online tutoring and sustained mentorship for disadvantaged students in rural communities.',
+  '第三屆東南亞國際事務研習營': '3rd Southeast Asian International Affairs Study Camp',
+  '高雄市東南亞產學交流協會': 'Kaohsiung Southeast Asia Industry and Academic Exchange Association',
+  '文學獎': 'Literary Award',
+  '第二十屆謝東閔先生紀念文學獎・散文組貳獎':
+    '20th Mr. Shieh Tung-min Memorial Literary Award · Second Prize in Prose',
+  '實踐大學': 'Shih Chien University',
+  '第二十三屆水煙紗漣文學獎・圖文組參獎':
+    '23rd Shui Sha Lian Literary Award · Third Prize in Illustrated Works',
+  '國立暨南國際大學': 'National Chi Nan University',
+  '第 15 屆 336 愛奇兒家庭日 攝影志工': 'Photography Volunteer, 15th 336 Angel Family Day',
+  '財團法人天使心家族社會福利基金會': 'Angel Heart Family Social Welfare Foundation',
+};
+
+function translate(value: string, language: Language) {
+  return language === 'en' ? translations[value] ?? value : value;
+}
+
 const education = [
   {
     date: 'Present',
@@ -30,7 +166,7 @@ const education = [
     program: '社會學系',
   },
   {
-    date: '2027 春季',
+    date: 'Spring, 2027',
     institution: '匈牙利羅蘭大學',
     englishName: 'Eötvös Loránd University',
     program: '社會科學院交換學生',
@@ -54,7 +190,7 @@ const selectedHonors = [
   {
     category: '文學創作',
     date: 'Mar. 2026',
-    title: '2025年藍花楹創作獎',
+    title: '2025 年藍花楹創作獎',
     distinction: '小說組首獎',
   },
   {
@@ -299,9 +435,17 @@ function SectionHeading({
 }
 
 export default function Home() {
+  const [language, setLanguage] = useState<Language>('zh');
+
+  useEffect(() => {
+    document.documentElement.lang = language === 'en' ? 'en' : 'zh-Hant';
+  }, [language]);
+
+  const t = (value: string) => translate(value, language);
+
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader language={language} onLanguageChange={setLanguage} />
 
       <section className="hero-section" id="top" aria-labelledby="page-title">
         <div className="shell">
@@ -311,13 +455,13 @@ export default function Home() {
               <h1 id="page-title">林雨欣</h1>
               <p className="english-name">Yu-Hsin Lin</p>
               <div className="identity">
-                <p>陽明交大百川學士學位學程學生</p>
-                <p>跨域法律與社會科學領域</p>
+                <p>{t('陽明交大百川學士學位學程學生')}</p>
+                <p>{t('跨域法律與社會科學領域')}</p>
               </div>
               <p className="hero-summary">
-                我的經驗橫跨刑事司法、人類學研究、華語教育與校園資訊服務；關注制度如何被理解，也在意知識如何被轉譯成可被使用的內容。
+                {t('我的經驗橫跨刑事司法、人類學研究、華語教育與校園資訊服務；關注制度如何被理解，也在意知識如何被轉譯成可被使用的內容。')}
               </p>
-              <div className="hero-links" aria-label="外部連結">
+              <div className="hero-links" aria-label={t('外部連結')}>
                 <a href="mailto:7777ath@gmail.com">Email <span aria-hidden="true">↗</span></a>
               </div>
             </div>
@@ -326,7 +470,7 @@ export default function Home() {
               <Image
                 className="portrait"
                 src="/profile.jpeg?v=academic-20260927"
-                alt="林雨欣個人照片"
+                alt={t('林雨欣個人照片')}
                 width={2113}
                 height={3170}
                 loading="eager"
@@ -337,21 +481,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section records-section" aria-label="學歷與代表性榮耀">
+      <section className="section records-section" aria-label={t('學歷與代表性榮耀')}>
         <div className="shell records-grid">
           <section className="record-card honors-card" id="honors" aria-labelledby="honors-title">
             <header className="honors-header">
-              <h2 id="honors-title">代表性榮耀</h2>
-              <p>跨年度最具代表性的成果。</p>
+              <h2 id="honors-title">{t('代表性榮耀')}</h2>
+              <p>{t('跨年度最具代表性的成果。')}</p>
             </header>
             <ul className="honors-list">
               {selectedHonors.map((honor) => (
                 <li key={honor.title}>
-                  <h3>{honor.title}</h3>
+                  <h3>{t(honor.title)}</h3>
                   <p className="honor-details">
                     <time>{honor.date}</time>
                     <span aria-hidden="true">・</span>
-                    <span>{honor.distinction}</span>
+                    <span>{t(honor.distinction)}</span>
                   </p>
                 </li>
               ))}
@@ -359,13 +503,13 @@ export default function Home() {
           </section>
 
           <section className="record-card education-card" id="education" aria-labelledby="education-title">
-            <h2 id="education-title">EDUCATION <span aria-hidden="true">・</span> 學歷與交換經驗</h2>
+            <h2 id="education-title">EDUCATION <span aria-hidden="true">・</span> {t('學歷與交換經驗')}</h2>
             <div className="academic-list">
               {education.map((entry) => (
                 <article className="education-item" key={`${entry.date}-${entry.institution}`}>
-                  <h3>{entry.institution}</h3>
+                  <h3>{t(entry.institution)}</h3>
                   <p className="education-program">
-                    {entry.program}
+                    {t(entry.program)}
                     {entry.note ? <><span aria-hidden="true">・</span>{entry.note}</> : null}
                   </p>
                   <time>{entry.date}</time>
@@ -378,8 +522,8 @@ export default function Home() {
 
       <section className="section experience-section" id="experience" aria-labelledby="experience-title">
         <div className="shell">
-          <SectionHeading id="experience-title" english="EXPERIENCE" title="經歷年表（2024 至今）" />
-          <p className="section-intro">由近到遠整理研究、交換、工作、實習、公共參與、獎項與青年培力。</p>
+          <SectionHeading id="experience-title" english="EXPERIENCE" title={t('經歷年表（2024 至今）')} />
+          <p className="section-intro">{t('由近到遠整理研究、交換、工作、實習、公共參與、獎項與青年培力。')}</p>
 
           <div className="timeline">
             {timeline.map((group) => (
@@ -392,16 +536,16 @@ export default function Home() {
                     <article className="timeline-item" key={`${group.year}-${item.date}-${item.title}`}>
                       <div className="timeline-meta">
                         <time>{item.date}</time>
-                        <span>{item.category}</span>
+                        <span>{t(item.category)}</span>
                       </div>
                       <div className="timeline-content">
-                        <h4>{item.title}</h4>
-                        {item.location ? <p className="timeline-location">{item.location}</p> : null}
-                        {item.organization ? <p className="organization">{item.organization}</p> : null}
-                        {item.description ? <p className="description">{item.description}</p> : null}
+                        <h4>{t(item.title)}</h4>
+                        {item.location ? <p className="timeline-location">{t(item.location)}</p> : null}
+                        {item.organization ? <p className="organization">{t(item.organization)}</p> : null}
+                        {item.description ? <p className="description">{t(item.description)}</p> : null}
                         {item.bullets ? (
                           <ul>
-                            {item.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                            {item.bullets.map((bullet) => <li key={bullet}>{t(bullet)}</li>)}
                           </ul>
                         ) : null}
                       </div>
@@ -418,8 +562,8 @@ export default function Home() {
         <div className="shell contact-grid">
           <div>
             <p className="contact-eyebrow">CONTACT</p>
-            <h2 id="contact-title">保持聯絡</h2>
-            <p>歡迎就研究、公共參與、校園專案或合作機會與我聯繫。</p>
+            <h2 id="contact-title">{t('保持聯絡')}</h2>
+            <p>{t('歡迎就研究、公共參與、校園專案或合作機會與我聯繫。')}</p>
           </div>
           <div className="contact-links">
             <a href="mailto:7777ath@gmail.com">
@@ -436,7 +580,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="shell footer-inner">
           <p>© 2026 Yu-Hsin Lin</p>
-          <a href="#top">回到頁首 ↑</a>
+          <a href="#top">{t('回到頁首 ↑')}</a>
         </div>
       </footer>
     </main>
