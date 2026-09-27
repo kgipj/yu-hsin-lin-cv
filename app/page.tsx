@@ -174,8 +174,8 @@ const timeline: TimelineGroup[] = [
       },
       {
         date: 'Feb. — Aug.',
-        category: '修課',
-        title: '韓國漢陽大學 社會學系線上修課',
+        category: '交換',
+        title: '韓國漢陽大學 線上交換',
         organization: '한양대학교（Hanyang University）',
         location: '線上・韓國',
         description: '於 2026 年 2 月至 8 月修習漢陽大學社會學系線上課程。',
