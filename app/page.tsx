@@ -106,7 +106,7 @@ const timeline: TimelineGroup[] = [
         location: '新竹・人類學',
         bullets: [
           '研究計畫：「從櫻花蝦到下雜魚：臺灣近海拖網漁業的價值階序與公共性建構」',
-          '計畫主持人：吳映青老師',
+          '計畫主持人：吳映青教授',
         ],
       },
       {
@@ -185,7 +185,6 @@ const timeline: TimelineGroup[] = [
         date: 'Apr.',
         category: '獎學金',
         title: '台北市關渡宮獎助學金',
-        organization: '台北市關渡宮',
       },
       {
         date: 'Mar.',
