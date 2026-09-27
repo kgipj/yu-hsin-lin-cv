@@ -6,6 +6,7 @@ const navigation = [
   { id: 'education', label: 'Education' },
   { id: 'honors', label: 'Honors' },
   { id: 'experience', label: 'Experience' },
+  { id: 'contact', label: 'Contact' },
 ];
 
 export default function SiteHeader() {
@@ -24,7 +25,7 @@ export default function SiteHeader() {
       });
 
       if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
-        current = 'experience';
+        current = 'contact';
       }
 
       setActiveSection(current);
