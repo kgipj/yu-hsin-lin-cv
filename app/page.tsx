@@ -21,7 +21,7 @@ const education = [
     date: 'Present',
     institution: '國立陽明交通大學',
     englishName: 'National Yang Ming Chiao Tung University',
-    program: '百川學士學位學程（核心法律）・輔系人文社會學系',
+    program: '百川學士學位學程 核心法律\n輔系人文社會學系',
   },
   {
     date: '2026/2–8',
