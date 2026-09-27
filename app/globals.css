@@ -544,6 +544,10 @@ nav a.active::after {
   border-bottom: 0;
 }
 
+.timeline-item-compact {
+  align-items: center;
+}
+
 .timeline-meta {
   display: grid;
   align-content: start;

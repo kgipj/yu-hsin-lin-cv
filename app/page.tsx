@@ -544,7 +544,14 @@ export default function Home() {
                 </div>
                 <div className="experience-items">
                   {group.items.map((item) => (
-                    <article className="timeline-item" key={`${group.year}-${item.date}-${item.title}`}>
+                    <article
+                      className={`timeline-item${
+                        item.location || item.organization || item.description || item.bullets
+                          ? ''
+                          : ' timeline-item-compact'
+                      }`}
+                      key={`${group.year}-${item.date}-${item.title}`}
+                    >
                       <div className="timeline-meta">
                         <time>{item.date}</time>
                         <span>{t(item.category)}</span>
