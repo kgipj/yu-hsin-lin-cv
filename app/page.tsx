@@ -16,91 +16,39 @@ type TimelineGroup = {
   items: TimelineItem[];
 };
 
-type HonorGroup = {
-  year: string;
-  items: Array<{
-    category: string;
-    title: string;
-    distinction: string;
-    organization?: string;
-    date: string;
-  }>;
-};
-
 const education = [
   {
-    date: '就讀中',
+    date: 'Present',
     institution: '國立陽明交通大學',
     englishName: 'National Yang Ming Chiao Tung University',
-    details: ['百川學士學位學程', '核心法律・輔系人文社會學系'],
+    program: '百川學士學位學程（核心法律）・輔系人文社會學系',
   },
   {
     date: '2026/2–8',
     institution: '韓國漢陽大學',
     englishName: '한양대학교 · Hanyang University',
-    details: ['暑期線上交換', '線上・韓國'],
+    program: '社會學系修課',
+    note: '線上・韓國',
   },
   {
     date: '2027 春季',
     institution: '匈牙利羅蘭大學',
     englishName: 'Eötvös Loránd University',
-    details: ['交換學生（已通過校內交換甄選）', 'Budapest, Hungary'],
+    program: '社會科學院交換學生',
+    note: 'Budapest, Hungary',
   },
 ];
 
-const selectedHonors: HonorGroup[] = [
+const selectedHonors = [
   {
-    year: '2026',
-    items: [
-      {
-        category: '文學獎',
-        title: '2025年藍花楹創作獎',
-        distinction: '小說組首獎',
-        date: 'Mar. 2026',
-      },
-      {
-        category: '競賽',
-        title: '2026 Impact Star 青年影響力啟動賽',
-        distinction: '入圍初賽・大專組全國前十名',
-        date: '2026',
-      },
-    ],
+    title: '司法院114年大專校院法治教育創新行動方案競賽',
   },
   {
-    year: '2025',
-    items: [
-      {
-        category: '競賽',
-        title: '司法院114年大專校院法治教育創新行動方案競賽',
-        distinction: '銀獎',
-        organization: '司法院',
-        date: 'Dec. 2025',
-      },
-      {
-        category: '徵文',
-        title: 'Stan up！青開麥 Podcast 節目熱寫徵文',
-        distinction: '獲獎',
-        organization: '新竹縣政府教育局',
-        date: 'Dec. 2025',
-      },
-    ],
+    title: '2025年藍花楹創作獎',
+    emphasis: '小說組首獎',
   },
   {
-    year: '2024',
-    items: [
-      {
-        category: '文學獎',
-        title: '第二十屆謝東閔先生紀念文學獎',
-        distinction: '散文組貳獎',
-        date: 'May 2024',
-      },
-      {
-        category: '文學獎',
-        title: '第二十三屆水煙紗漣文學獎',
-        distinction: '圖文組參獎',
-        date: 'Apr. 2024',
-      },
-    ],
+    title: 'NYCU LIFE 數碼寶貝社 社長',
   },
 ];
 
@@ -193,7 +141,7 @@ const timeline: TimelineGroup[] = [
         ],
       },
       {
-        date: '2026/2–8',
+        date: 'Feb. — Aug.',
         category: '交換',
         title: '韓國漢陽大學 暑期線上交換',
         organization: '한양대학교（Hanyang University）',
@@ -336,12 +284,12 @@ export default function Home() {
     <main>
       <SiteHeader />
 
-      <section className="about-section" id="about" aria-labelledby="about-title">
+      <section className="hero-section" id="top" aria-labelledby="page-title">
         <div className="shell">
           <div className="hero-grid">
             <div className="hero-copy">
               <p className="hero-label">LAW · HUMANITIES · PUBLIC ENGAGEMENT</p>
-              <h1 id="about-title">Yu-Hsin Lin</h1>
+              <h1 id="page-title">Yu-Hsin Lin</h1>
               <p className="chinese-name">林雨欣</p>
               <div className="identity">
                 <p>陽明交大百川學士學位學程學生</p>
@@ -367,36 +315,23 @@ export default function Home() {
             </figure>
           </div>
 
-          <div className="about-details">
-            <div className="about-label">
-              <span>01</span>
-              <p>ABOUT</p>
-            </div>
-            <div className="about-prose">
-              <p className="lead">
-                我在法律與人文社會領域之間學習，將課堂上的制度思考帶進研究、倡議與公共服務。
-              </p>
-              <p>
-                從日治時期飲食與漁業史料，到冤案救援與法治教育；從陪伴外籍學員認識臺灣，到整合校園資訊，我累積的每段經驗都在練習同一件事：理解複雜脈絡，並把它說清楚、做實在。
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
       <section className="section education-section" id="education" aria-labelledby="education-title">
         <div className="shell">
-          <SectionHeading id="education-title" number="02" english="EDUCATION" title="學歷與交換經驗" />
+          <SectionHeading id="education-title" number="01" english="EDUCATION" title="學歷與交換經驗" />
           <div className="academic-list">
             {education.map((entry) => (
               <article className="education-item" key={`${entry.date}-${entry.institution}`}>
                 <time>{entry.date}</time>
-                <div>
-                  <h3>{entry.institution}</h3>
-                  <p className="english-name">{entry.englishName}</p>
-                  <div className="education-details">
-                    {entry.details.map((detail) => <p key={detail}>{detail}</p>)}
+                <div className="education-record">
+                  <div className="education-title-line">
+                    <h3>{entry.institution}</h3>
+                    <p className="education-program">{entry.program}</p>
                   </div>
+                  <p className="english-name">{entry.englishName}</p>
+                  {entry.note ? <p className="education-note">{entry.note}</p> : null}
                 </div>
               </article>
             ))}
@@ -406,33 +341,24 @@ export default function Home() {
 
       <section className="section honors-section" id="honors" aria-labelledby="honors-title">
         <div className="shell">
-          <SectionHeading id="honors-title" number="03" english="SELECTED HONORS" title="代表性榮耀" />
-          <div className="honors-groups">
-            {selectedHonors.map((group) => (
-              <section className="honor-year" key={group.year} aria-labelledby={`honor-${group.year}`}>
-                <h3 id={`honor-${group.year}`}>{group.year}</h3>
-                <div className="honor-items">
-                  {group.items.map((honor) => (
-                    <article className="honor-item" key={`${honor.date}-${honor.title}`}>
-                      <div className="honor-topline">
-                        <span>{honor.category}</span>
-                        <time>{honor.date}</time>
-                      </div>
-                      <h4>{honor.title}</h4>
-                      <p className="distinction">{honor.distinction}</p>
-                      {honor.organization ? <p className="honor-organization">{honor.organization}</p> : null}
-                    </article>
-                  ))}
-                </div>
-              </section>
+          <SectionHeading id="honors-title" number="02" english="SELECTED HONORS" title="代表性榮耀" />
+          <ul className="honors-list">
+            {selectedHonors.map((honor) => (
+              <li key={honor.title}>
+                <span className="honor-bullet" aria-hidden="true">•</span>
+                <h3>
+                  {honor.title}
+                  {honor.emphasis ? <> <strong>{honor.emphasis}</strong></> : null}
+                </h3>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
       <section className="section experience-section" id="experience" aria-labelledby="experience-title">
         <div className="shell">
-          <SectionHeading id="experience-title" number="04" english="EXPERIENCE" title="經歷年表" />
+          <SectionHeading id="experience-title" number="03" english="EXPERIENCE" title="經歷年表" />
           <p className="section-intro">由近到遠整理研究、交換、工作、實習、公共參與、獎項與青年培力。</p>
 
           <div className="timeline">
@@ -446,11 +372,11 @@ export default function Home() {
                     <article className="timeline-item" key={`${group.year}-${item.date}-${item.title}`}>
                       <div className="timeline-meta">
                         <time>{item.date}</time>
-                        {item.location ? <p>{item.location}</p> : null}
                         <span>{item.category}</span>
                       </div>
                       <div className="timeline-content">
                         <h4>{item.title}</h4>
+                        {item.location ? <p className="timeline-location">{item.location}</p> : null}
                         {item.organization ? <p className="organization">{item.organization}</p> : null}
                         {item.description ? <p className="description">{item.description}</p> : null}
                         {item.bullets ? (

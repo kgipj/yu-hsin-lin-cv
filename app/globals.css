@@ -115,7 +115,7 @@ nav a.active::after {
   transform: scaleX(1);
 }
 
-.about-section {
+.hero-section {
   padding: 82px 0 88px;
   background: var(--background);
 }
@@ -134,8 +134,7 @@ nav a.active::after {
 }
 
 .hero-label,
-.section-kicker p,
-.about-label p {
+.section-kicker p {
   margin: 0;
   color: var(--accent);
   font-size: 11px;
@@ -223,42 +222,16 @@ nav a.active::after {
   object-position: 50% 37%;
 }
 
-.about-details {
-  display: grid;
-  grid-template-columns: 150px minmax(0, 760px);
-  gap: 40px;
-  margin-top: 64px;
-  padding-top: 42px;
-  border-top: 1px solid var(--border);
-}
-
-.about-label,
 .section-kicker {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.about-label span,
 .section-kicker span {
   color: var(--text-tertiary);
   font-family: var(--font-geist), ui-monospace, monospace;
   font-size: 11px;
-}
-
-.about-prose p {
-  max-width: 740px;
-  margin: 0 0 18px;
-  color: var(--text-secondary);
-  font-size: 15px;
-  line-height: 1.85;
-}
-
-.about-prose .lead {
-  color: var(--text-primary);
-  font-size: 19px;
-  font-weight: 620;
-  line-height: 1.7;
 }
 
 .section {
@@ -266,13 +239,16 @@ nav a.active::after {
   scroll-margin-top: var(--header-height);
 }
 
-.education-section,
-.experience-section {
+.education-section {
   background: var(--surface);
 }
 
 .honors-section {
   background: var(--muted-bg);
+}
+
+.experience-section {
+  background: var(--background);
 }
 
 .section-heading {
@@ -294,120 +270,104 @@ nav a.active::after {
 }
 
 .academic-list,
-.honors-groups,
 .timeline {
   border-top: 1px solid var(--border);
 }
 
 .education-item {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 40px;
-  padding: 31px 0 32px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: start;
+  padding: 32px 0 34px;
   border-bottom: 1px solid var(--border);
 }
 
 .education-item > time {
-  padding-top: 3px;
+  grid-column: 2;
+  grid-row: 1;
+  padding-top: 5px;
   color: var(--accent-dark);
   font-family: var(--font-geist), ui-monospace, monospace;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 650;
+  white-space: nowrap;
+}
+
+.education-record {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.education-title-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
 }
 
 .education-item h3 {
   margin: 0;
-  font-size: 19px;
-  font-weight: 680;
+  font-size: 22px;
+  font-weight: 700;
   line-height: 1.5;
   letter-spacing: -0.018em;
 }
 
-.english-name {
-  margin: 3px 0 13px;
-  color: var(--text-tertiary);
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.education-details p {
-  margin: 2px 0;
-  color: var(--text-secondary);
-  font-size: 15px;
+.education-program {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 17px;
+  font-weight: 540;
   line-height: 1.7;
 }
 
-.honor-year {
-  display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 40px;
-  border-bottom: 1px solid var(--border);
-}
-
-.honor-year > h3 {
-  margin: 0;
-  padding: 32px 0;
-  color: var(--accent);
-  font-size: 22px;
-  font-weight: 650;
-  line-height: 1;
-  letter-spacing: -0.025em;
-}
-
-.honor-items {
-  min-width: 0;
-}
-
-.honor-item {
-  padding: 29px 0 30px;
-  border-bottom: 1px solid var(--border);
-}
-
-.honor-item:last-child {
-  border-bottom: 0;
-}
-
-.honor-topline {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 7px;
-}
-
-.honor-topline span {
-  color: var(--accent);
-  font-size: 10px;
-  font-weight: 720;
-  letter-spacing: 0.11em;
-}
-
-.honor-topline time {
+.english-name {
+  margin: 7px 0 0;
   color: var(--text-tertiary);
-  font-family: var(--font-geist), ui-monospace, monospace;
-  font-size: 12px;
-  white-space: nowrap;
+  font-size: 14px;
+  line-height: 1.65;
 }
 
-.honor-item h4 {
-  max-width: 740px;
+.education-note {
+  margin: 5px 0 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.honors-list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+  list-style: none;
+}
+
+.honors-list li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 14px;
+  align-items: baseline;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.honor-bullet {
+  color: var(--accent);
+  font-size: 17px;
+  line-height: 1;
+}
+
+.honors-list h3 {
   margin: 0;
   font-size: 18px;
-  font-weight: 660;
-  line-height: 1.6;
+  font-weight: 560;
+  line-height: 1.65;
   letter-spacing: -0.018em;
 }
 
-.distinction {
-  margin: 5px 0 0;
-  color: var(--text-primary);
-  font-size: 15px;
-  font-weight: 620;
-}
-
-.honor-organization {
-  margin: 3px 0 0;
-  color: var(--text-secondary);
-  font-size: 13px;
+.honors-list strong {
+  font-weight: 720;
 }
 
 .experience-section .section-heading {
@@ -425,58 +385,36 @@ nav a.active::after {
 .year-group {
   display: grid;
   grid-template-columns: 150px minmax(0, 1fr);
-  gap: 40px;
   border-bottom: 1px solid var(--border);
+}
+
+.year-column {
+  position: relative;
+  border-right: 1px solid var(--border);
 }
 
 .year-column h3 {
   position: sticky;
   top: calc(var(--header-height) + 28px);
   margin: 0;
-  padding: 34px 0;
-  color: var(--accent);
-  font-size: 28px;
-  font-weight: 650;
+  padding: 34px 24px 34px 0;
+  color: #8fa8be;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 720;
   line-height: 1;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.055em;
 }
 
 .experience-items {
-  position: relative;
   min-width: 0;
-  padding-left: 24px;
-}
-
-.experience-items::before {
-  position: absolute;
-  top: 40px;
-  bottom: 40px;
-  left: 3px;
-  width: 1px;
-  background: var(--border);
-  content: '';
 }
 
 .timeline-item {
-  position: relative;
   display: grid;
-  grid-template-columns: 165px minmax(0, 1fr);
-  gap: 30px;
-  padding: 31px 0 33px;
+  grid-template-columns: 155px minmax(0, 1fr);
+  gap: 26px;
+  padding: 32px 0 32px 34px;
   border-bottom: 1px solid var(--border-soft);
-}
-
-.timeline-item::before {
-  position: absolute;
-  top: 39px;
-  left: -24px;
-  width: 7px;
-  height: 7px;
-  border: 2px solid var(--surface);
-  border-radius: 50%;
-  background: #8ca5bf;
-  box-shadow: 0 0 0 1px #8ca5bf;
-  content: '';
 }
 
 .timeline-item:last-child {
@@ -486,28 +424,26 @@ nav a.active::after {
 .timeline-meta {
   display: grid;
   align-content: start;
-  gap: 8px;
+  gap: 10px;
 }
 
 .timeline-meta time {
-  color: var(--text-primary);
+  color: #4d5d6d;
   font-family: var(--font-geist), ui-monospace, monospace;
-  font-size: 12px;
-  font-weight: 640;
-}
-
-.timeline-meta p {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 12px;
-  line-height: 1.6;
+  font-size: 11px;
+  font-weight: 680;
 }
 
 .timeline-meta span {
+  width: fit-content;
+  padding: 3px 7px;
+  border: 1px solid #d8e3ed;
+  border-radius: 999px;
   color: var(--accent);
-  font-size: 10px;
+  background: #f3f7fa;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.04em;
 }
 
 .timeline-content h4 {
@@ -518,17 +454,25 @@ nav a.active::after {
   letter-spacing: -0.018em;
 }
 
-.organization {
-  margin: 4px 0 0;
-  color: var(--text-secondary);
+.timeline-location {
+  margin: 7px 0 0;
+  color: var(--accent);
   font-size: 13px;
-  font-weight: 520;
-  line-height: 1.65;
+  font-weight: 620;
+  line-height: 1.8;
+}
+
+.organization {
+  margin: 8px 0 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 540;
+  line-height: 1.8;
 }
 
 .description {
   max-width: 690px;
-  margin: 13px 0 0;
+  margin: 14px 0 0;
   color: var(--text-secondary);
   font-size: 14px;
   line-height: 1.8;
@@ -536,17 +480,14 @@ nav a.active::after {
 
 .timeline-content ul {
   display: grid;
-  gap: 7px;
+  gap: 6px;
   max-width: 690px;
   margin: 14px 0 0;
-  padding-left: 20px;
+  padding: 0;
   color: var(--text-secondary);
   font-size: 14px;
-  line-height: 1.75;
-}
-
-.timeline-content li::marker {
-  color: #8ca5bf;
+  line-height: 1.8;
+  list-style: none;
 }
 
 .site-footer {
@@ -601,13 +542,13 @@ nav a.active::after {
     gap: 64px;
   }
 
-  .section-heading,
-  .education-item,
-  .honor-year,
-  .year-group,
-  .about-details {
+  .section-heading {
     grid-template-columns: 125px minmax(0, 1fr);
     gap: 32px;
+  }
+
+  .year-group {
+    grid-template-columns: 125px minmax(0, 1fr);
   }
 
   .section-intro {
@@ -617,6 +558,7 @@ nav a.active::after {
   .timeline-item {
     grid-template-columns: 145px minmax(0, 1fr);
     gap: 25px;
+    padding-left: 30px;
   }
 }
 
@@ -634,7 +576,7 @@ nav a.active::after {
     font-size: 12px;
   }
 
-  .about-section {
+  .hero-section {
     padding: 66px 0 76px;
   }
 
@@ -645,23 +587,20 @@ nav a.active::after {
   }
 
   .portrait-wrap {
+    grid-row: 1;
     width: 180px;
   }
 
-  .about-details,
+  .hero-copy {
+    grid-row: 2;
+  }
+
   .section-heading,
-  .education-item,
-  .honor-year,
-  .year-group {
+  .education-item {
     grid-template-columns: 1fr;
     gap: 0;
   }
 
-  .about-details {
-    margin-top: 52px;
-  }
-
-  .about-label,
   .section-kicker {
     margin-bottom: 18px;
   }
@@ -676,33 +615,37 @@ nav a.active::after {
   }
 
   .education-item > time {
+    grid-column: 1;
+    grid-row: 1;
     margin-bottom: 11px;
   }
 
-  .honor-year > h3 {
-    padding: 28px 0 13px;
+  .education-record {
+    grid-column: 1;
+    grid-row: 2;
   }
 
-  .honor-item {
-    padding: 24px 0;
+  .honors-list li {
+    padding: 22px 0;
   }
 
   .section-intro {
     margin: 0 0 40px;
   }
 
-  .year-column h3 {
-    position: static;
-    padding: 30px 0 16px;
+  .year-group {
+    grid-template-columns: 96px minmax(0, 1fr);
   }
 
-  .experience-items {
-    padding-left: 20px;
+  .year-column h3 {
+    padding-right: 18px;
+    font-size: 35px;
   }
 
   .timeline-item {
     grid-template-columns: 1fr;
-    gap: 13px;
+    gap: 15px;
+    padding: 28px 0 28px 24px;
   }
 
   .timeline-meta {
@@ -712,9 +655,6 @@ nav a.active::after {
     gap: 7px 14px;
   }
 
-  .timeline-item::before {
-    left: -20px;
-  }
 }
 
 @media (max-width: 560px) {
@@ -739,7 +679,7 @@ nav a.active::after {
     font-size: 10.5px;
   }
 
-  .about-section {
+  .hero-section {
     padding: 54px 0 68px;
   }
 
@@ -760,8 +700,7 @@ nav a.active::after {
     font-size: 20px;
   }
 
-  .hero-summary,
-  .about-prose p {
+  .hero-summary {
     font-size: 14px;
   }
 
@@ -778,7 +717,7 @@ nav a.active::after {
   }
 
   .education-item h3 {
-    font-size: 18px;
+    font-size: 21px;
   }
 
   .honor-topline {
@@ -811,6 +750,27 @@ nav a.active::after {
 
   .hero-copy h1 {
     font-size: 36px;
+  }
+}
+
+@media (max-width: 460px) {
+  .year-group {
+    grid-template-columns: 1fr;
+  }
+
+  .year-column {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .year-column h3 {
+    position: static;
+    padding: 26px 0 20px;
+    font-size: 38px;
+  }
+
+  .timeline-item {
+    padding-left: 0;
   }
 }
 

@@ -3,21 +3,20 @@
 import { useEffect, useState } from 'react';
 
 const navigation = [
-  { id: 'about', label: 'About' },
   { id: 'education', label: 'Education' },
   { id: 'honors', label: 'Honors' },
   { id: 'experience', label: 'Experience' },
 ];
 
 export default function SiteHeader() {
-  const [activeSection, setActiveSection] = useState('about');
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     let frame = 0;
 
     const updateActiveSection = () => {
       const marker = window.scrollY + 160;
-      let current = 'about';
+      let current = '';
 
       navigation.forEach(({ id }) => {
         const section = document.getElementById(id);
@@ -50,7 +49,7 @@ export default function SiteHeader() {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <a className="brand" href="#about" onClick={() => setActiveSection('about')}>
+        <a className="brand" href="#top" onClick={() => setActiveSection('')}>
           Yu-Hsin Lin
         </a>
         <nav aria-label="主要導覽">
