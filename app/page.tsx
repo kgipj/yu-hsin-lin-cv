@@ -89,7 +89,7 @@ const timeline: TimelineGroup[] = [
     items: [
       {
         date: 'Spring',
-        category: '教育',
+        category: '交換',
         title: '赴匈牙利羅蘭大學交換',
         organization: 'Eötvös Loránd University・Budapest, Hungary',
         description: '通過校內交換甄選，預計於 2027 年春季前往匈牙利進行交換學習。',
@@ -161,7 +161,6 @@ const timeline: TimelineGroup[] = [
         location: '新竹・數位開發',
         bullets: [
           '推動「NYCU LIFE 校園資訊整合平台」專案，致力於改善陽明交大學生所面臨的資訊落差',
-          '統籌社團營運與行政事務，負責進度追蹤、對外溝通及跨組協作',
         ],
       },
       {
