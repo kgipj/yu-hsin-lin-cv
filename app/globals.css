@@ -167,10 +167,12 @@ nav a.active::after {
 }
 
 .hero-grid {
+  --hero-side-gap: clamp(56px, 9vw, 112px);
   display: grid;
   grid-template-columns: minmax(0, 1fr) 210px;
   align-items: center;
-  gap: clamp(56px, 9vw, 112px);
+  gap: var(--hero-side-gap);
+  padding-right: var(--hero-side-gap);
   min-height: 430px;
 }
 
@@ -288,7 +290,7 @@ nav a.active::after {
 
 .portrait-wrap {
   width: 100%;
-  margin: 0 0 0 -28px;
+  margin: 0;
   animation: fade-up 520ms 80ms ease both;
 }
 
@@ -548,7 +550,7 @@ nav a.active::after {
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 155px minmax(0, 1fr);
+  grid-template-columns: 120px minmax(0, 1fr);
   gap: 26px;
   padding: 32px 0 32px 34px;
   border-bottom: 1px solid var(--border-soft);
@@ -743,8 +745,10 @@ nav a.active::after {
   }
 
   .hero-grid {
+    --hero-side-gap: 64px;
     grid-template-columns: minmax(0, 1fr) 190px;
-    gap: 64px;
+    gap: var(--hero-side-gap);
+    padding-right: var(--hero-side-gap);
   }
 
   .section-heading {
@@ -757,7 +761,7 @@ nav a.active::after {
   }
 
   .timeline-item {
-    grid-template-columns: 145px minmax(0, 1fr);
+    grid-template-columns: 120px minmax(0, 1fr);
     gap: 25px;
     padding-left: 30px;
   }
@@ -783,15 +787,16 @@ nav a.active::after {
   }
 
   .hero-grid {
+    --hero-side-gap: 42px;
     grid-template-columns: 1fr;
-    gap: 42px;
+    gap: var(--hero-side-gap);
+    padding-right: 0;
     min-height: auto;
   }
 
   .portrait-wrap {
     grid-row: 1;
     width: 180px;
-    margin-left: 0;
   }
 
   .hero-copy {
