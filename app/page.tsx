@@ -76,7 +76,7 @@ const timeline: TimelineGroup[] = [
         bullets: [
           '研究計畫：「從櫻花蝦到下雜魚：臺灣近海拖網漁業的價值階序與公共性建構」',
           '計畫主持人：吳映青老師',
-          '協助系上吳映青教授建置 EndNote 學術書目資料庫，進行書目核對、文獻分類與標籤管理',
+          '建置 EndNote 學術書目資料庫，進行書目核對、文獻分類與標籤管理',
           '檢索《臺灣日日新報》，蒐集日治時期蝦米、乾蝦之飲食文化、料理應用與進出口貿易史料',
         ],
       },
@@ -142,11 +142,11 @@ const timeline: TimelineGroup[] = [
       },
       {
         date: 'Feb. — Aug.',
-        category: '交換',
-        title: '韓國漢陽大學 暑期線上交換',
+        category: '修課',
+        title: '韓國漢陽大學 社會學系線上修課',
         organization: '한양대학교（Hanyang University）',
         location: '線上・韓國',
-        description: '於 2026 年 2 月至 8 月參與漢陽大學暑期線上交換。',
+        description: '於 2026 年 2 月至 8 月修習漢陽大學社會學系線上課程。',
       },
       {
         date: 'May — Aug.',
@@ -285,7 +285,6 @@ export default function Home() {
         <div className="shell">
           <div className="hero-grid">
             <div className="hero-copy">
-              <p className="hero-label">LAW · HUMANITIES · PUBLIC ENGAGEMENT</p>
               <h1 id="page-title">Yu-Hsin Lin</h1>
               <p className="chinese-name">林雨欣</p>
               <div className="identity">
@@ -301,6 +300,7 @@ export default function Home() {
             </div>
 
             <figure className="portrait-wrap">
+              <p className="hero-label">LAW · HUMANITIES · PUBLIC ENGAGEMENT</p>
               <Image
                 className="portrait"
                 src="/profile.jpeg?v=academic-20260927"
@@ -317,21 +317,20 @@ export default function Home() {
 
       <section className="section education-section" id="education" aria-labelledby="education-title">
         <div className="shell">
-          <SectionHeading id="education-title" english="EDUCATION" title="學歷與交換經驗" />
-          <div className="academic-list">
-            {education.map((entry) => (
-              <article className="education-item" key={`${entry.date}-${entry.institution}`}>
-                <time>{entry.date}</time>
-                <div className="education-record">
-                  <div className="education-title-line">
-                    <h3>{entry.institution}</h3>
-                    <p className="education-program">{entry.program}</p>
-                  </div>
-                  <p className="english-name">{entry.englishName}</p>
-                  {entry.note ? <p className="education-note">{entry.note}</p> : null}
-                </div>
-              </article>
-            ))}
+          <div className="education-card">
+            <h2 id="education-title">EDUCATION <span aria-hidden="true">・</span> 學歷與交換經驗</h2>
+            <div className="academic-list">
+              {education.map((entry) => (
+                <article className="education-item" key={`${entry.date}-${entry.institution}`}>
+                  <h3>{entry.institution}</h3>
+                  <p className="education-program">
+                    {entry.program}
+                    {entry.note ? <><span aria-hidden="true">・</span>{entry.note}</> : null}
+                  </p>
+                  <time>{entry.date}</time>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -391,13 +390,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="contact-section" id="contact" aria-labelledby="contact-title">
+        <div className="shell contact-grid">
+          <div>
+            <p className="contact-eyebrow">CONTACT</p>
+            <h2 id="contact-title">保持聯絡</h2>
+            <p>歡迎就研究、公共參與、校園專案或合作機會與我聯繫。</p>
+          </div>
+          <div className="contact-links">
+            <a href="mailto:7777ath@gmail.com">
+              <span><small>EMAIL</small>7777ath@gmail.com</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <div className="contact-location">
+              <span><small>BASED IN</small>Hsinchu, Taiwan</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer className="site-footer">
         <div className="shell footer-inner">
-          <div>
-            <strong>Yu-Hsin Lin</strong>
-            <a href="mailto:7777ath@gmail.com">Email ↗</a>
-          </div>
           <p>© 2026 Yu-Hsin Lin</p>
+          <a href="#top">回到頁首 ↑</a>
         </div>
       </footer>
     </main>
