@@ -274,7 +274,7 @@ const timeline: TimelineGroup[] = [
         date: 'Apr.',
         category: '文學獎',
         title: '第二十三屆水煙紗漣文學獎・圖文組參獎',
-        organization: '國立暨南大學',
+        organization: '國立暨南國際大學',
       },
       {
         date: 'Mar.',
