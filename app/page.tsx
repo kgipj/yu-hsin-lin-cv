@@ -31,11 +31,11 @@ const translations: Record<string, string> = {
   '林雨欣個人照片': 'Portrait of Yu-Hsin Lin',
   '學歷與代表性榮耀': 'Education and Selected Honors',
   '代表性榮耀': 'Selected Honors',
-  '跨年度最具代表性的成果。': 'A selection of achievements across different years.',
+  '跨年度最具代表性的成果': 'A selection of achievements across different years',
   '學歷與交換經驗': 'Education & Exchange',
   '經歷年表（2024 至今）': 'Experience Timeline (2024–Present)',
-  '由近到遠整理研究、交換、工作、實習、公共參與、獎項與青年培力。':
-    'Research, exchanges, employment, internships, public engagement, honors, and youth development, listed in reverse chronological order.',
+  '由近到遠整理研究、交換、工作、實習、公共參與、獎項與青年培力':
+    'Research, exchanges, employment, internships, public engagement, honors, and youth development, listed in reverse chronological order',
   '保持聯絡': 'Get in Touch',
   '歡迎就研究、公共參與、校園專案或合作機會與我聯繫。':
     'Feel free to contact me about research, public engagement, campus initiatives, or opportunities to collaborate.',
@@ -504,7 +504,7 @@ export default function Home() {
                 <p>HIGHLIGHTS</p>
               </div>
               <h2 id="honors-title">{t('代表性榮耀')}</h2>
-              <p className="honors-subtitle">{t('跨年度最具代表性的成果。')}</p>
+              <p className="honors-subtitle">{t('跨年度最具代表性的成果')}</p>
             </header>
             <ul className="honors-list">
               {selectedHonors.map((honor) => (
@@ -541,7 +541,7 @@ export default function Home() {
       <section className="section experience-section" id="experience" aria-labelledby="experience-title">
         <div className="shell">
           <SectionHeading id="experience-title" english="EXPERIENCE" title={t('經歷年表（2024 至今）')} />
-          <p className="section-intro">{t('由近到遠整理研究、交換、工作、實習、公共參與、獎項與青年培力。')}</p>
+          <p className="section-intro">{t('由近到遠整理研究、交換、工作、實習、公共參與、獎項與青年培力')}</p>
 
           <div className="timeline">
             {timeline.map((group) => (
