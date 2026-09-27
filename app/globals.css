@@ -48,7 +48,7 @@ time {
 }
 
 .shell {
-  width: min(1000px, calc(100% - 96px));
+  width: min(1050px, calc(100% - 96px));
   margin-inline: auto;
 }
 
@@ -66,7 +66,7 @@ time {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(1000px, calc(100% - 96px));
+  width: min(1050px, calc(100% - 96px));
   height: 100%;
   margin-inline: auto;
 }
@@ -140,23 +140,36 @@ nav a.active::after {
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.03em;
-  cursor: pointer;
   transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
 }
 
 .language-toggle:hover,
-.language-toggle:focus-visible {
+.language-toggle:focus-within {
   border-color: #b9cbd9;
   color: var(--accent-dark);
   background: var(--surface);
 }
 
-.language-toggle:focus-visible {
+.language-toggle:focus-within {
   outline: 2px solid rgba(23, 111, 175, 0.28);
   outline-offset: 3px;
 }
 
-.language-toggle .active {
+.language-option {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.language-option:focus-visible {
+  outline: none;
+}
+
+.language-option.active {
   color: var(--accent-dark);
   font-weight: 760;
 }
@@ -228,7 +241,6 @@ nav a.active::after {
   color: var(--text-secondary);
   font-size: 15px;
   line-height: 1.8;
-  white-space: pre-line;
 }
 
 .hero-links {
@@ -371,26 +383,34 @@ nav a.active::after {
 }
 
 .education-card {
+  width: 100%;
+  max-width: 310px;
+  justify-self: end;
   margin-top: clamp(163px, calc(161.2px + 0.185vw), 164px);
-  padding: 16px 22px 4px;
+  padding: 13px 18px 2px;
 }
 
 .education-card .education-item {
-  padding: 14px 0 16px;
+  padding: 11px 0 13px;
 }
 
 .education-card h2 {
-  margin-bottom: 3px;
-  font-size: 14px;
+  margin-bottom: 2px;
+  font-size: 13px;
 }
 
 .education-card .education-item h3 {
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .education-card .education-program {
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.education-card .education-item > time {
+  margin-top: 5px;
+  font-size: 13px;
 }
 
 .record-card h2 {
@@ -827,6 +847,12 @@ nav a.active::after {
 
   .records-grid {
     gap: 28px;
+  }
+
+  .education-card {
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
   }
 
   .section-intro {
