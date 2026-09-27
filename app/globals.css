@@ -265,7 +265,7 @@ nav a.active::after {
 
 .records-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
   gap: 30px;
   align-items: start;
 }
@@ -648,10 +648,6 @@ nav a.active::after {
     padding-left: 30px;
   }
 
-  .honors-list li {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -808,6 +804,11 @@ nav a.active::after {
 
   .record-card h2 {
     font-size: 16px;
+  }
+
+  .honors-list li {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .section-heading h2 {

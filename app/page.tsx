@@ -319,7 +319,7 @@ export default function Home() {
               <p className="chinese-name">林雨欣</p>
               <div className="identity">
                 <p>陽明交大百川學士學位學程學生</p>
-                <p>核心法律、輔系人文社會學系</p>
+                <p>跨域法律與社會科學領域</p>
               </div>
               <p className="hero-summary">
                 我的經驗橫跨刑事司法、人類學研究、華語教育與校園資訊服務；關注制度如何被理解，也在意知識如何被轉譯成可被使用的內容。
@@ -346,22 +346,6 @@ export default function Home() {
 
       <section className="section records-section" aria-label="學歷與代表性榮耀">
         <div className="shell records-grid">
-          <section className="record-card education-card" id="education" aria-labelledby="education-title">
-            <h2 id="education-title">EDUCATION <span aria-hidden="true">・</span> 學歷與交換經驗</h2>
-            <div className="academic-list">
-              {education.map((entry) => (
-                <article className="education-item" key={`${entry.date}-${entry.institution}`}>
-                  <h3>{entry.institution}</h3>
-                  <p className="education-program">
-                    {entry.program}
-                    {entry.note ? <><span aria-hidden="true">・</span>{entry.note}</> : null}
-                  </p>
-                  <time>{entry.date}</time>
-                </article>
-              ))}
-            </div>
-          </section>
-
           <section className="record-card honors-card" id="honors" aria-labelledby="honors-title">
             <header className="honors-header">
               <h2 id="honors-title">代表性榮耀</h2>
@@ -379,6 +363,22 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </section>
+
+          <section className="record-card education-card" id="education" aria-labelledby="education-title">
+            <h2 id="education-title">EDUCATION <span aria-hidden="true">・</span> 學歷與交換經驗</h2>
+            <div className="academic-list">
+              {education.map((entry) => (
+                <article className="education-item" key={`${entry.date}-${entry.institution}`}>
+                  <h3>{entry.institution}</h3>
+                  <p className="education-program">
+                    {entry.program}
+                    {entry.note ? <><span aria-hidden="true">・</span>{entry.note}</> : null}
+                  </p>
+                  <time>{entry.date}</time>
+                </article>
+              ))}
+            </div>
           </section>
         </div>
       </section>

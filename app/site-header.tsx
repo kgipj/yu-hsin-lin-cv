@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 
 const navigation = [
-  { id: 'education', label: 'Education' },
   { id: 'honors', label: 'Honors' },
+  { id: 'education', label: 'Education' },
   { id: 'experience', label: 'Experience' },
   { id: 'contact', label: 'Contact' },
 ];
