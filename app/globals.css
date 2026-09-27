@@ -266,13 +266,6 @@ nav a.active::after {
   font-weight: 600;
 }
 
-.hero-location small {
-  color: var(--accent);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-}
-
 .hero-links a,
 .site-footer a {
   color: var(--accent-dark);
