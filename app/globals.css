@@ -233,13 +233,8 @@ nav a.active::after {
   scroll-margin-top: var(--header-height);
 }
 
-.education-section {
+.records-section {
   background: var(--background);
-}
-
-.honors-section {
-  color: #f8fbff;
-  background: var(--accent-dark);
 }
 
 .experience-section {
@@ -265,26 +260,32 @@ nav a.active::after {
 }
 
 .timeline {
-  border-top: 1px solid var(--border);
+  border-top: 0;
 }
 
-.education-card {
-  width: min(100%, 820px);
-  margin-inline: auto;
-  padding: 38px 46px 18px;
+.records-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  align-items: start;
+}
+
+.record-card {
+  padding: 34px 38px 16px;
+  scroll-margin-top: calc(var(--header-height) + 24px);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 14px;
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
 }
 
-.education-card h2 {
+.record-card h2 {
   margin: 0 0 14px;
   color: var(--accent);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 720;
   line-height: 1.5;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.075em;
 }
 
 .education-item {
@@ -324,82 +325,49 @@ nav a.active::after {
 }
 
 .honors-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 42px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .honors-list li {
-  padding: 24px 0 28px;
-  border-top: 1px solid rgba(226, 238, 248, 0.25);
+  padding: 25px 0 27px;
 }
 
-.honors-layout {
-  display: grid;
-  grid-template-columns: minmax(190px, 0.45fr) minmax(0, 1.4fr);
-  gap: clamp(64px, 9vw, 110px);
-  align-items: start;
-}
-
-.honors-intro p {
-  margin: 0 0 14px;
-  color: #bed8ed;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-}
-
-.honors-intro h2 {
-  margin: 0;
-  font-size: clamp(30px, 3.5vw, 38px);
-  line-height: 1.3;
-  letter-spacing: -0.035em;
-}
-
-.honors-intro > span {
-  display: block;
-  max-width: 260px;
-  margin-top: 20px;
-  color: #c9d8e6;
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.honor-meta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px 18px;
-  margin-bottom: 12px;
-  color: #b8d3e8;
-  font-family: var(--font-geist), ui-monospace, monospace;
-  font-size: 11px;
-  font-weight: 650;
-  letter-spacing: 0.04em;
+.honors-list li + li {
+  border-top: 1px solid var(--border);
 }
 
 .honors-list h3 {
   margin: 0;
-  color: #ffffff;
   font-size: 18px;
-  font-weight: 650;
+  font-weight: 700;
   line-height: 1.55;
   letter-spacing: -0.018em;
 }
 
 .honors-list li > p {
-  margin: 8px 0 0;
-  color: #dce8f2;
-  font-size: 14px;
-  font-weight: 520;
+  margin: 5px 0 0;
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 450;
   line-height: 1.65;
+}
+
+.honors-list time {
+  display: block;
+  margin-top: 8px;
+  color: var(--text-secondary);
+  font-family: var(--font-geist), ui-monospace, monospace;
+  font-size: 15px;
+  font-weight: 520;
+  letter-spacing: 0.05em;
 }
 
 .experience-section .section-heading {
   margin-bottom: 18px;
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .section-intro {
@@ -708,17 +676,12 @@ nav a.active::after {
     margin-bottom: 38px;
   }
 
-  .honors-layout,
-  .honors-list {
+  .records-grid {
     grid-template-columns: 1fr;
   }
 
-  .honors-layout {
-    gap: 38px;
-  }
-
-  .honors-intro > span {
-    max-width: 520px;
+  .records-grid {
+    gap: 28px;
   }
 
   .section-intro {
@@ -809,12 +772,12 @@ nav a.active::after {
     padding: 66px 0 72px;
   }
 
-  .education-card {
+  .record-card {
     padding: 30px 28px 12px;
     border-radius: 10px;
   }
 
-  .education-card h2 {
+  .record-card h2 {
     font-size: 16px;
   }
 

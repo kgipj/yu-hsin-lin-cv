@@ -27,8 +27,7 @@ const education = [
     date: '2026/2–8',
     institution: '韓國漢陽大學',
     englishName: '한양대학교 · Hanyang University',
-    program: '社會學系修課',
-    note: '線上・韓國',
+    program: '社會學系',
   },
   {
     date: '2027 春季',
@@ -311,6 +310,7 @@ export default function Home() {
         <div className="shell">
           <div className="hero-grid">
             <div className="hero-copy">
+              <p className="hero-label">LAW ＆ HUMANITIES AND SOCIAL SCIENCES</p>
               <h1 id="page-title">Yu-Hsin Lin</h1>
               <p className="chinese-name">林雨欣</p>
               <div className="identity">
@@ -326,7 +326,6 @@ export default function Home() {
             </div>
 
             <figure className="portrait-wrap">
-              <p className="hero-label">LAW ＆ HUMANITIES AND SOCIAL SCIENCES</p>
               <Image
                 className="portrait"
                 src="/profile.jpeg?v=academic-20260927"
@@ -341,9 +340,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section education-section" id="education" aria-labelledby="education-title">
-        <div className="shell">
-          <div className="education-card">
+      <section className="section records-section" aria-label="學歷與代表性榮耀">
+        <div className="shell records-grid">
+          <section className="record-card education-card" id="education" aria-labelledby="education-title">
             <h2 id="education-title">EDUCATION <span aria-hidden="true">・</span> 學歷與交換經驗</h2>
             <div className="academic-list">
               {education.map((entry) => (
@@ -357,29 +356,20 @@ export default function Home() {
                 </article>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <section className="section honors-section" id="honors" aria-labelledby="honors-title">
-        <div className="shell honors-layout">
-          <header className="honors-intro">
-            <p>SELECTED HONORS</p>
-            <h2 id="honors-title">代表性榮耀</h2>
-            <span>精選法治、青年影響力、文學創作、校園領導與獎助學金成果。</span>
-          </header>
-          <ul className="honors-list">
-            {selectedHonors.map((honor) => (
-              <li key={honor.title}>
-                <div className="honor-meta">
-                  <span>{honor.category}</span>
+          <section className="record-card honors-card" id="honors" aria-labelledby="honors-title">
+            <h2 id="honors-title">SELECTED HONORS <span aria-hidden="true">・</span> 代表性榮耀</h2>
+            <ul className="honors-list">
+              {selectedHonors.map((honor) => (
+                <li key={honor.title}>
+                  <h3>{honor.title}</h3>
+                  <p>{honor.distinction}</p>
                   <time>{honor.date}</time>
-                </div>
-                <h3>{honor.title}</h3>
-                <p>{honor.distinction}</p>
-              </li>
-            ))}
-          </ul>
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
       </section>
 
