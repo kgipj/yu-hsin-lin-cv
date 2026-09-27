@@ -279,7 +279,8 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Mar.',
         category: '志工',
-        title: '財團法人天使心家族社會福利基金會 第15屆336 愛奇兒家庭日 攝影志工',
+        title: '第15屆336 愛奇兒家庭日 攝影志工',
+        organization: '財團法人天使心家族社會福利基金會',
       },
     ],
   },
