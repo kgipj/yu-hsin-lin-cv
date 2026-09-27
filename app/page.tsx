@@ -363,13 +363,19 @@ export default function Home() {
           </section>
 
           <section className="record-card honors-card" id="honors" aria-labelledby="honors-title">
-            <h2 id="honors-title">SELECTED HONORS <span aria-hidden="true">・</span> 代表性榮耀</h2>
+            <header className="honors-header">
+              <h2 id="honors-title">代表性榮耀</h2>
+              <p>跨年度最具代表性的成果。</p>
+            </header>
             <ul className="honors-list">
               {selectedHonors.map((honor) => (
                 <li key={honor.title}>
                   <h3>{honor.title}</h3>
-                  <p>{honor.distinction}</p>
-                  <time>{honor.date}</time>
+                  <p className="honor-details">
+                    <time>{honor.date}</time>
+                    <span aria-hidden="true">・</span>
+                    <span>{honor.distinction}</span>
+                  </p>
                 </li>
               ))}
             </ul>
@@ -379,7 +385,7 @@ export default function Home() {
 
       <section className="section experience-section" id="experience" aria-labelledby="experience-title">
         <div className="shell">
-          <SectionHeading id="experience-title" english="EXPERIENCE" title="經歷年表" />
+          <SectionHeading id="experience-title" english="EXPERIENCE" title="經歷年表（2024 至今）" />
           <p className="section-intro">由近到遠整理研究、交換、工作、實習、公共參與、獎項與青年培力。</p>
 
           <div className="timeline">

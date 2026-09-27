@@ -324,6 +324,26 @@ nav a.active::after {
   white-space: pre-line;
 }
 
+.honors-header {
+  padding: 4px 0 26px;
+}
+
+.record-card .honors-header h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(30px, 3vw, 36px);
+  font-weight: 720;
+  line-height: 1.25;
+  letter-spacing: -0.045em;
+}
+
+.honors-header p {
+  margin: 14px 0 0;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
 .honors-list {
   margin: 0;
   padding: 0;
@@ -331,7 +351,11 @@ nav a.active::after {
 }
 
 .honors-list li {
-  padding: 25px 0 27px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(150px, 0.85fr);
+  gap: 20px;
+  align-items: baseline;
+  padding: 23px 0 25px;
 }
 
 .honors-list li + li {
@@ -340,42 +364,43 @@ nav a.active::after {
 
 .honors-list h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
-  line-height: 1.55;
+  line-height: 1.6;
   letter-spacing: -0.018em;
 }
 
-.honors-list li > p {
-  margin: 5px 0 0;
+.honor-details {
+  margin: 0;
   color: var(--text-secondary);
-  font-size: 16px;
-  font-weight: 450;
-  line-height: 1.65;
-}
-
-.honors-list time {
-  display: block;
-  margin-top: 8px;
-  color: var(--text-secondary);
-  font-family: var(--font-geist), ui-monospace, monospace;
-  font-size: 15px;
-  font-weight: 520;
-  letter-spacing: 0.05em;
+  font-size: 14px;
+  font-weight: 430;
+  line-height: 1.75;
 }
 
 .experience-section .section-heading {
-  margin-bottom: 18px;
+  display: block;
+  max-width: 760px;
+  margin-bottom: 0;
   padding-bottom: 0;
   border-bottom: 0;
 }
 
+.experience-section .section-kicker {
+  margin-bottom: 10px;
+}
+
+.experience-section .section-heading h2 {
+  font-size: clamp(32px, 4vw, 42px);
+  line-height: 1.2;
+}
+
 .section-intro {
-  max-width: 680px;
-  margin: 0 0 50px 190px;
+  max-width: 720px;
+  margin: 16px 0 46px;
   color: var(--text-secondary);
-  font-size: 14px;
-  line-height: 1.75;
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 .year-group {
@@ -617,14 +642,15 @@ nav a.active::after {
     grid-template-columns: 125px minmax(0, 1fr);
   }
 
-  .section-intro {
-    margin-left: 157px;
-  }
-
   .timeline-item {
     grid-template-columns: 145px minmax(0, 1fr);
     gap: 25px;
     padding-left: 30px;
+  }
+
+  .honors-list li {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 }
 
@@ -688,7 +714,7 @@ nav a.active::after {
   }
 
   .section-intro {
-    margin: 0 0 40px;
+    margin: 14px 0 38px;
   }
 
   .year-group {
@@ -792,11 +818,6 @@ nav a.active::after {
     font-size: 21px;
   }
 
-  .honor-topline {
-    align-items: flex-start;
-  }
-
-  .honor-item h4,
   .timeline-content h4 {
     font-size: 17px;
   }
