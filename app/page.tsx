@@ -43,7 +43,7 @@ const selectedHonors = [
   {
     category: '法治教育',
     date: 'Dec. 2025',
-    title: '司法院114年大專校院法治教育創新行動方案競賽',
+    title: '司法院 114 年度大專校院法治教育創新行動方案競賽',
     distinction: '銀獎',
   },
   {
@@ -222,8 +222,7 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Dec.',
         category: '競賽',
-        title: '大專校院法治教育創新行動方案競賽・銀獎',
-        organization: '司法院 114 年度',
+        title: '司法院 114 年度大專校院法治教育創新行動方案競賽・銀獎',
       },
       {
         date: 'Dec.',
