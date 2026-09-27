@@ -485,8 +485,11 @@ export default function Home() {
         <div className="shell records-grid">
           <section className="record-card honors-card" id="honors" aria-labelledby="honors-title">
             <header className="honors-header">
+              <div className="section-kicker">
+                <p>HIGHLIGHTS</p>
+              </div>
               <h2 id="honors-title">{t('代表性榮耀')}</h2>
-              <p>{t('跨年度最具代表性的成果。')}</p>
+              <p className="honors-subtitle">{t('跨年度最具代表性的成果。')}</p>
             </header>
             <ul className="honors-list">
               {selectedHonors.map((honor) => (

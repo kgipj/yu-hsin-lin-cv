@@ -3,7 +3,7 @@
 @import 'shadcn/tailwind.css';
 
 :root {
-  --background: #f7f9fc;
+  --background: #fafafa;
   --surface: #ffffff;
   --text-primary: #1e293b;
   --text-secondary: #64748b;
@@ -58,7 +58,7 @@ time {
   top: 0;
   height: var(--header-height);
   border-bottom: 1px solid rgba(220, 227, 234, 0.86);
-  background: rgba(247, 249, 252, 0.94);
+  background: rgba(250, 250, 250, 0.94);
   backdrop-filter: blur(14px);
 }
 
@@ -336,7 +336,7 @@ nav a.active::after {
 }
 
 .education-card {
-  margin-top: clamp(108px, 8vw, 116px);
+  margin-top: clamp(153px, calc(151.2px + 0.185vw), 154px);
   padding: 16px 22px 4px;
 }
 
@@ -407,16 +407,20 @@ nav a.active::after {
   padding: 0 0 18px;
 }
 
+.honors-header .section-kicker {
+  margin-bottom: 10px;
+}
+
 .record-card .honors-header h2 {
   margin: 0;
   color: var(--text-primary);
-  font-size: clamp(27px, 2.6vw, 32px);
-  font-weight: 720;
-  line-height: 1.25;
-  letter-spacing: -0.045em;
+  font-size: clamp(32px, 4vw, 42px);
+  font-weight: 680;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
 }
 
-.honors-header p {
+.honors-header .honors-subtitle {
   margin: 9px 0 0;
   color: var(--text-secondary);
   font-size: 14px;
@@ -594,7 +598,7 @@ nav a.active::after {
   padding: 96px 0;
   scroll-margin-top: var(--header-height);
   border-top: 1px solid var(--border);
-  background: var(--muted-bg);
+  background: var(--background);
 }
 
 .contact-grid {
