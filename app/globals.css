@@ -261,7 +261,7 @@ nav a.active::after {
   display: inline-flex;
   align-items: baseline;
   margin: 20px 0 0;
-  color: var(--accent);
+  color: var(--text-secondary);
   font-size: 14px;
   font-weight: 600;
 }
