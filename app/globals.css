@@ -230,8 +230,27 @@ nav a.active::after {
 
 .hero-links {
   display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
   gap: 24px;
   margin-top: 28px;
+}
+
+.hero-location {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero-location small {
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
 }
 
 .hero-links a,
@@ -597,7 +616,6 @@ nav a.active::after {
 .contact-section {
   padding: 96px 0;
   scroll-margin-top: var(--header-height);
-  border-top: 1px solid var(--border);
   background: var(--background);
 }
 
@@ -675,7 +693,6 @@ nav a.active::after {
 }
 
 .site-footer {
-  border-top: 1px solid var(--border);
   background: var(--background);
 }
 

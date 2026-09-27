@@ -463,6 +463,14 @@ export default function Home() {
               </p>
               <div className="hero-links" aria-label={t('外部連結')}>
                 <a href="mailto:7777ath@gmail.com">Email <span aria-hidden="true">↗</span></a>
+                <a
+                  href="https://tw.linkedin.com/in/yu-hsin-lin-48406a403"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn <span aria-hidden="true">↗</span>
+                </a>
+                <p className="hero-location"><small>BASED IN</small>Hsinchu, Taiwan</p>
               </div>
             </div>
 
@@ -571,6 +579,14 @@ export default function Home() {
           <div className="contact-links">
             <a href="mailto:7777ath@gmail.com">
               <span><small>EMAIL</small>7777ath@gmail.com</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              href="https://tw.linkedin.com/in/yu-hsin-lin-48406a403"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span><small>LINKEDIN</small>Yu-Hsin Lin</span>
               <span aria-hidden="true">↗</span>
             </a>
             <div className="contact-location">
