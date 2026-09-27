@@ -375,7 +375,7 @@ nav a.active::after {
 }
 
 .education-card {
-  margin-top: clamp(153px, calc(151.2px + 0.185vw), 154px);
+  margin-top: clamp(163px, calc(161.2px + 0.185vw), 164px);
   padding: 16px 22px 4px;
 }
 
@@ -443,7 +443,7 @@ nav a.active::after {
 }
 
 .honors-header {
-  padding: 0 0 18px;
+  padding: 0 0 28px;
 }
 
 .honors-header .section-kicker {
