@@ -228,19 +228,13 @@ nav a.active::after {
   gap: 12px;
 }
 
-.section-kicker span {
-  color: var(--text-tertiary);
-  font-family: var(--font-geist), ui-monospace, monospace;
-  font-size: 11px;
-}
-
 .section {
   padding: 102px 0 112px;
   scroll-margin-top: var(--header-height);
 }
 
 .education-section {
-  background: var(--surface);
+  background: var(--background);
 }
 
 .honors-section {
@@ -269,9 +263,14 @@ nav a.active::after {
   letter-spacing: -0.035em;
 }
 
-.academic-list,
 .timeline {
   border-top: 1px solid var(--border);
+}
+
+.education-section .section-heading {
+  margin-bottom: 28px;
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .education-item {
@@ -279,8 +278,7 @@ nav a.active::after {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 28px;
   align-items: start;
-  padding: 32px 0 34px;
-  border-bottom: 1px solid var(--border);
+  padding: 28px 0;
 }
 
 .education-item > time {

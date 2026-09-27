@@ -259,19 +259,16 @@ const timeline: TimelineGroup[] = [
 
 function SectionHeading({
   id,
-  number,
   english,
   title,
 }: {
   id: string;
-  number: string;
   english: string;
   title: string;
 }) {
   return (
     <header className="section-heading">
       <div className="section-kicker">
-        <span>{number}</span>
         <p>{english}</p>
       </div>
       <h2 id={id}>{title}</h2>
@@ -320,7 +317,7 @@ export default function Home() {
 
       <section className="section education-section" id="education" aria-labelledby="education-title">
         <div className="shell">
-          <SectionHeading id="education-title" number="01" english="EDUCATION" title="學歷與交換經驗" />
+          <SectionHeading id="education-title" english="EDUCATION" title="學歷與交換經驗" />
           <div className="academic-list">
             {education.map((entry) => (
               <article className="education-item" key={`${entry.date}-${entry.institution}`}>
@@ -341,7 +338,7 @@ export default function Home() {
 
       <section className="section honors-section" id="honors" aria-labelledby="honors-title">
         <div className="shell">
-          <SectionHeading id="honors-title" number="02" english="SELECTED HONORS" title="代表性榮耀" />
+          <SectionHeading id="honors-title" english="SELECTED HONORS" title="代表性榮耀" />
           <ul className="honors-list">
             {selectedHonors.map((honor) => (
               <li key={honor.title}>
@@ -358,7 +355,7 @@ export default function Home() {
 
       <section className="section experience-section" id="experience" aria-labelledby="experience-title">
         <div className="shell">
-          <SectionHeading id="experience-title" number="03" english="EXPERIENCE" title="經歷年表" />
+          <SectionHeading id="experience-title" english="EXPERIENCE" title="經歷年表" />
           <p className="section-intro">由近到遠整理研究、交換、工作、實習、公共參與、獎項與青年培力。</p>
 
           <div className="timeline">
