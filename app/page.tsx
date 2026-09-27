@@ -311,8 +311,8 @@ export default function Home() {
           <div className="hero-grid">
             <div className="hero-copy">
               <p className="hero-label">LAW ＆ HUMANITIES AND SOCIAL SCIENCES</p>
-              <h1 id="page-title">Yu-Hsin Lin</h1>
-              <p className="chinese-name">林雨欣</p>
+              <h1 id="page-title">林雨欣</h1>
+              <p className="english-name">Yu-Hsin Lin</p>
               <div className="identity">
                 <p>陽明交大百川學士學位學程學生</p>
                 <p>跨域法律與社會科學領域</p>

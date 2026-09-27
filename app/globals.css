@@ -158,12 +158,12 @@ nav a.active::after {
   letter-spacing: -0.045em;
 }
 
-.chinese-name {
+.english-name {
   margin: 6px 0 28px;
   color: var(--text-secondary);
   font-size: 18px;
   font-weight: 550;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
 }
 
 .identity {
@@ -780,7 +780,7 @@ nav a.active::after {
     font-size: 38px;
   }
 
-  .chinese-name {
+  .english-name {
     margin-bottom: 24px;
     font-size: 16px;
   }
