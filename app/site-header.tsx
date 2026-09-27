@@ -18,11 +18,14 @@ export default function SiteHeader({
   onLanguageChange: (language: Language) => void;
 }) {
   const [activeSection, setActiveSection] = useState('');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     let frame = 0;
 
     const updateActiveSection = () => {
+      setIsScrolled(window.scrollY > 4);
+
       const marker = window.scrollY + 160;
       let current = '';
 
@@ -55,7 +58,7 @@ export default function SiteHeader({
   }, []);
 
   return (
-    <header className="site-header">
+    <header className={`site-header${isScrolled ? ' scrolled' : ''}`}>
       <div className="header-inner">
         <a className="brand" href="#top" onClick={() => setActiveSection('')}>
           Yu-Hsin Lin
