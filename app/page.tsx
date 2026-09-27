@@ -25,8 +25,8 @@ type TimelineGroup = {
 const translations: Record<string, string> = {
   '陽明交大百川學士學位學程學生': 'Student, Arete Honors Program, National Yang Ming Chiao Tung University',
   '跨域法律與社會科學領域': 'Interdisciplinary Focus in Law and Social Sciences',
-  '我的經驗橫跨刑事司法與人權倡議、人類學研究、法治教育提案及校園數位服務專案，累積研究、公共議題轉譯與跨領域協作經驗。':
-    'My experience spans criminal justice and human rights advocacy, anthropological research, rule-of-law education proposals, and campus digital service projects, with experience in research, communicating public issues, and interdisciplinary collaboration.',
+  '我的經驗橫跨刑事司法與人權倡議、人類學研究、文學創作、法治教育提案及校園數位服務專案等，累積研究、藝術創作、公共倡議與跨領域協作等經驗。':
+    'My experience spans criminal justice and human rights advocacy, anthropological research, literary writing, rule-of-law education proposals, and campus digital service projects, with experience in research, artistic creation, public advocacy, and interdisciplinary collaboration.',
   '外部連結': 'External links',
   '林雨欣個人照片': 'Portrait of Yu-Hsin Lin',
   '學歷與代表性榮耀': 'Education and Selected Honors',
@@ -460,7 +460,7 @@ export default function Home() {
                 <p>{t('跨域法律與社會科學領域')}</p>
               </div>
               <p className="hero-summary">
-                {t('我的經驗橫跨刑事司法與人權倡議、人類學研究、法治教育提案及校園數位服務專案，累積研究、公共議題轉譯與跨領域協作經驗。')}
+                {t('我的經驗橫跨刑事司法與人權倡議、人類學研究、文學創作、法治教育提案及校園數位服務專案等，累積研究、藝術創作、公共倡議與跨領域協作等經驗。')}
               </p>
               <p className="hero-location">Based in Hsinchu, Taiwan</p>
               <div className="hero-links" aria-label={t('外部連結')}>

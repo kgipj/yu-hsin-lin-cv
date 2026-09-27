@@ -233,7 +233,7 @@ nav a.active::after {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .hero-links .hero-icon-link {
@@ -260,7 +260,7 @@ nav a.active::after {
 .hero-location {
   display: inline-flex;
   align-items: baseline;
-  margin: 20px 0 0;
+  margin: 16px 0 0;
   color: var(--text-secondary);
   font-size: 14px;
   font-weight: 600;
