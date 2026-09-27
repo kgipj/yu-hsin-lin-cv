@@ -190,7 +190,7 @@ nav a.active::after {
   grid-template-columns: minmax(0, 1fr) 210px;
   align-items: center;
   gap: var(--hero-side-gap);
-  padding-right: var(--hero-side-gap);
+  padding-right: 0;
   min-height: 430px;
 }
 
@@ -775,7 +775,7 @@ nav a.active::after {
     --hero-side-gap: 64px;
     grid-template-columns: minmax(0, 1fr) 190px;
     gap: var(--hero-side-gap);
-    padding-right: var(--hero-side-gap);
+    padding-right: 32px;
   }
 
   .section-heading {
