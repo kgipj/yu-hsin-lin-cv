@@ -132,6 +132,10 @@ nav a:focus-visible {
   letter-spacing: -0.035em;
 }
 
+.hero-lead span {
+  display: block;
+}
+
 .hero-summary {
   max-width: 650px;
   margin: 16px 0 0;
@@ -296,51 +300,39 @@ nav a:focus-visible {
   line-height: 1.8;
 }
 
-.honors-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.honors-list {
   border-top: 1px solid var(--line-strong);
-  border-left: 1px solid var(--line-strong);
 }
 
-.honor-card {
+.honor-item {
   display: grid;
-  grid-template-columns: 54px minmax(0, 1fr);
-  gap: 22px;
-  min-height: 190px;
-  padding: 30px;
-  border-right: 1px solid var(--line-strong);
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: baseline;
+  padding: 23px 2px;
   border-bottom: 1px solid var(--line-strong);
-  background: var(--surface);
 }
 
-.honor-index {
-  color: #9bb3bd;
-  font-size: 13px;
-  font-weight: 760;
-}
-
-.honor-year {
-  margin: 0 0 14px;
-  color: var(--accent);
-  font-size: 9px;
-  font-weight: 780;
-  letter-spacing: 0.12em;
-}
-
-.honor-card h3 {
-  margin: 0;
+.honor-bullet {
+  color: var(--foreground);
   font-size: 17px;
-  font-weight: 760;
-  line-height: 1.5;
-  letter-spacing: -0.025em;
+  line-height: 1;
 }
 
-.honor-result {
-  margin: 13px 0 0;
-  color: var(--muted);
-  font-size: 11px;
+.honor-item h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 650;
   line-height: 1.65;
+  letter-spacing: -0.018em;
+}
+
+.honor-item time {
+  color: var(--muted);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 13px;
+  font-style: italic;
+  white-space: nowrap;
 }
 
 .timeline-section {
@@ -506,10 +498,6 @@ nav a:focus-visible {
     gap: 52px;
   }
 
-  .honors-grid {
-    grid-template-columns: 1fr;
-  }
-
   .year-group {
     grid-template-columns: 96px minmax(0, 1fr);
   }
@@ -566,11 +554,15 @@ nav a:focus-visible {
     padding-left: 0;
   }
 
-  .honor-card {
-    grid-template-columns: 42px minmax(0, 1fr);
-    gap: 15px;
-    min-height: auto;
-    padding: 24px 20px;
+  .honor-item {
+    grid-template-columns: 16px minmax(0, 1fr);
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  .honor-item time {
+    grid-column: 2;
+    margin-top: 3px;
   }
 }
 

@@ -15,7 +15,7 @@ const sans = Noto_Sans_TC({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://yu-hsin-lin-cv.racing-fairy-3597.chatgpt.site'),
+  metadataBase: new URL('https://yu-hsin-lin-cv.kgipj.chatgpt.site'),
   title: '林雨欣 Yu-Hsin Lin',
   description: '林雨欣的個人履歷網站：法律、人文社會研究、公共參與與校園服務。',
   alternates: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: '法律・人文社會研究・公共參與',
     images: [
       {
-        url: 'https://yu-hsin-lin-cv.racing-fairy-3597.chatgpt.site/og.png',
+        url: 'https://yu-hsin-lin-cv.kgipj.chatgpt.site/og.png',
         width: 1200,
         height: 630,
         alt: '林雨欣 Yu-Hsin Lin 個人履歷網站',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '林雨欣 Yu-Hsin Lin',
     description: '法律・人文社會研究・公共參與',
-    images: ['https://yu-hsin-lin-cv.racing-fairy-3597.chatgpt.site/og.png'],
+    images: ['https://yu-hsin-lin-cv.kgipj.chatgpt.site/og.png'],
   },
 };
 

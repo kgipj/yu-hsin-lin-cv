@@ -2,24 +2,12 @@ import { ArrowDownRight, Mail } from 'lucide-react';
 
 const representativeHonors = [
   {
-    year: '2026',
-    title: 'Impact Star 青年影響力競賽',
-    result: '入圍初賽・大專組全國前十名',
+    title: '司法院114年大專校院法治教育創新行動方案競賽 銀獎',
+    date: 'Dec. 2025',
   },
   {
-    year: '2025',
-    title: '大專校院法治教育創新行動方案競賽',
-    result: '銀獎・司法院 114 年度',
-  },
-  {
-    year: '2026',
-    title: '藍花楹創作獎',
-    result: '小說組首獎',
-  },
-  {
-    year: '2024',
-    title: '第二十屆謝東閔先生紀念文學獎',
-    result: '散文組貳獎',
+    title: '2025年藍花楹創作獎 小說組首獎',
+    date: 'Mar. 2026',
   },
 ];
 
@@ -75,7 +63,7 @@ const timeline: TimelineGroup[] = [
       {
         date: '2026',
         category: '競賽',
-        title: '2026 Impact Star 青年影響力競賽',
+        title: '2026 Impact Star 青年影響力啟動賽',
         organization: '入圍初賽・大專組全國前十名',
       },
       {
@@ -127,12 +115,12 @@ const timeline: TimelineGroup[] = [
         ],
       },
       {
-        date: '114-2 — 暑假',
+        date: '2026/2–8',
         category: '交換',
         title: '韓國漢陽大學 暑期線上交換',
         organization: '한양대학교（Hanyang University）',
         location: '線上・韓國',
-        description: '於 114 學年度第 2 學期至暑假參與漢陽大學暑期線上交換。',
+        description: '於 2026 年 2 月至 8 月參與漢陽大學暑期線上交換。',
       },
       {
         date: 'May — Aug.',
@@ -161,6 +149,12 @@ const timeline: TimelineGroup[] = [
         category: '獎學金',
         title: '張俊彥校長紀念獎助學金',
         organization: '國立陽明交通大學',
+      },
+      {
+        date: 'Jan.',
+        category: '青年培力',
+        title: '民主小火青年培力營',
+        organization: '潔伴同行挺台灣協會',
       },
     ],
   },
@@ -211,12 +205,6 @@ const timeline: TimelineGroup[] = [
         title: '第三屆東南亞國際事務研習營',
         organization: '高雄市東南亞產學交流協會',
       },
-      {
-        date: 'Jan.',
-        category: '青年培力',
-        title: '民主小火青年培力營',
-        organization: '潔伴同行挺台灣協會',
-      },
     ],
   },
   {
@@ -233,6 +221,11 @@ const timeline: TimelineGroup[] = [
         category: '文學獎',
         title: '第二十三屆水煙紗漣文學獎・圖文組參獎',
         organization: '文學創作',
+      },
+      {
+        date: 'Mar.',
+        category: '志工',
+        title: '財團法人天使心家族社會福利基金會 第15屆336 愛奇兒家庭日 攝影志工',
       },
     ],
   },
@@ -260,7 +253,8 @@ export default function Home() {
           <h1>林雨欣</h1>
           <p className="roman-name">Yu-Hsin Lin</p>
           <p className="hero-lead">
-            陽明交大百川學士學位學程學生，主修核心法律、輔系人文社會學系。
+            <span>陽明交大百川學士學位學程學生</span>
+            <span>核心法律、輔系人文社會學系</span>
           </p>
           <p className="hero-summary">
             我的經驗橫跨刑事司法、人類學研究、華語教育與校園資訊服務；關注制度如何被理解，也在意知識如何被轉譯成可被使用的內容。
@@ -309,7 +303,7 @@ export default function Home() {
               <p>輔系人文社會學系</p>
               <div className="education-entry">
                 <h3>韓國漢陽大學</h3>
-                <p>暑期線上交換・114-2 至暑假</p>
+                <p>暑期線上交換・2026/2–8</p>
               </div>
             </div>
             <div className="profile-group">
@@ -328,15 +322,12 @@ export default function Home() {
             <h2>代表性榮耀</h2>
             <p>精選法治、文學與青年影響力領域的重要成果。</p>
           </div>
-          <div className="honors-grid">
-            {representativeHonors.map((honor, index) => (
-              <article className="honor-card" key={`${honor.year}-${honor.title}`}>
-                <span className="honor-index">{String(index + 1).padStart(2, '0')}</span>
-                <div>
-                  <p className="honor-year">{honor.year}</p>
-                  <h3>{honor.title}</h3>
-                  <p className="honor-result">{honor.result}</p>
-                </div>
+          <div className="honors-list" role="list">
+            {representativeHonors.map((honor) => (
+              <article className="honor-item" role="listitem" key={honor.title}>
+                <span className="honor-bullet" aria-hidden="true">•</span>
+                <h3>{honor.title}</h3>
+                <time>{honor.date}</time>
               </article>
             ))}
           </div>
