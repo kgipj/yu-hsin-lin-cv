@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import type { Language } from './page';
 
 const navigation = [
-  { id: 'honors', en: 'Honors', zh: '榮耀' },
-  { id: 'education', en: 'Education', zh: '學歷' },
-  { id: 'experience', en: 'Experience', zh: '經歷' },
-  { id: 'contact', en: 'Contact', zh: '聯絡' },
+  { id: 'honors', label: 'Honors' },
+  { id: 'education', label: 'Education' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'contact', label: 'Contact' },
 ];
 
 export default function SiteHeader({
@@ -70,7 +70,7 @@ export default function SiteHeader({
                 aria-current={activeSection === item.id ? 'location' : undefined}
                 onClick={() => setActiveSection(item.id)}
               >
-                {item[language]}
+                {item.label}
               </a>
             ))}
           </nav>

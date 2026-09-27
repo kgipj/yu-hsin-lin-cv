@@ -132,7 +132,7 @@ nav a.active::after {
   gap: 2px;
   padding: 5px 8px;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 999px;
   color: var(--text-tertiary);
   background: rgba(255, 255, 255, 0.6);
   font: inherit;
@@ -336,7 +336,7 @@ nav a.active::after {
 }
 
 .education-card {
-  margin-top: 8px;
+  margin-top: clamp(108px, 8vw, 116px);
   padding: 16px 22px 4px;
 }
 
