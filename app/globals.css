@@ -8,8 +8,8 @@
   --text-primary: #1e293b;
   --text-secondary: #64748b;
   --text-tertiary: #8a98aa;
-  --accent: #315b8a;
-  --accent-dark: #23466c;
+  --accent: #176faf;
+  --accent-dark: #124f80;
   --border: #dce3ea;
   --border-soft: #e8edf2;
   --muted-bg: #f1f4f8;
@@ -238,6 +238,7 @@ nav a.active::after {
 }
 
 .records-section {
+  padding: 78px 0 90px;
   background: var(--background);
 }
 
@@ -275,25 +276,25 @@ nav a.active::after {
 }
 
 .record-card {
-  padding: 34px 38px 16px;
+  padding: 27px 30px 12px;
   scroll-margin-top: calc(var(--header-height) + 24px);
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 10px;
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
 }
 
 .record-card h2 {
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   color: var(--accent);
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 720;
   line-height: 1.5;
   letter-spacing: 0.075em;
 }
 
 .education-item {
-  padding: 27px 0 29px;
+  padding: 20px 0 22px;
 }
 
 .education-item + .education-item {
@@ -302,49 +303,49 @@ nav a.active::after {
 
 .education-item > time {
   display: block;
-  margin-top: 8px;
+  margin-top: 6px;
   color: var(--text-secondary);
   font-family: var(--font-geist), ui-monospace, monospace;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 520;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.045em;
   white-space: nowrap;
 }
 
 .education-item h3 {
   margin: 0;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.5;
   letter-spacing: -0.018em;
 }
 
 .education-program {
-  margin: 5px 0 0;
+  margin: 4px 0 0;
   color: var(--text-secondary);
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 450;
-  line-height: 1.65;
+  line-height: 1.6;
   white-space: pre-line;
 }
 
 .honors-header {
-  padding: 4px 0 26px;
+  padding: 0 0 18px;
 }
 
 .record-card .honors-header h2 {
   margin: 0;
   color: var(--text-primary);
-  font-size: clamp(30px, 3vw, 36px);
+  font-size: clamp(27px, 2.6vw, 32px);
   font-weight: 720;
   line-height: 1.25;
   letter-spacing: -0.045em;
 }
 
 .honors-header p {
-  margin: 14px 0 0;
+  margin: 9px 0 0;
   color: var(--text-secondary);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.7;
 }
 
@@ -357,9 +358,9 @@ nav a.active::after {
 .honors-list li {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(150px, 0.85fr);
-  gap: 20px;
+  gap: 18px;
   align-items: baseline;
-  padding: 23px 0 25px;
+  padding: 17px 0 19px;
 }
 
 .honors-list li + li {
@@ -368,18 +369,18 @@ nav a.active::after {
 
 .honors-list h3 {
   margin: 0;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.6;
+  line-height: 1.55;
   letter-spacing: -0.018em;
 }
 
 .honor-details {
   margin: 0;
   color: var(--text-secondary);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 430;
-  line-height: 1.75;
+  line-height: 1.65;
 }
 
 .experience-section .section-heading {
@@ -455,18 +456,18 @@ nav a.active::after {
 .timeline-meta time {
   color: #4d5d6d;
   font-family: var(--font-geist), ui-monospace, monospace;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 680;
 }
 
 .timeline-meta span {
   width: fit-content;
-  padding: 3px 7px;
+  padding: 4px 9px;
   border: 1px solid #d8e3ed;
   border-radius: 999px;
   color: var(--accent);
   background: #f3f7fa;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -802,12 +803,12 @@ nav a.active::after {
   }
 
   .record-card {
-    padding: 30px 28px 12px;
+    padding: 24px 22px 10px;
     border-radius: 10px;
   }
 
   .record-card h2 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .honors-list li {
@@ -820,7 +821,7 @@ nav a.active::after {
   }
 
   .education-item h3 {
-    font-size: 21px;
+    font-size: 18px;
   }
 
   .timeline-content h4 {
