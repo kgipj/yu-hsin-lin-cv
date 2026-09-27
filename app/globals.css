@@ -230,17 +230,37 @@ nav a.active::after {
 
 .hero-links {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 10px;
   margin-top: 28px;
+}
+
+.hero-links .hero-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.54);
+  text-decoration: none;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.hero-links .hero-icon-link:hover,
+.hero-links .hero-icon-link:focus-visible {
+  border-color: #b9cbd9;
+  background: var(--surface);
+  text-decoration: none;
 }
 
 .hero-location {
   display: inline-flex;
   align-items: baseline;
   gap: 8px;
-  margin: 0;
+  margin: 0 0 0 14px;
   color: var(--text-secondary);
   font-size: 14px;
   font-weight: 600;

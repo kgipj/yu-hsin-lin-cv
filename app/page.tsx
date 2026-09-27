@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { Mail } from 'lucide-react';
 import SiteHeader from './site-header';
 import Image from 'next/image';
 
@@ -462,13 +463,19 @@ export default function Home() {
                 {t('我的經驗橫跨刑事司法、人類學研究、華語教育與校園資訊服務；關注制度如何被理解，也在意知識如何被轉譯成可被使用的內容。')}
               </p>
               <div className="hero-links" aria-label={t('外部連結')}>
-                <a href="mailto:7777ath@gmail.com">Email <span aria-hidden="true">↗</span></a>
+                <a className="hero-icon-link" href="mailto:7777ath@gmail.com" aria-label="Email">
+                  <Mail aria-hidden="true" size={18} strokeWidth={1.8} />
+                </a>
                 <a
+                  className="hero-icon-link"
                   href="https://tw.linkedin.com/in/yu-hsin-lin-48406a403"
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="LinkedIn"
                 >
-                  LinkedIn <span aria-hidden="true">↗</span>
+                  <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.99h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.42a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.1 20.45H3.54V8.99H7.1v11.46Z" />
+                  </svg>
                 </a>
                 <p className="hero-location"><small>BASED IN</small>Hsinchu, Taiwan</p>
               </div>
