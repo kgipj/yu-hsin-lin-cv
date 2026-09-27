@@ -462,7 +462,7 @@ export default function Home() {
               <p className="hero-summary">
                 {t('我的經驗橫跨刑事司法、人類學研究、華語教育與校園資訊服務；關注制度如何被理解，也在意知識如何被轉譯成可被使用的內容。')}
               </p>
-              <p className="hero-location"><span>BASED IN</span><span>Hsinchu, Taiwan</span></p>
+              <p className="hero-location">Based in Hsinchu, Taiwan</p>
               <div className="hero-links" aria-label={t('外部連結')}>
                 <a className="hero-icon-link" href="mailto:7777ath@gmail.com" aria-label="Email">
                   <Mail aria-hidden="true" size={18} strokeWidth={1.8} />
