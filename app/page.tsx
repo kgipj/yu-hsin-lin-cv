@@ -195,7 +195,7 @@ const timeline: TimelineGroup[] = [
         date: 'Mar.',
         category: '文學獎',
         title: '2025 年藍花楹創作獎・小說組首獎',
-        organization: '文學創作',
+        organization: '國立陽明交通大學',
       },
       {
         date: 'Mar.',
