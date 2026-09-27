@@ -204,7 +204,7 @@ nav a.active::after {
 }
 
 .hero-label {
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 
 .hero-copy h1 {
@@ -216,7 +216,7 @@ nav a.active::after {
 }
 
 .english-name {
-  margin: 6px 0 28px;
+  margin: 12px 0 28px;
   color: var(--text-secondary);
   font-size: 18px;
   font-weight: 550;
