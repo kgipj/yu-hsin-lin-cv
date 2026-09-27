@@ -216,36 +216,38 @@ nav a.active::after {
   margin: 0;
   font-size: clamp(46px, 5.4vw, 56px);
   font-weight: 740;
-  line-height: 1.1;
+  line-height: 1.22;
   letter-spacing: -0.045em;
 }
 
 .english-name {
-  margin: 12px 0 28px;
+  margin: 12px 0 24px;
   color: var(--text-secondary);
+  background: transparent;
   font-size: 18px;
   font-weight: 550;
   letter-spacing: 0.04em;
+  box-shadow: none;
 }
 
 .identity {
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
 .identity p {
   margin: 0;
   font-size: clamp(21px, 2.6vw, 28px);
   font-weight: 680;
-  line-height: 1.48;
+  line-height: 1.42;
   letter-spacing: -0.025em;
 }
 
 .hero-summary {
-  max-width: 720px;
+  max-width: 640px;
   margin: 0;
   color: var(--text-secondary);
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 1.72;
 }
 
 .hero-links {
@@ -946,7 +948,8 @@ nav a.active::after {
   }
 
   .hero-summary {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.7;
   }
 
   .portrait-wrap {
