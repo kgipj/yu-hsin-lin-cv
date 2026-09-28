@@ -470,7 +470,7 @@ export default function Home() {
                 </a>
                 <a
                   className="hero-icon-link"
-                  href="https://tw.linkedin.com/in/yu-hsin-lin-48406a403"
+                  href="https://www.linkedin.com/in/yu-hsin-lin-48406a403?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn"
@@ -597,7 +597,7 @@ export default function Home() {
               <span aria-hidden="true">↗</span>
             </a>
             <a
-              href="https://tw.linkedin.com/in/yu-hsin-lin-48406a403"
+              href="https://www.linkedin.com/in/yu-hsin-lin-48406a403?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
               target="_blank"
               rel="noreferrer"
             >
