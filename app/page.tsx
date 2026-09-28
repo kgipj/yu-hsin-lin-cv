@@ -34,7 +34,7 @@ const translations: Record<string, string> = {
   '跨年度最具代表性的成果': 'A selection of achievements across different years',
   '學歷與交換經驗': 'Education & Exchange',
   '經歷年表（2024 至今）': 'Experience Timeline (2024–Present)',
-  '由近到遠整理研究、交換、工作、實習、公共參與、獎項與青年培力':
+  '由近至遠整理研究、交換、工作、實習、公共參與、獎項與青年培力':
     'Research, exchanges, employment, internships, public engagement, honors, and youth development, listed in reverse chronological order',
   '保持聯絡': 'Get in Touch',
   '歡迎就研究、公共參與、校園專案或合作機會與我聯繫。':
@@ -542,7 +542,7 @@ export default function Home() {
       <section className="section experience-section" id="experience" aria-labelledby="experience-title">
         <div className="shell">
           <SectionHeading id="experience-title" english="EXPERIENCE" title={t('經歷年表（2024 至今）')} />
-          <p className="section-intro">{t('由近到遠整理研究、交換、工作、實習、公共參與、獎項與青年培力')}</p>
+          <p className="section-intro">{t('由近至遠整理研究、交換、工作、實習、公共參與、獎項與青年培力')}</p>
 
           <div className="timeline">
             {timeline.map((group) => (
