@@ -824,6 +824,8 @@ nav a.active::after {
   .portrait-wrap {
     grid-row: 1;
     width: 180px;
+    justify-self: center;
+    margin-inline: auto;
   }
 
   .hero-copy {
