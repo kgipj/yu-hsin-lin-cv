@@ -24,7 +24,7 @@ type TimelineGroup = {
 
 const translations: Record<string, string> = {
   '陽明交大百川學士學位學程學生': 'Student, Arete Honors Program, National Yang Ming Chiao Tung University',
-  '跨域法律、人文與社會科學領域': 'Interdisciplinary Focus in Law, Humanities, and Social Sciences',
+  '跨域法律與社會科學領域': 'Interdisciplinary Focus in Law and Social Sciences',
   '我的經驗橫跨人類學、刑事司法與人權倡議、文學創作、法治教育及校園數位服務專案等，累積學術研究、社會創新、地方創生與專案推動等經驗。':
     'My experience spans anthropology, criminal justice and human rights advocacy, literary writing, rule-of-law education, and campus digital service projects, with experience in academic research, social innovation, place-based revitalization, and project implementation.',
   '外部連結': 'External links',
@@ -50,7 +50,7 @@ const translations: Record<string, string> = {
   '法治教育': 'Legal Education',
   '司法院 114 年度大專校院法治教育創新行動方案競賽':
     '2025 Judicial Yuan Legal Education and Innovation Project Competition for University Students',
-  '銀獎': 'Silver Award',
+  '全國銀獎': 'National Silver Award',
   '青年影響力': 'Youth Impact',
   '2026 Impact Star 青年影響力啟動賽': '2026 Youth Impact Star: Action Challenge',
   '入圍複賽・大專組全國前十名': 'Semifinalist · National Top 10, University Division',
@@ -118,8 +118,8 @@ const translations: Record<string, string> = {
   '2025 年藍花楹創作獎・小說組首獎': '2025 Jacaranda Creative Writing Award · First Prize in Fiction',
   '民主小火青年培力營': 'Democracy Spark Youth Development Camp',
   '潔伴同行挺台灣協會': 'Jieban Tongxing Ting Taiwan Association',
-  '司法院 114 年度大專校院法治教育創新行動方案競賽・銀獎':
-    '2025 Judicial Yuan Legal Education and Innovation Project Competition for University Students · Silver Award',
+  '司法院 114 年度大專校院法治教育創新行動方案競賽・全國銀獎':
+    '2025 Judicial Yuan Legal Education and Innovation Project Competition for University Students · National Silver Award',
   '作品名稱：「網」顧兒少－我國數位性剝削下的無法可依':
     'Project: “Safeguarding Children Online: The Legal Void in Taiwan’s Response to Digital Sexual Exploitation”',
   '指導老師：劉邦揚教授': 'Faculty Adviser: Professor Bang-Yang Liu',
@@ -176,7 +176,7 @@ const selectedHonors = [
     category: '法治教育',
     date: 'Dec. 2025',
     title: '司法院 114 年度大專校院法治教育創新行動方案競賽',
-    distinction: '銀獎',
+    distinction: '全國銀獎',
   },
   {
     category: '青年影響力',
@@ -348,7 +348,7 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Dec.',
         category: '競賽',
-        title: '司法院 114 年度大專校院法治教育創新行動方案競賽・銀獎',
+        title: '司法院 114 年度大專校院法治教育創新行動方案競賽・全國銀獎',
         bullets: [
           '作品名稱：「網」顧兒少－我國數位性剝削下的無法可依',
           '指導老師：劉邦揚教授',
@@ -458,7 +458,7 @@ export default function Home() {
               <p className="english-name">Yu-Hsin Lin</p>
               <div className="identity">
                 <p>{t('陽明交大百川學士學位學程學生')}</p>
-                <p>{t('跨域法律、人文與社會科學領域')}</p>
+                <p>{t('跨域法律與社會科學領域')}</p>
               </div>
               <p className="hero-summary">
                 {t('我的經驗橫跨人類學、刑事司法與人權倡議、文學創作、法治教育及校園數位服務專案等，累積學術研究、社會創新、地方創生與專案推動等經驗。')}
