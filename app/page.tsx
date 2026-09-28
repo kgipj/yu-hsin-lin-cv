@@ -24,7 +24,7 @@ type TimelineGroup = {
 
 const translations: Record<string, string> = {
   '陽明交大百川學士學位學程學生': 'Student, Arete Honors Program, National Yang Ming Chiao Tung University',
-  '跨域法律與社會科學領域': 'Interdisciplinary Focus in Law and Social Sciences',
+  '跨域法律、人文與社會科學領域': 'Interdisciplinary Focus in Law, Humanities, and Social Sciences',
   '我的經驗橫跨人類學、刑事司法與人權倡議、文學創作、法治教育及校園數位服務專案等，累積學術研究、社會創新、地方創生與專案推動等經驗。':
     'My experience spans anthropology, criminal justice and human rights advocacy, literary writing, rule-of-law education, and campus digital service projects, with experience in academic research, social innovation, place-based revitalization, and project implementation.',
   '外部連結': 'External links',
@@ -53,7 +53,7 @@ const translations: Record<string, string> = {
   '銀獎': 'Silver Award',
   '青年影響力': 'Youth Impact',
   '2026 Impact Star 青年影響力啟動賽': '2026 Youth Impact Star: Action Challenge',
-  '入圍初賽・大專組全國前十名': 'Preliminary Round Finalist · National Top 10, University Division',
+  '入圍複賽・大專組全國前十名': 'Semifinalist · National Top 10, University Division',
   '出題組織：Teach for Taiwan 為台灣而教': 'Challenge Provider: Teach For Taiwan',
   '作品名稱：起跑線上的共鳴': 'Project: “Resonance at the Starting Line”',
   '指導老師：曾聖凱教授': 'Faculty Adviser: Professor Sheng-Kai Tseng',
@@ -180,9 +180,9 @@ const selectedHonors = [
   },
   {
     category: '青年影響力',
-    date: '2026',
+    date: 'May 2026',
     title: '2026 Impact Star 青年影響力啟動賽',
-    distinction: '入圍初賽・大專組全國前十名',
+    distinction: '入圍複賽・大專組全國前十名',
   },
   {
     category: '文學創作',
@@ -249,10 +249,10 @@ const timeline: TimelineGroup[] = [
         organization: '新北市政府青年局',
       },
       {
-        date: '2026',
+        date: 'May 2026',
         category: '競賽',
         title: '2026 Impact Star 青年影響力啟動賽',
-        organization: '入圍初賽・大專組全國前十名',
+        organization: '入圍複賽・大專組全國前十名',
         bullets: [
           '出題組織：Teach for Taiwan 為台灣而教',
           '作品名稱：起跑線上的共鳴',
@@ -458,7 +458,7 @@ export default function Home() {
               <p className="english-name">Yu-Hsin Lin</p>
               <div className="identity">
                 <p>{t('陽明交大百川學士學位學程學生')}</p>
-                <p>{t('跨域法律與社會科學領域')}</p>
+                <p>{t('跨域法律、人文與社會科學領域')}</p>
               </div>
               <p className="hero-summary">
                 {t('我的經驗橫跨人類學、刑事司法與人權倡議、文學創作、法治教育及校園數位服務專案等，累積學術研究、社會創新、地方創生與專案推動等經驗。')}
