@@ -24,27 +24,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  openGraph: {
-    type: 'website',
-    locale: 'zh_TW',
-    url: '/',
-    title: '林雨欣 Yu-Hsin Lin',
-    description: '法律・人文社會研究・公共參與',
-    images: [
-      {
-        url: `${siteUrl}/profile.jpeg?v=share-20260928`,
-        width: 2113,
-        height: 3170,
-        alt: '林雨欣 Yu-Hsin Lin 個人照片',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: '林雨欣 Yu-Hsin Lin',
-    description: '法律・人文社會研究・公共參與',
-    images: [`${siteUrl}/profile.jpeg?v=share-20260928`],
-  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
