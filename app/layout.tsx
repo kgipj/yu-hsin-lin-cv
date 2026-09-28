@@ -20,7 +20,8 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: '林雨欣 Yu-Hsin Lin',
-  description: '林雨欣的個人履歷網站：法律、人文社會研究、公共參與與校園服務。',
+  description:
+    '我的經驗橫跨人類學、刑事司法與人權倡議、文學創作、法治教育及校園數位服務專案等，累積學術研究、社會創新、地方創生與專案管理等經驗。',
   alternates: {
     canonical: '/',
   },
