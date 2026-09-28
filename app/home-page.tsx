@@ -61,7 +61,8 @@ const translations: Record<string, string> = {
   '2025 年藍花楹創作獎': '2025 Jacaranda Creative Writing Award',
   '小說組首獎': 'First Prize · Fiction',
   '校園領導': 'Campus Leadership',
-  'NYCU LIFE 數碼寶貝社': 'NYCU LIFE Digimon Club',
+  '國立陽明交通大學 NYCU LIFE 數碼寶貝社':
+    'NYCU LIFE Digimon Club, National Yang Ming Chiao Tung University',
   '社長': 'President',
   '獎助學金': 'Scholarship',
   '張俊彥校長紀念獎助學金': 'President Chang Chun-Yen Memorial Scholarship',
@@ -101,7 +102,8 @@ const translations: Record<string, string> = {
     'Summer Program Work-Study Peer Mentor, Mandarin Training Center, National Taiwan Normal University',
   '台北・華語教育': 'Taipei · Mandarin Education',
   '領導': 'Leadership',
-  'NYCU LIFE 數碼寶貝社 社長': 'President, NYCU LIFE Digimon Club',
+  '國立陽明交通大學 NYCU LIFE 數碼寶貝社 社長':
+    'President, NYCU LIFE Digimon Club, National Yang Ming Chiao Tung University',
   '新竹・數位開發': 'Hsinchu · Digital Development',
   '推動「NYCU LIFE 校園資訊整合平台」專案，致力於改善陽明交大學生所面臨的資訊落差':
     'Led the NYCU LIFE campus information platform initiative to reduce information gaps among NYCU students.',
@@ -193,7 +195,7 @@ const selectedHonors = [
   {
     category: '校園領導',
     date: 'Jun. 2026 — Present',
-    title: 'NYCU LIFE 數碼寶貝社',
+    title: '國立陽明交通大學 NYCU LIFE 數碼寶貝社',
     distinction: '社長',
   },
   {
@@ -249,17 +251,6 @@ const timeline: TimelineGroup[] = [
         organization: '新北市政府青年局',
       },
       {
-        date: 'May 2026',
-        category: '競賽',
-        title: '2026 Impact Star 青年影響力啟動賽',
-        organization: '入圍複賽・大專組全國前十名',
-        bullets: [
-          '出題組織：Teach for Taiwan 為台灣而教',
-          '作品名稱：起跑線上的共鳴',
-          '指導老師：曾聖凱教授',
-        ],
-      },
-      {
         date: 'Jul. — Sep.',
         category: '實習',
         title: '台灣冤獄平反協會 實習生',
@@ -287,26 +278,19 @@ const timeline: TimelineGroup[] = [
         organization: '財團法人春雨文教基金會',
       },
       {
-        date: 'Jun. — Jul.',
-        category: '工作',
-        title: '國立臺灣師範大學國語教學中心 暑期專案課程工讀學伴',
-        location: '台北・華語教育',
-      },
-      {
         date: 'Jun. — Present',
         category: '領導',
-        title: 'NYCU LIFE 數碼寶貝社 社長',
+        title: '國立陽明交通大學 NYCU LIFE 數碼寶貝社 社長',
         location: '新竹・數位開發',
         bullets: [
           '推動「NYCU LIFE 校園資訊整合平台」專案，致力於改善陽明交大學生所面臨的資訊落差',
         ],
       },
       {
-        date: 'Feb. — Aug.',
-        category: '交換',
-        title: '韓國漢陽大學 線上交換',
-        organization: '한양대학교（Hanyang University）',
-        description: 'Hanyang Online Pre-Exchange Program',
+        date: 'Jun. — Jul.',
+        category: '工作',
+        title: '國立臺灣師範大學國語教學中心 暑期專案課程工讀學伴',
+        location: '台北・華語教育',
       },
       {
         date: 'May — Aug.',
@@ -315,6 +299,17 @@ const timeline: TimelineGroup[] = [
         location: '新北・地方創生／文化推廣',
         bullets: [
           '參與新北市文化推廣與地方創生專案，以青年視角轉譯在地歷史與文化',
+        ],
+      },
+      {
+        date: 'May 2026',
+        category: '競賽',
+        title: '2026 Impact Star 青年影響力啟動賽',
+        organization: '入圍複賽・大專組全國前十名',
+        bullets: [
+          '出題組織：Teach for Taiwan 為台灣而教',
+          '作品名稱：起跑線上的共鳴',
+          '指導老師：曾聖凱教授',
         ],
       },
       {
@@ -333,6 +328,13 @@ const timeline: TimelineGroup[] = [
         category: '獎學金',
         title: '張俊彥校長紀念獎助學金',
         organization: '國立陽明交通大學',
+      },
+      {
+        date: 'Feb. — Aug.',
+        category: '交換',
+        title: '韓國漢陽大學 線上交換',
+        organization: '한양대학교（Hanyang University）',
+        description: 'Hanyang Online Pre-Exchange Program',
       },
       {
         date: 'Jan.',

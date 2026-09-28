@@ -594,14 +594,19 @@ nav a.active::after {
 .timeline-meta {
   display: grid;
   align-content: start;
+  justify-items: start;
   gap: 10px;
 }
 
 .timeline-meta time {
+  display: block;
+  width: 100%;
   color: #4d5d6d;
   font-family: var(--font-geist), ui-monospace, monospace;
   font-size: 14px;
   font-weight: 680;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .timeline-meta span {
