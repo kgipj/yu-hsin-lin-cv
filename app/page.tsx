@@ -106,8 +106,8 @@ const translations: Record<string, string> = {
   '推動「NYCU LIFE 校園資訊整合平台」專案，致力於改善陽明交大學生所面臨的資訊落差':
     'Led the NYCU LIFE campus information platform initiative to reduce information gaps among NYCU students.',
   '韓國漢陽大學 線上交換': 'Online Exchange, Hanyang University',
-  '線上・韓國': 'Online · South Korea',
   '한양대학교（Hanyang University）': 'Hanyang University',
+  'Hanyang Online Pre-Exchange Program': 'Hanyang Online Pre-Exchange Program',
   'Eötvös Loránd University・Budapest, Hungary': 'Eötvös Loránd University · Budapest, Hungary',
   '公共參與': 'Public Engagement',
   '新北文化大使': 'New Taipei Culture Ambassador',
@@ -124,7 +124,7 @@ const translations: Record<string, string> = {
     'Project: “Safeguarding Children Online: The Legal Void in Taiwan’s Response to Digital Sexual Exploitation”',
   '指導老師：劉邦揚教授': 'Faculty Adviser: Professor Bang-Yang Liu',
   '徵文': 'Writing Competition',
-  'Stan up！青開麥 Podcast 節目熱寫徵文・獲獎':
+  'Stan up！青開麥 Podcast 節目熱寫徵文活動・獲獎':
     '“Stand Up! Youth Mic” Podcast Essay Competition · Award Recipient',
   '新竹縣政府教育局': 'Education Bureau, Hsinchu County Government',
   '秋季獎助學金': 'Autumn Scholarship',
@@ -306,7 +306,7 @@ const timeline: TimelineGroup[] = [
         category: '交換',
         title: '韓國漢陽大學 線上交換',
         organization: '한양대학교（Hanyang University）',
-        location: '線上・韓國',
+        description: 'Hanyang Online Pre-Exchange Program',
       },
       {
         date: 'May — Aug.',
@@ -357,7 +357,7 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Dec.',
         category: '徵文',
-        title: 'Stan up！青開麥 Podcast 節目熱寫徵文・獲獎',
+        title: 'Stan up！青開麥 Podcast 節目熱寫徵文活動・獲獎',
         organization: '新竹縣政府教育局',
       },
       {
