@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     description: '法律・人文社會研究・公共參與',
     images: [
       {
-        url: `${siteUrl}/og.png`,
-        width: 1200,
-        height: 630,
-        alt: '林雨欣 Yu-Hsin Lin 個人履歷網站',
+        url: `${siteUrl}/profile.jpeg?v=share-20260928`,
+        width: 2113,
+        height: 3170,
+        alt: '林雨欣 Yu-Hsin Lin 個人照片',
       },
     ],
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '林雨欣 Yu-Hsin Lin',
     description: '法律・人文社會研究・公共參與',
-    images: [`${siteUrl}/og.png`],
+    images: [`${siteUrl}/profile.jpeg?v=share-20260928`],
   },
 };
 
