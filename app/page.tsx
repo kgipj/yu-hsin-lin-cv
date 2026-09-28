@@ -124,7 +124,7 @@ const translations: Record<string, string> = {
     'Project: “Safeguarding Children Online: The Legal Void in Taiwan’s Response to Digital Sexual Exploitation”',
   '指導老師：劉邦揚教授': 'Faculty Adviser: Professor Bang-Yang Liu',
   '徵文': 'Writing Competition',
-  'Stan up！青開麥 Podcast 節目熱寫徵文活動・獲獎':
+  '「Stan up！青開麥」 Podcast 節目熱寫徵文活動・獲獎':
     '“Stand Up! Youth Mic” Podcast Essay Competition · Award Recipient',
   '新竹縣政府教育局': 'Education Bureau, Hsinchu County Government',
   '秋季獎助學金': 'Autumn Scholarship',
@@ -357,7 +357,7 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Dec.',
         category: '徵文',
-        title: 'Stan up！青開麥 Podcast 節目熱寫徵文活動・獲獎',
+        title: '「Stan up！青開麥」 Podcast 節目熱寫徵文活動・獲獎',
         organization: '新竹縣政府教育局',
       },
       {
