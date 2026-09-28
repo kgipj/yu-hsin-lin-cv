@@ -1033,12 +1033,12 @@ nav a.active::after {
 
   .year-column {
     border-right: 0;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 0;
   }
 
   .year-column h3 {
     position: static;
-    padding: 26px 0 20px;
+    padding: 26px 0 8px;
     font-size: 38px;
   }
 
