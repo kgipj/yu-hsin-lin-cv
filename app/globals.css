@@ -190,7 +190,7 @@ nav a.active::after {
   grid-template-columns: minmax(0, 1fr) 210px;
   align-items: center;
   gap: var(--hero-side-gap);
-  padding-right: 0;
+  padding-right: 36px;
   min-height: 430px;
 }
 

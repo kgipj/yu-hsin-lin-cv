@@ -25,8 +25,8 @@ type TimelineGroup = {
 const translations: Record<string, string> = {
   '陽明交大百川學士學位學程學生': 'Student, Arete Honors Program, National Yang Ming Chiao Tung University',
   '跨域法律與社會科學領域': 'Interdisciplinary Focus in Law and Social Sciences',
-  '我的經驗橫跨人類學、刑事司法與人權倡議、文學創作、法治教育及校園數位服務專案等，累積學術研究、藝術創作、社群行銷與專案推動等經驗。':
-    'My experience spans anthropology, criminal justice and human rights advocacy, literary writing, rule-of-law education, and campus digital service projects, with experience in academic research, artistic creation, social media marketing, and project implementation.',
+  '我的經驗橫跨人類學、刑事司法與人權倡議、文學創作、法治教育及校園數位服務專案等，累積學術研究、社會創新、地方創生與專案推動等經驗。':
+    'My experience spans anthropology, criminal justice and human rights advocacy, literary writing, rule-of-law education, and campus digital service projects, with experience in academic research, social innovation, place-based revitalization, and project implementation.',
   '外部連結': 'External links',
   '林雨欣個人照片': 'Portrait of Yu-Hsin Lin',
   '學歷與代表性榮耀': 'Education and Selected Honors',
@@ -62,7 +62,7 @@ const translations: Record<string, string> = {
   '小說組首獎': 'First Prize · Fiction',
   '校園領導': 'Campus Leadership',
   'NYCU LIFE 數碼寶貝社': 'NYCU LIFE Digimon Club',
-  '首屆社長': 'Founding President',
+  '社長': 'President',
   '獎助學金': 'Scholarship',
   '張俊彥校長紀念獎助學金': 'President Chang Chun-Yen Memorial Scholarship',
   '第二十屆謝東閔先生紀念文學獎': '20th Mr. Shieh Tung-min Memorial Literary Award',
@@ -101,7 +101,7 @@ const translations: Record<string, string> = {
     'Summer Program Work-Study Peer Mentor, Mandarin Training Center, National Taiwan Normal University',
   '台北・華語教育': 'Taipei · Mandarin Education',
   '領導': 'Leadership',
-  'NYCU LIFE 數碼寶貝社 首屆社長': 'Founding President, NYCU LIFE Digimon Club',
+  'NYCU LIFE 數碼寶貝社 社長': 'President, NYCU LIFE Digimon Club',
   '新竹・數位開發': 'Hsinchu · Digital Development',
   '推動「NYCU LIFE 校園資訊整合平台」專案，致力於改善陽明交大學生所面臨的資訊落差':
     'Led the NYCU LIFE campus information platform initiative to reduce information gaps among NYCU students.',
@@ -169,13 +169,6 @@ const education = [
     englishName: '한양대학교 · Hanyang University',
     program: '社會學系',
   },
-  {
-    date: 'Spring, 2027',
-    institution: '匈牙利羅蘭大學',
-    englishName: 'Eötvös Loránd University',
-    program: '社會科學院交換學生',
-    note: 'Budapest, Hungary',
-  },
 ];
 
 const selectedHonors = [
@@ -201,7 +194,7 @@ const selectedHonors = [
     category: '校園領導',
     date: 'Jun. 2026 — Present',
     title: 'NYCU LIFE 數碼寶貝社',
-    distinction: '首屆社長',
+    distinction: '社長',
   },
   {
     category: '獎助學金',
@@ -302,7 +295,7 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Jun. — Present',
         category: '領導',
-        title: 'NYCU LIFE 數碼寶貝社 首屆社長',
+        title: 'NYCU LIFE 數碼寶貝社 社長',
         location: '新竹・數位開發',
         bullets: [
           '推動「NYCU LIFE 校園資訊整合平台」專案，致力於改善陽明交大學生所面臨的資訊落差',
@@ -468,7 +461,7 @@ export default function Home() {
                 <p>{t('跨域法律與社會科學領域')}</p>
               </div>
               <p className="hero-summary">
-                {t('我的經驗橫跨人類學、刑事司法與人權倡議、文學創作、法治教育及校園數位服務專案等，累積學術研究、藝術創作、社群行銷與專案推動等經驗。')}
+                {t('我的經驗橫跨人類學、刑事司法與人權倡議、文學創作、法治教育及校園數位服務專案等，累積學術研究、社會創新、地方創生與專案推動等經驗。')}
               </p>
               <p className="hero-location">Based in Hsinchu, Taiwan</p>
               <div className="hero-links" aria-label={t('外部連結')}>
