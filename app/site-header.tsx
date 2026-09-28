@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import type { Language } from './page';
+import type { Language } from './home-page';
 
 const navigation = [
   { id: 'honors', label: 'Honors' },
