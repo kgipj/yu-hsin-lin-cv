@@ -77,25 +77,14 @@ export default function SiteHeader({
               </a>
             ))}
           </nav>
-          <div className="language-toggle" role="group" aria-label="Language selection">
+          <div className="language-toggle">
             <button
-              className={`language-option${language === 'en' ? ' active' : ''}`}
+              className="language-option"
               type="button"
-              onClick={() => onLanguageChange('en')}
-              aria-pressed={language === 'en'}
-              aria-label="English"
+              onClick={() => onLanguageChange(language === 'zh' ? 'en' : 'zh')}
+              aria-label={language === 'zh' ? 'Switch to English' : '切換至中文'}
             >
-              EN
-            </button>
-            <span aria-hidden="true"> / </span>
-            <button
-              className={`language-option${language === 'zh' ? ' active' : ''}`}
-              type="button"
-              onClick={() => onLanguageChange('zh')}
-              aria-pressed={language === 'zh'}
-              aria-label="中文"
-            >
-              中
+              {language === 'zh' ? 'EN' : '中'}
             </button>
           </div>
         </div>

@@ -158,7 +158,7 @@ function translate(value: string, language: Language) {
 
 const education = [
   {
-    date: 'Present',
+    date: 'Sep. 2025 - Present',
     institution: '國立陽明交通大學',
     englishName: 'National Yang Ming Chiao Tung University',
     program: '百川學士學位學程 核心法律\n輔系人文社會學系',
