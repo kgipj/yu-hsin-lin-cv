@@ -72,8 +72,8 @@ const translations: Record<string, string> = {
   '圖文組參獎': 'Third Prize · Illustrated Works',
   '交換': 'Exchange',
   '赴匈牙利羅蘭大學交換': 'Exchange at Eötvös Loránd University',
-  '通過校內交換甄選，預計於 2027 年春季前往匈牙利進行交換學習':
-    'Selected through NYCU’s internal exchange program; scheduled to study in Hungary in spring 2027',
+  '通過校內交換甄選，預計於 2027 年春季前往匈牙利布達佩斯進行交換學習':
+    'Selected through NYCU’s internal exchange program; scheduled to study in Budapest, Hungary, in spring 2027',
   '研究': 'Research',
   '國立陽明交通大學人文社會學系 研究獎助生':
     'Research Assistant, Department of Humanities and Social Sciences, National Yang Ming Chiao Tung University',
@@ -227,7 +227,7 @@ const timeline: TimelineGroup[] = [
         category: '交換',
         title: '赴匈牙利羅蘭大學交換',
         organization: 'Eötvös Loránd University・Budapest, Hungary',
-        description: '通過校內交換甄選，預計於 2027 年春季前往匈牙利進行交換學習',
+        description: '通過校內交換甄選，預計於 2027 年春季前往匈牙利布達佩斯進行交換學習',
       },
     ],
   },
