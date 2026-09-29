@@ -61,7 +61,7 @@ export default function SiteHeader({
     <header className={`site-header${isScrolled ? ' scrolled' : ''}`}>
       <div className="header-inner">
         <a className="brand" href="#top" onClick={() => setActiveSection('')}>
-          {language === 'zh' ? '林雨欣' : 'Yu-Hsin Lin'}
+          林雨欣 Yu-Hsin Lin
         </a>
         <div className="header-actions">
           <nav aria-label={language === 'en' ? 'Primary navigation' : '主要導覽'}>
