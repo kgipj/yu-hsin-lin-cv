@@ -456,8 +456,8 @@ export default function Home() {
           <div className="hero-grid">
             <div className="hero-copy">
               <p className="hero-label">LAW ＆ HUMANITIES AND SOCIAL SCIENCES</p>
-              <h1 id="page-title">林雨欣</h1>
-              <p className="english-name">Yu-Hsin Lin</p>
+              <h1 id="page-title">{language === 'zh' ? '林雨欣' : 'Yu-Hsin Lin'}</h1>
+              <p className="english-name">{language === 'zh' ? 'Yu-Hsin Lin' : '林雨欣'}</p>
               <div className="identity">
                 <p>{t('陽明交大百川學士學位學程學生')}</p>
                 <p>{t('跨域法律與社會科學領域')}</p>
