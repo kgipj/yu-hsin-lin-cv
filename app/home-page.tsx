@@ -63,6 +63,7 @@ const translations: Record<string, string> = {
   '校園領導': 'Campus Leadership',
   '國立陽明交通大學 NYCU LIFE 數碼寶貝社':
     'NYCU LIFE Digimon Club, National Yang Ming Chiao Tung University',
+  'NYCU LIFE 數碼寶貝社 社長': 'President, NYCU LIFE Digimon Club',
   '社長': 'President',
   '獎助學金': 'Scholarship',
   '張俊彥校長紀念獎助學金': 'President Chang Chun-Yen Memorial Scholarship',
@@ -195,8 +196,8 @@ const selectedHonors = [
   {
     category: '校園領導',
     date: 'Jun. 2026 — Present',
-    title: '國立陽明交通大學 NYCU LIFE 數碼寶貝社',
-    distinction: '社長',
+    title: 'NYCU LIFE 數碼寶貝社 社長',
+    distinction: '國立陽明交通大學',
   },
   {
     category: '獎助學金',
@@ -280,7 +281,8 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Jun. — Present',
         category: '領導',
-        title: '國立陽明交通大學 NYCU LIFE 數碼寶貝社 社長',
+        title: 'NYCU LIFE 數碼寶貝社 社長',
+        organization: '國立陽明交通大學',
         location: '新竹・數位開發',
         bullets: [
           '推動「NYCU LIFE 校園資訊整合平台」專案，致力於改善陽明交大學生所面臨的資訊落差',
