@@ -37,8 +37,8 @@ const translations: Record<string, string> = {
   '由近至遠整理研究、交換、工作、實習、公共參與、獎項與青年培力':
     'Research, exchanges, employment, internships, public engagement, honors, and youth development, listed in reverse chronological order',
   '歡迎聯繫': 'Get in Touch',
-  '歡迎就研究、公共參與、校園專案或合作機會與我聯繫。':
-    'Feel free to contact me about research, public engagement, campus initiatives, or opportunities to collaborate.',
+  '歡迎就研究、專案、公共參與或其他合作機會與我聯繫。':
+    'Feel free to contact me about research, projects, public engagement, or other opportunities to collaborate.',
   '回到頁首 ↑': 'Back to top ↑',
   '國立陽明交通大學': 'National Yang Ming Chiao Tung University',
   '百川學士學位學程 核心法律\n輔系人文社會學系':
@@ -590,7 +590,7 @@ export default function Home() {
           <div>
             <p className="contact-eyebrow">CONTACT</p>
             <h2 id="contact-title">{t('歡迎聯繫')}</h2>
-            <p>{t('歡迎就研究、公共參與、校園專案或合作機會與我聯繫。')}</p>
+            <p>{t('歡迎就研究、專案、公共參與或其他合作機會與我聯繫。')}</p>
           </div>
           <div className="contact-links">
             <a href="mailto:7777ath@gmail.com">
