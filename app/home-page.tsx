@@ -115,6 +115,7 @@ const translations: Record<string, string> = {
   'Eötvös Loránd University・Budapest, Hungary': 'Eötvös Loránd University · Budapest, Hungary',
   '公共參與': 'Public Engagement',
   '新北文化大使': 'New Taipei Culture Ambassador',
+  '新北市文化局': 'Cultural Affairs Department, New Taipei City Government',
   '新北・地方創生／文化推廣': 'New Taipei · Regional Revitalization / Cultural Promotion',
   '台北市關渡宮獎助學金': 'Taipei Guandu Temple Scholarship',
   '2025 年藍花楹創作獎・小說組首獎': '2025 Jacaranda Creative Writing Award · First Prize in Fiction',
@@ -301,6 +302,7 @@ const timeline: TimelineGroup[] = [
         date: 'May — Aug.',
         category: '公共參與',
         title: '新北文化大使',
+        organization: '新北市文化局',
         location: '新北・地方創生／文化推廣',
       },
       {
