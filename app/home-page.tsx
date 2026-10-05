@@ -97,8 +97,9 @@ const translations: Record<string, string> = {
   '春雨創生行動營': 'Spring Rain Regional Revitalization Action Camp',
   '財團法人春雨文教基金會': 'Spring Rain Culture and Education Foundation',
   '工作': 'Employment',
-  '國立臺灣師範大學國語教學中心 暑期專案課程工讀學伴':
-    'Summer Program Work-Study Peer Mentor, Mandarin Training Center, National Taiwan Normal University',
+  '暑期專案課程工讀學伴': 'Summer Program Work-Study Peer Mentor',
+  '國立臺灣師範大學國語教學中心':
+    'Mandarin Training Center, National Taiwan Normal University',
   '台北・華語教育': 'Taipei · Mandarin Education',
   '領導': 'Leadership',
   '國立陽明交通大學 NYCU LIFE 數碼寶貝社 社長':
@@ -282,7 +283,8 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Jun. — Jul.',
         category: '工作',
-        title: '國立臺灣師範大學國語教學中心 暑期專案課程工讀學伴',
+        title: '暑期專案課程工讀學伴',
+        organization: '國立臺灣師範大學國語教學中心',
         location: '台北・華語教育',
       },
       {
