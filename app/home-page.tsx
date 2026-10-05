@@ -71,10 +71,6 @@ const translations: Record<string, string> = {
   '散文組貳獎': 'Second Prize · Prose',
   '第二十三屆水煙紗漣文學獎': '23rd Shui Sha Lian Literary Award',
   '圖文組參獎': 'Third Prize · Illustrated Works',
-  '閱讀推廣': 'Reading Promotion',
-  '益品書屋 10 週年夏日閱讀祭徵件活動':
-    'EP Books 10th Anniversary Summer Reading Festival Submission Contest',
-  '閱讀金句賞': 'Reading Quote Award',
   '獎項': 'Award',
   '交換': 'Exchange',
   '赴匈牙利羅蘭大學交換': 'Exchange at Eötvös Loránd University',
@@ -152,7 +148,7 @@ const translations: Record<string, string> = {
   '實踐大學': 'Shih Chien University',
   '第二十三屆水煙紗漣文學獎・圖文組參獎':
     '23rd Shui Sha Lian Literary Award · Third Prize in Illustrated Works',
-  '益品書屋 10 週年夏日閱讀祭徵件活動・閱讀金句賞':
+  '益品書屋十週年｜夏日閱讀祭徵件活動・閱讀金句賞':
     'EP Books 10th Anniversary Summer Reading Festival · Reading Quote Award',
   '益品書屋': 'EP Books',
   '國立暨南國際大學': 'National Chi Nan University',
@@ -180,12 +176,6 @@ const education = [
 ];
 
 const selectedHonors = [
-  {
-    category: '閱讀推廣',
-    date: 'Oct. 2026',
-    title: '益品書屋 10 週年夏日閱讀祭徵件活動',
-    distinction: '閱讀金句賞',
-  },
   {
     category: '法治教育',
     date: 'Dec. 2025',
@@ -249,7 +239,7 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Oct.',
         category: '獎項',
-        title: '益品書屋 10 週年夏日閱讀祭徵件活動・閱讀金句賞',
+        title: '益品書屋十週年｜夏日閱讀祭徵件活動・閱讀金句賞',
         organization: '益品書屋',
       },
       {
