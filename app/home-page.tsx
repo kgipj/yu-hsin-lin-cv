@@ -155,8 +155,6 @@ const translations: Record<string, string> = {
   '益品書屋 10 週年夏日閱讀祭徵件活動・閱讀金句賞':
     'EP Books 10th Anniversary Summer Reading Festival · Reading Quote Award',
   '益品書屋': 'EP Books',
-  '金句分享：《夏夜裡的閱讀煙花》':
-    'Selected quote: “Reading Fireworks on a Summer Night”',
   '國立暨南國際大學': 'National Chi Nan University',
   '第 15 屆 336 愛奇兒家庭日 攝影志工': 'Photography Volunteer, 15th 336 Angel Family Day',
   '財團法人天使心家族社會福利基金會': 'Angel Heart Family Social Welfare Foundation',
@@ -253,7 +251,6 @@ const timeline: TimelineGroup[] = [
         category: '獎項',
         title: '益品書屋 10 週年夏日閱讀祭徵件活動・閱讀金句賞',
         organization: '益品書屋',
-        bullets: ['金句分享：《夏夜裡的閱讀煙花》'],
       },
       {
         date: 'Aug. — Present',
