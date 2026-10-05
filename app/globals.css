@@ -247,14 +247,13 @@ nav a.active::after {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 30px;
-  padding: 4px 7px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--text-tertiary);
   background: var(--control-bg);
-  font: inherit;
-  line-height: 1;
   cursor: pointer;
 }
 
@@ -1135,8 +1134,8 @@ nav a.active::after {
   }
 
   .theme-toggle {
-    min-width: 25px;
-    padding: 4px 6px;
+    width: 24px;
+    height: 24px;
   }
 
   .hero-copy h1 {
