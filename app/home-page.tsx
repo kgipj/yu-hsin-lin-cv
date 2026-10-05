@@ -133,8 +133,6 @@ const translations: Record<string, string> = {
   '台灣積體電路製造股份有限公司 校園服務代表':
     'Campus Service Representative, Taiwan Semiconductor Manufacturing Company (TSMC)',
   '新竹・半導體製造': 'Hsinchu · Semiconductor Manufacturing',
-  '協助陽明交大與台積電產學合作相關事宜，處理公文送簽與行政業務':
-    'Supported administrative work for industry–academia collaboration between NYCU and TSMC, including document routing and approval procedures.',
   '志工': 'Volunteer Service',
   '惠瑜慈善協會 教學志工': 'Teaching Volunteer, Michelle Chiou Foundation',
   '線上・教育陪伴／公益服務': 'Online · Educational Support / Community Service',
@@ -370,9 +368,6 @@ const timeline: TimelineGroup[] = [
         category: '工作',
         title: '台灣積體電路製造股份有限公司 校園服務代表',
         location: '新竹・半導體製造',
-        bullets: [
-          '協助陽明交大與台積電產學合作相關事宜，處理公文送簽與行政業務',
-        ],
       },
       {
         date: 'Jun. — Dec.',
