@@ -101,6 +101,8 @@ const translations: Record<string, string> = {
   '國立臺灣師範大學國語教學中心':
     'Mandarin Training Center, National Taiwan Normal University',
   '台北・華語教育': 'Taipei · Mandarin Education',
+  '帶領美國大學生進行校外教學活動':
+    'Led off-campus educational activities for university students from the United States.',
   '領導': 'Leadership',
   '國立陽明交通大學 NYCU LIFE 數碼寶貝社 社長':
     'President, NYCU LIFE Digimon Club, National Yang Ming Chiao Tung University',
@@ -286,6 +288,7 @@ const timeline: TimelineGroup[] = [
         title: '暑期專案課程工讀學伴',
         organization: '國立臺灣師範大學國語教學中心',
         location: '台北・華語教育',
+        bullets: ['帶領美國大學生進行校外教學活動'],
       },
       {
         date: 'May — Aug.',
