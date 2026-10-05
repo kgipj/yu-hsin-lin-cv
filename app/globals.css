@@ -566,13 +566,12 @@ nav a.active::after {
   position: sticky;
   top: calc(var(--header-height) + 28px);
   margin: 0;
-  padding: 34px 12px;
+  padding: 34px 24px 34px 0;
   color: #8fa8be;
   font-size: clamp(38px, 5vw, 58px);
   font-weight: 720;
   line-height: 1;
   letter-spacing: -0.055em;
-  text-align: center;
 }
 
 .experience-items {
@@ -889,7 +888,7 @@ nav a.active::after {
   }
 
   .year-column h3 {
-    padding-inline: 8px;
+    padding-right: 18px;
     font-size: 35px;
   }
 
@@ -1056,7 +1055,6 @@ nav a.active::after {
     position: static;
     padding: 26px 0 8px;
     font-size: 38px;
-    text-align: left;
   }
 
   .timeline-item {
