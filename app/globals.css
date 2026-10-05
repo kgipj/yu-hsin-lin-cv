@@ -553,7 +553,7 @@ nav a.active::after {
 
 .year-group {
   display: grid;
-  grid-template-columns: 185px minmax(0, 1fr);
+  grid-template-columns: 215px minmax(0, 1fr);
   border-bottom: 1px solid var(--border);
 }
 
@@ -800,7 +800,7 @@ nav a.active::after {
   }
 
   .year-group {
-    grid-template-columns: 150px minmax(0, 1fr);
+    grid-template-columns: 170px minmax(0, 1fr);
   }
 
   .timeline-item {
