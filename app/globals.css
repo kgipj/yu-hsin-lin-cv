@@ -3,7 +3,6 @@
 @import 'shadcn/tailwind.css';
 
 :root {
-  color-scheme: light;
   --background: #fafafa;
   --surface: #ffffff;
   --text-primary: #1e293b;
@@ -14,47 +13,7 @@
   --border: #dce3ea;
   --border-soft: #e8edf2;
   --muted-bg: #f1f4f8;
-  --header-bg: rgba(250, 250, 250, 0.94);
-  --header-border: rgba(220, 227, 234, 0.86);
-  --control-bg: rgba(255, 255, 255, 0.6);
-  --control-hover-border: #b9cbd9;
-  --focus-ring: rgba(23, 111, 175, 0.28);
-  --icon-bg: rgba(255, 255, 255, 0.54);
-  --link-underline: rgba(49, 91, 138, 0.28);
-  --portrait-shadow: 0 6px 18px rgba(30, 41, 59, 0.12);
-  --card-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
-  --year-text: #8fa8be;
-  --timeline-date: #4d5d6d;
-  --tag-border: #d8e3ed;
-  --tag-bg: #f3f7fa;
   --header-height: 64px;
-}
-
-:root[data-theme='dark'] {
-  color-scheme: dark;
-  --background: #0a0d12;
-  --surface: #11161d;
-  --text-primary: #e6edf3;
-  --text-secondary: #a7b3c2;
-  --text-tertiary: #7f8b99;
-  --accent: #58a6e7;
-  --accent-dark: #79b8e8;
-  --border: #2b3542;
-  --border-soft: #202833;
-  --muted-bg: #161b22;
-  --header-bg: rgba(10, 13, 18, 0.92);
-  --header-border: rgba(55, 65, 81, 0.9);
-  --control-bg: rgba(17, 22, 29, 0.8);
-  --control-hover-border: #4b6073;
-  --focus-ring: rgba(88, 166, 231, 0.35);
-  --icon-bg: rgba(17, 22, 29, 0.8);
-  --link-underline: rgba(88, 166, 231, 0.35);
-  --portrait-shadow: 0 8px 24px rgba(0, 0, 0, 0.36);
-  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
-  --year-text: #6f8ca5;
-  --timeline-date: #a7b3c2;
-  --tag-border: #344454;
-  --tag-bg: #111c26;
 }
 
 * {
@@ -79,20 +38,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body,
-.site-header,
-.hero-section,
-.records-section,
-.experience-section,
-.contact-section,
-.site-footer,
-.record-card,
-.language-toggle,
-.theme-toggle,
-.hero-icon-link {
-  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -113,13 +58,13 @@ time {
   top: 0;
   height: var(--header-height);
   border-bottom: 1px solid transparent;
-  background: var(--header-bg);
+  background: rgba(250, 250, 250, 0.94);
   backdrop-filter: blur(14px);
   transition: border-color 180ms ease;
 }
 
 .site-header.scrolled {
-  border-bottom-color: var(--header-border);
+  border-bottom-color: rgba(220, 227, 234, 0.86);
 }
 
 .header-inner {
@@ -146,12 +91,6 @@ time {
   align-items: center;
   height: 100%;
   gap: 24px;
-}
-
-.header-controls {
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
 nav {
@@ -203,7 +142,7 @@ nav a.active::after {
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--text-tertiary);
-  background: var(--control-bg);
+  background: rgba(255, 255, 255, 0.6);
   font: inherit;
   font-size: 11px;
   font-weight: 600;
@@ -214,13 +153,13 @@ nav a.active::after {
 
 .language-toggle:hover,
 .language-toggle:focus-within {
-  border-color: var(--control-hover-border);
+  border-color: #b9cbd9;
   color: var(--accent-dark);
   background: var(--surface);
 }
 
 .language-toggle:focus-within {
-  outline: 2px solid var(--focus-ring);
+  outline: 2px solid rgba(23, 111, 175, 0.28);
   outline-offset: 3px;
 }
 
@@ -241,44 +180,6 @@ nav a.active::after {
 .language-option.active {
   color: var(--accent-dark);
   font-weight: 760;
-}
-
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--text-tertiary);
-  background: var(--control-bg);
-  cursor: pointer;
-}
-
-.theme-toggle:hover,
-.theme-toggle:focus-visible {
-  border-color: var(--control-hover-border);
-  color: var(--accent-dark);
-  background: var(--surface);
-}
-
-.theme-toggle:focus-visible {
-  outline: 2px solid var(--focus-ring);
-  outline-offset: 3px;
-}
-
-.theme-icon-sun {
-  display: none;
-}
-
-:root[data-theme='dark'] .theme-icon-moon {
-  display: none;
-}
-
-:root[data-theme='dark'] .theme-icon-sun {
-  display: block;
 }
 
 .hero-section {
@@ -369,14 +270,14 @@ nav a.active::after {
   color: var(--accent);
   border: 1px solid var(--border);
   border-radius: 6px;
-  background: var(--icon-bg);
+  background: rgba(255, 255, 255, 0.54);
   text-decoration: none;
   transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
 .hero-links .hero-icon-link:hover,
 .hero-links .hero-icon-link:focus-visible {
-  border-color: var(--control-hover-border);
+  border-color: #b9cbd9;
   background: var(--surface);
   text-decoration: none;
 }
@@ -396,7 +297,7 @@ nav a.active::after {
   font-size: 14px;
   font-weight: 650;
   text-decoration: underline;
-  text-decoration-color: var(--link-underline);
+  text-decoration-color: rgba(49, 91, 138, 0.28);
   text-underline-offset: 5px;
   transition: color 180ms ease, text-decoration-color 180ms ease;
 }
@@ -420,7 +321,7 @@ nav a.active::after {
   width: 100%;
   aspect-ratio: 4 / 5;
   border-radius: 10px;
-  box-shadow: var(--portrait-shadow);
+  box-shadow: 0 6px 18px rgba(30, 41, 59, 0.12);
   object-fit: cover;
   object-position: 50% 37%;
 }
@@ -480,7 +381,7 @@ nav a.active::after {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
-  box-shadow: var(--card-shadow);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
 }
 
 .record-card.honors-card {
@@ -666,7 +567,7 @@ nav a.active::after {
   top: calc(var(--header-height) + 28px);
   margin: 0;
   padding: 34px 24px 34px 0;
-  color: var(--year-text);
+  color: #8fa8be;
   font-size: clamp(38px, 5vw, 58px);
   font-weight: 720;
   line-height: 1;
@@ -703,7 +604,7 @@ nav a.active::after {
 .timeline-meta time {
   display: block;
   width: 100%;
-  color: var(--timeline-date);
+  color: #4d5d6d;
   font-family: var(--font-geist), ui-monospace, monospace;
   font-size: 14px;
   font-weight: 680;
@@ -714,10 +615,10 @@ nav a.active::after {
 .timeline-meta span {
   width: fit-content;
   padding: 4px 9px;
-  border: 1px solid var(--tag-border);
+  border: 1px solid #d8e3ed;
   border-radius: 999px;
   color: var(--accent);
-  background: var(--tag-bg);
+  background: #f3f7fa;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -1124,18 +1025,9 @@ nav a.active::after {
     gap: 8px;
   }
 
-  .header-controls {
-    gap: 4px;
-  }
-
   .language-toggle {
     padding-inline: 5px;
     font-size: 9.5px;
-  }
-
-  .theme-toggle {
-    width: 24px;
-    height: 24px;
   }
 
   .hero-copy h1 {
