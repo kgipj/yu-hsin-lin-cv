@@ -100,7 +100,7 @@ const translations: Record<string, string> = {
   '暑期專案課程工讀學伴': 'Summer Program Work-Study Peer Mentor',
   '國立臺灣師範大學國語教學中心':
     'Mandarin Training Center, National Taiwan Normal University',
-  '台北・華語教育': 'Taipei · Mandarin Education',
+  '台北・國際交流': 'Taipei · International Exchange',
   '帶領美國大學生進行校外教學活動':
     'Led off-campus educational activities for university students from the United States.',
   '領導': 'Leadership',
@@ -296,7 +296,7 @@ const timeline: TimelineGroup[] = [
         category: '工作',
         title: '暑期專案課程工讀學伴',
         organization: '國立臺灣師範大學國語教學中心',
-        location: '台北・華語教育',
+        location: '台北・國際交流',
         bullets: ['帶領美國大學生進行校外教學活動'],
       },
       {
