@@ -17,6 +17,14 @@ const sans = Noto_Sans_TC({
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://yu-hsin-lin-cv.kgipj.chatgpt.site';
 
+const themeInitScript = `
+  try {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  } catch {}
+`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: '林雨欣 Yu-Hsin Lin',
@@ -29,7 +37,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="zh-Hant">
+    <html lang="zh-Hant" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className={`${geist.variable} ${sans.variable}`}>{children}</body>
     </html>
   );

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { Moon, Sun } from 'lucide-react';
 import type { Language } from './home-page';
 
 const navigation = [
@@ -57,6 +58,17 @@ export default function SiteHeader({
     };
   }, []);
 
+  const toggleTheme = () => {
+    const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = nextTheme;
+
+    try {
+      window.localStorage.setItem('theme', nextTheme);
+    } catch {
+      // Keep the toggle functional when storage is unavailable.
+    }
+  };
+
   return (
     <header className={`site-header${isScrolled ? ' scrolled' : ''}`}>
       <div className="header-inner">
@@ -78,14 +90,26 @@ export default function SiteHeader({
               </a>
             ))}
           </nav>
-          <div className="language-toggle">
+          <div className="header-controls">
+            <div className="language-toggle">
+              <button
+                className="language-option"
+                type="button"
+                onClick={() => onLanguageChange(language === 'zh' ? 'en' : 'zh')}
+                aria-label={language === 'zh' ? 'Switch to English' : '切換至中文'}
+              >
+                {language === 'zh' ? 'EN' : '中'}
+              </button>
+            </div>
             <button
-              className="language-option"
+              className="theme-toggle"
               type="button"
-              onClick={() => onLanguageChange(language === 'zh' ? 'en' : 'zh')}
-              aria-label={language === 'zh' ? 'Switch to English' : '切換至中文'}
+              onClick={toggleTheme}
+              aria-label={language === 'zh' ? '切換深色或淺色模式' : 'Toggle light or dark mode'}
+              title={language === 'zh' ? '切換明暗模式' : 'Toggle theme'}
             >
-              {language === 'zh' ? 'EN' : '中'}
+              <Moon className="theme-icon theme-icon-moon" aria-hidden="true" size={14} strokeWidth={1.9} />
+              <Sun className="theme-icon theme-icon-sun" aria-hidden="true" size={14} strokeWidth={1.9} />
             </button>
           </div>
         </div>
