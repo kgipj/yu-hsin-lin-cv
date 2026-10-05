@@ -78,7 +78,7 @@ time {
 
 .brand {
   display: inline-flex;
-  gap: 8px;
+  gap: 6px;
   white-space: nowrap;
   color: var(--text-primary);
   font-size: 15px;
