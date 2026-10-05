@@ -32,7 +32,6 @@ const translations: Record<string, string> = {
   '學歷與代表性榮耀': 'Education and Selected Honors',
   '代表性榮耀': 'Selected Honors',
   '跨年度最具代表性的成果': 'A selection of achievements across different years',
-  '學歷與交換經驗': 'Education & Exchange',
   '經歷年表（2024 至今）': 'Experience Timeline (2024–Present)',
   '由近至遠整理研究、交換、工作、實習、公共參與、獎項與青年培力':
     'Research, exchanges, employment, internships, public engagement, honors, and youth development, listed in reverse chronological order',
@@ -525,7 +524,13 @@ export default function Home() {
           </section>
 
           <section className="record-card education-card" id="education" aria-labelledby="education-title">
-            <h2 id="education-title">EDUCATION <span aria-hidden="true">・</span> {t('學歷與交換經驗')}</h2>
+            <h2 id="education-title">
+              {language === 'en' ? (
+                'EDUCATION & EXCHANGE'
+              ) : (
+                <>EDUCATION <span aria-hidden="true">・</span> 學歷與交換經驗</>
+              )}
+            </h2>
             <div className="academic-list">
               {education.map((entry) => (
                 <article className="education-item" key={`${entry.date}-${entry.institution}`}>

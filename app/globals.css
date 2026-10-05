@@ -622,6 +622,7 @@ nav a.active::after {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 .timeline-content h4 {
