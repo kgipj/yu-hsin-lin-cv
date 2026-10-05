@@ -258,7 +258,7 @@ nav a.active::after {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .hero-links .hero-icon-link {
