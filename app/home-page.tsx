@@ -113,8 +113,6 @@ const translations: Record<string, string> = {
   '公共參與': 'Public Engagement',
   '新北文化大使': 'New Taipei Culture Ambassador',
   '新北・地方創生／文化推廣': 'New Taipei · Regional Revitalization / Cultural Promotion',
-  '參與新北市文化推廣與地方創生專案，以青年視角轉譯在地歷史與文化':
-    'Contributed to cultural promotion and regional revitalization projects in New Taipei City, interpreting local history and culture from a youth perspective.',
   '台北市關渡宮獎助學金': 'Taipei Guandu Temple Scholarship',
   '2025 年藍花楹創作獎・小說組首獎': '2025 Jacaranda Creative Writing Award · First Prize in Fiction',
   '民主小火青年培力營': 'Democracy Spark Youth Development Camp',
@@ -292,9 +290,6 @@ const timeline: TimelineGroup[] = [
         category: '公共參與',
         title: '新北文化大使',
         location: '新北・地方創生／文化推廣',
-        bullets: [
-          '參與新北市文化推廣與地方創生專案，以青年視角轉譯在地歷史與文化',
-        ],
       },
       {
         date: 'May',
