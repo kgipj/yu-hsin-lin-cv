@@ -61,8 +61,8 @@ const translations: Record<string, string> = {
   '小說組首獎': 'First Prize · Fiction',
   '校園領導': 'Campus Leadership',
   '國立陽明交通大學 NYCU LIFE 數碼寶貝社':
-    'NYCU LIFE Digimon Club, National Yang Ming Chiao Tung University',
-  'NYCU LIFE 數碼寶貝社 社長': 'President, NYCU LIFE Digimon Club',
+    'NYCU LIFE, National Yang Ming Chiao Tung University',
+  'NYCU LIFE 數碼寶貝社 社長': 'President, NYCU LIFE',
   '社長': 'President',
   '獎助學金': 'Scholarship',
   '張俊彥校長紀念獎助學金': 'President Chang Chun-Yen Memorial Scholarship',
@@ -104,7 +104,7 @@ const translations: Record<string, string> = {
     'Led off-campus educational activities for university students from the United States.',
   '領導': 'Leadership',
   '國立陽明交通大學 NYCU LIFE 數碼寶貝社 社長':
-    'President, NYCU LIFE Digimon Club, National Yang Ming Chiao Tung University',
+    'President, NYCU LIFE, National Yang Ming Chiao Tung University',
   '新竹・數位開發': 'Hsinchu · Digital Development',
   '推動「NYCU LIFE 校園資訊整合平台」專案，致力於改善陽明交大學生所面臨的資訊落差':
     'Led the NYCU LIFE campus information platform initiative to reduce information gaps among NYCU students.',
