@@ -89,8 +89,6 @@ const translations: Record<string, string> = {
   '實習': 'Internship',
   '台灣冤獄平反協會 實習生': 'Intern, Taiwan Innocence Project',
   '台北・刑事司法／人權倡議': 'Taipei · Criminal Justice / Human Rights Advocacy',
-  '製作冤案救援與刑事司法議題社群文案，協助轉譯案件背景與倡議重點':
-    'Produced social media copy on wrongful-conviction relief and criminal justice, translating case backgrounds and advocacy priorities for public audiences.',
   '獎學金': 'Scholarship',
   '新北市獎學金': 'New Taipei City Scholarship',
   '新北市政府': 'New Taipei City Government',
@@ -256,9 +254,6 @@ const timeline: TimelineGroup[] = [
         category: '實習',
         title: '台灣冤獄平反協會 實習生',
         location: '台北・刑事司法／人權倡議',
-        bullets: [
-          '製作冤案救援與刑事司法議題社群文案，協助轉譯案件背景與倡議重點',
-        ],
       },
       {
         date: 'Jul.',
