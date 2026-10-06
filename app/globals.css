@@ -775,14 +775,10 @@ nav a.active::after {
 
 .footer-motto {
   justify-self: center;
-  padding: 8px 14px;
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  color: var(--text-primary) !important;
-  background: var(--surface);
-  font-size: 13px !important;
+  color: var(--text-secondary) !important;
+  font-size: 12px !important;
   font-style: italic;
-  font-weight: 560;
+  font-weight: 400;
   letter-spacing: 0.035em;
   text-align: center;
 }
