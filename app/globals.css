@@ -775,7 +775,7 @@ nav a.active::after {
 
 .footer-motto {
   justify-self: center;
-  color: var(--text-secondary) !important;
+  color: var(--accent) !important;
   font-size: 12px !important;
   font-style: italic;
   font-weight: 400;
