@@ -995,6 +995,10 @@ nav a.active::after {
     padding: 66px 0 72px;
   }
 
+  .contact-section {
+    padding-bottom: 68px;
+  }
+
   .record-card {
     padding: 24px 22px 10px;
     border-radius: 10px;
