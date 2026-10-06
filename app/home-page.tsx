@@ -38,6 +38,7 @@ const translations: Record<string, string> = {
   '歡迎聯繫': 'Get in Touch',
   '歡迎就研究、專案、公共參與或其他合作機會與我聯繫。':
     'Feel free to contact me about research, projects, public engagement, or other opportunities to collaborate.',
+  '求知若飢，虛心若愚。': 'Stay hungry, stay foolish.',
   '回到頁首 ↑': 'Back to top ↑',
   '國立陽明交通大學': 'National Yang Ming Chiao Tung University',
   '百川學士學位學程 核心法律\n輔系人文社會學系':
@@ -621,6 +622,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="shell footer-inner">
           <p>© 2026 Yu-Hsin Lin</p>
+          <p className="footer-motto">{t('求知若飢，虛心若愚。')}</p>
           <a href="#top">{t('回到頁首 ↑')}</a>
         </div>
       </footer>
