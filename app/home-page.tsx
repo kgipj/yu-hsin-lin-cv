@@ -489,7 +489,7 @@ export default function Home() {
         });
       },
       {
-        threshold: 0.12,
+        threshold: 0.01,
         rootMargin: '0px 0px -8% 0px',
       },
     );
