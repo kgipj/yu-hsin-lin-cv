@@ -454,20 +454,20 @@ nav a.active::after {
 
 .record-card.honors-card {
   padding: 24px 18px 12px;
-  background: transparent;
+  background-color: transparent;
   border: 0;
   border-radius: 18px;
   box-shadow: none;
   transition:
-    transform 240ms ease,
+    background-color 240ms ease,
     box-shadow 240ms ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .record-card.honors-card:hover,
   .record-card.honors-card:focus-within {
-    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.055);
-    transform: translateY(-4px);
+    background-color: rgba(23, 111, 175, 0.025);
+    box-shadow: inset 3px 0 0 rgba(23, 111, 175, 0.42);
   }
 }
 
