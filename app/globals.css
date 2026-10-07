@@ -127,7 +127,16 @@ nav a {
   color: var(--text-secondary);
   font-size: 13px;
   font-weight: 520;
-  transition: color 180ms ease;
+  transform-origin: center;
+  transition:
+    color 180ms ease,
+    transform 200ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  nav a:hover {
+    transform: scale(1.15);
+  }
 }
 
 nav a::after {
