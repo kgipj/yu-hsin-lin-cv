@@ -1151,7 +1151,7 @@ nav a.active::after {
   }
 
   nav {
-    gap: 17px;
+    gap: 26px;
   }
 
   nav a {
@@ -1287,7 +1287,7 @@ nav a.active::after {
   }
 
   nav {
-    gap: 10px;
+    gap: 16px;
   }
 
   nav a {
