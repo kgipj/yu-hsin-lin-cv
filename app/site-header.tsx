@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import type { Language } from './home-page';
+import type { Language } from './language-preference';
 import { withSiteVersion } from './site-version';
 
 const resumeSections = ['honors', 'education', 'experience'];

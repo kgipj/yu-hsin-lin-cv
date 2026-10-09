@@ -1,11 +1,10 @@
 'use client';
 
-import { useEffect, useState, type CSSProperties } from 'react';
+import { useEffect, type CSSProperties } from 'react';
 import { Mail } from 'lucide-react';
 import SiteHeader from './site-header';
 import Image from 'next/image';
-
-export type Language = 'zh' | 'en';
+import { usePersistentLanguage, type Language } from './language-preference';
 
 type TimelineItem = {
   date: string;
@@ -455,11 +454,7 @@ function SectionHeading({
 }
 
 export default function Home() {
-  const [language, setLanguage] = useState<Language>('zh');
-
-  useEffect(() => {
-    document.documentElement.lang = language === 'en' ? 'en' : 'zh-Hant';
-  }, [language]);
+  const [language, setLanguage] = usePersistentLanguage();
 
   useEffect(() => {
     const targets = Array.from(

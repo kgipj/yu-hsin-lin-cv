@@ -1,4 +1,4 @@
-import type { Language } from '../home-page';
+import type { Language } from '../language-preference';
 import { basePath } from './blog-content';
 
 export default function BlogFooter({ language }: { language: Language }) {

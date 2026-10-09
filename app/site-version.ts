@@ -1,4 +1,4 @@
-export const siteVersion = '20261010-9';
+export const siteVersion = '20261010-10';
 
 export function withSiteVersion(path: string) {
   return `${path}?v=${siteVersion}`;

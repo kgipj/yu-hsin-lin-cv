@@ -1,18 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import type { Language } from '../home-page';
+import { usePersistentLanguage } from '../language-preference';
 import SiteHeader from '../site-header';
 import { withSiteVersion } from '../site-version';
 import BlogFooter from './blog-footer';
 import { basePath, blogPosts, localize } from './blog-content';
 
 export default function BlogPage() {
-  const [language, setLanguage] = useState<Language>('zh');
-
-  useEffect(() => {
-    document.documentElement.lang = language === 'en' ? 'en' : 'zh-Hant';
-  }, [language]);
+  const [language, setLanguage] = usePersistentLanguage();
 
   return (
     <main>

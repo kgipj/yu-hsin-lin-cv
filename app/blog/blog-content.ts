@@ -1,4 +1,4 @@
-import type { Language } from '../home-page';
+import type { Language } from '../language-preference';
 
 export type LocalizedText = {
   zh: string;
