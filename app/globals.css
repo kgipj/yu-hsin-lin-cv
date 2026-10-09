@@ -1406,7 +1406,7 @@ nav a.active::after {
   }
 
   nav {
-    gap: 7px;
+    gap: 14px;
   }
 
   nav a {
@@ -1414,7 +1414,7 @@ nav a.active::after {
   }
 
   .header-actions {
-    gap: 8px;
+    gap: 14px;
   }
 
   .language-toggle {
