@@ -1056,8 +1056,9 @@ nav a.active::after {
   line-height: 1.95;
 }
 
-.blog-footer {
-  border-top: 1px solid var(--border-soft);
+.blog-footer .footer-inner {
+  display: flex;
+  justify-content: space-between;
 }
 
 .contact-links small {
