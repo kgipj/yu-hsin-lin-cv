@@ -10,14 +10,18 @@ const navigation = [
   { id: 'contact', label: 'Contact' },
 ];
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export default function SiteHeader({
   language,
   onLanguageChange,
+  currentPage = 'home',
 }: {
   language: Language;
   onLanguageChange: (language: Language) => void;
+  currentPage?: 'home' | 'blog';
 }) {
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState(currentPage === 'blog' ? 'blog' : '');
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -25,6 +29,12 @@ export default function SiteHeader({
 
     const updateActiveSection = () => {
       setIsScrolled(window.scrollY > 4);
+
+      if (currentPage === 'blog') {
+        setActiveSection('blog');
+        frame = 0;
+        return;
+      }
 
       const marker = window.scrollY + 160;
       let current = '';
@@ -55,12 +65,19 @@ export default function SiteHeader({
       window.removeEventListener('resize', requestUpdate);
       if (frame) window.cancelAnimationFrame(frame);
     };
-  }, []);
+  }, [currentPage]);
+
+  const homeHref = `${basePath}/`;
+  const blogHref = `${basePath}/blog.html`;
 
   return (
     <header className={`site-header${isScrolled ? ' scrolled' : ''}`}>
       <div className="header-inner">
-        <a className="brand" href="#top" onClick={() => setActiveSection('')}>
+        <a
+          className="brand"
+          href={currentPage === 'home' ? '#top' : `${homeHref}#top`}
+          onClick={() => setActiveSection('')}
+        >
           <span>林雨欣</span>
           <span>Yu-Hsin Lin</span>
         </a>
@@ -68,7 +85,7 @@ export default function SiteHeader({
           <nav aria-label={language === 'en' ? 'Primary navigation' : '主要導覽'}>
             {navigation.map((item) => (
               <a
-                href={`#${item.id}`}
+                href={currentPage === 'home' ? `#${item.id}` : `${homeHref}#${item.id}`}
                 key={item.id}
                 className={activeSection === item.id ? 'active' : undefined}
                 aria-current={activeSection === item.id ? 'location' : undefined}
@@ -77,6 +94,14 @@ export default function SiteHeader({
                 {item.label}
               </a>
             ))}
+            <a
+              href={blogHref}
+              className={activeSection === 'blog' ? 'active' : undefined}
+              aria-current={activeSection === 'blog' ? 'page' : undefined}
+              onClick={() => setActiveSection('blog')}
+            >
+              Blog
+            </a>
           </nav>
           <div className="language-toggle">
             <button
