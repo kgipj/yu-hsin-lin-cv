@@ -3,12 +3,8 @@
 import { useEffect, useState } from 'react';
 import type { Language } from './home-page';
 
-const navigation = [
-  { id: 'honors', label: 'Honors' },
-  { id: 'education', label: 'Education' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'contact', label: 'Contact' },
-];
+const resumeSections = ['honors', 'education', 'experience'];
+const trackedSections = [...resumeSections, 'contact'];
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
@@ -39,9 +35,11 @@ export default function SiteHeader({
       const marker = window.scrollY + 160;
       let current = '';
 
-      navigation.forEach(({ id }) => {
+      trackedSections.forEach((id) => {
         const section = document.getElementById(id);
-        if (section && section.offsetTop <= marker) current = id;
+        if (section && section.offsetTop <= marker) {
+          current = resumeSections.includes(id) ? 'resume' : id;
+        }
       });
 
       if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
@@ -83,17 +81,14 @@ export default function SiteHeader({
         </a>
         <div className="header-actions">
           <nav aria-label={language === 'en' ? 'Primary navigation' : '主要導覽'}>
-            {navigation.map((item) => (
-              <a
-                href={currentPage === 'home' ? `#${item.id}` : `${homeHref}#${item.id}`}
-                key={item.id}
-                className={activeSection === item.id ? 'active' : undefined}
-                aria-current={activeSection === item.id ? 'location' : undefined}
-                onClick={() => setActiveSection(item.id)}
-              >
-                {item.label}
-              </a>
-            ))}
+            <a
+              href={currentPage === 'home' ? '#honors' : `${homeHref}#honors`}
+              className={activeSection === 'resume' ? 'active' : undefined}
+              aria-current={activeSection === 'resume' ? 'location' : undefined}
+              onClick={() => setActiveSection('resume')}
+            >
+              Resume
+            </a>
             <a
               href={blogHref}
               className={activeSection === 'blog' ? 'active' : undefined}
@@ -101,6 +96,14 @@ export default function SiteHeader({
               onClick={() => setActiveSection('blog')}
             >
               Blog
+            </a>
+            <a
+              href={currentPage === 'home' ? '#contact' : `${homeHref}#contact`}
+              className={activeSection === 'contact' ? 'active' : undefined}
+              aria-current={activeSection === 'contact' ? 'location' : undefined}
+              onClick={() => setActiveSection('contact')}
+            >
+              Contact
             </a>
           </nav>
           <div className="language-toggle">
