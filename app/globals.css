@@ -127,16 +127,7 @@ nav a {
   color: var(--text-secondary);
   font-size: 13px;
   font-weight: 520;
-  transform-origin: center bottom;
-  transition:
-    color 180ms ease,
-    transform 200ms ease-out;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  nav a:hover {
-    transform: scale(1.15);
-  }
+  transition: color 180ms ease;
 }
 
 nav a::after {
@@ -163,12 +154,6 @@ nav a.active {
 nav a.active::after {
   opacity: 1;
   transform: scaleX(1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  nav a.active:hover::after {
-    transform: scale(0.869565);
-  }
 }
 
 .language-toggle {
