@@ -242,42 +242,6 @@ nav a.active::after {
 }
 
 .hero-label,
-.hero-copy h1,
-.english-name,
-.identity,
-.hero-summary,
-.hero-location,
-.hero-links,
-.portrait-wrap {
-  animation: hero-reveal 640ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
-}
-
-.hero-label {
-  animation-delay: 40ms;
-}
-.hero-copy h1 {
-  animation-delay: 100ms;
-}
-.english-name {
-  animation-delay: 160ms;
-}
-.identity {
-  animation-delay: 220ms;
-}
-.hero-summary {
-  animation-delay: 280ms;
-}
-.hero-location {
-  animation-delay: 340ms;
-}
-.hero-links {
-  animation-delay: 400ms;
-}
-.portrait-wrap {
-  animation-delay: 460ms;
-}
-
-.hero-label,
 .section-kicker p {
   margin: 0;
   color: var(--accent);
@@ -899,17 +863,6 @@ nav a.active::after {
 
 .reveal-enabled .year-group.is-visible .timeline-item {
   animation-delay: var(--reveal-delay);
-}
-
-@keyframes hero-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 @keyframes reveal-item {
