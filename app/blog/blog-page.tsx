@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import type { Language } from '../home-page';
 import SiteHeader from '../site-header';
+import { withSiteVersion } from '../site-version';
 import BlogFooter from './blog-footer';
 import { basePath, blogPosts, localize } from './blog-content';
 
@@ -40,7 +41,7 @@ export default function BlogPage() {
               <li key={post.slug}>
                 <a
                   className="blog-post-link"
-                  href={`${basePath}/blog/${post.slug}.html`}
+                  href={withSiteVersion(`${basePath}/blog/${post.slug}.html`)}
                 >
                   <span className="blog-post-copy">
                     <span className="blog-post-category">

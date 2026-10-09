@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import type { Language } from '../../home-page';
 import SiteHeader from '../../site-header';
+import { withSiteVersion } from '../../site-version';
 import BlogFooter from '../blog-footer';
 import { basePath, blogPosts, localize } from '../blog-content';
 
@@ -25,7 +26,7 @@ export default function ArticlePage() {
 
       <article className="blog-article">
         <div className="shell blog-article-shell">
-          <a className="blog-back-link" href={`${basePath}/blog.html`}>
+          <a className="blog-back-link" href={withSiteVersion(`${basePath}/blog.html`)}>
             <span aria-hidden="true">←</span>
             {language === 'zh' ? '返回文章列表' : 'Back to all posts'}
           </a>

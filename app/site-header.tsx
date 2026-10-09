@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import type { Language } from './home-page';
+import { withSiteVersion } from './site-version';
 
 const resumeSections = ['honors', 'education', 'experience'];
 const trackedSections = [...resumeSections, 'contact'];
@@ -66,7 +67,7 @@ export default function SiteHeader({
   }, [currentPage]);
 
   const homeHref = `${basePath}/`;
-  const blogHref = `${basePath}/blog.html`;
+  const blogHref = withSiteVersion(`${basePath}/blog.html`);
 
   return (
     <header className={`site-header${isScrolled ? ' scrolled' : ''}`}>
