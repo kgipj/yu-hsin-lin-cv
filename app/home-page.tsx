@@ -51,6 +51,7 @@ const translations: Record<string, string> = {
   法治教育: 'Legal Education',
   '司法院 114 年度大專校院法治教育創新行動方案競賽':
     '2025 Judicial Yuan Legal Education and Innovation Project Competition for University Students',
+  司法院: 'Judicial Yuan',
   全國銀獎: 'National Silver Award',
   青年影響力: 'Youth Impact',
   '2026 Impact Star 青年影響力啟動賽':
@@ -330,6 +331,7 @@ const timeline: TimelineGroup[] = [
         date: 'May',
         category: '競賽',
         title: '2026 Impact Star 青年影響力啟動賽・入圍複賽・大專組全國前十名',
+        organization: '新北市政府青年局',
         bullets: [
           '出題組織：Teach for Taiwan 為台灣而教',
           '作品名稱：起跑線上的共鳴',
@@ -376,6 +378,7 @@ const timeline: TimelineGroup[] = [
         date: 'Dec.',
         category: '競賽',
         title: '司法院 114 年度大專校院法治教育創新行動方案競賽・全國銀獎',
+        organization: '司法院',
         bullets: [
           '作品名稱：「網」顧兒少－我國數位性剝削下的無法可依',
           '指導老師：劉邦揚教授',
