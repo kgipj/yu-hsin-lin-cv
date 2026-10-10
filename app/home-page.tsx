@@ -69,7 +69,7 @@ const translations: Record<string, string> = {
   校園領導: 'Campus Leadership',
   '國立陽明交通大學 NYCU LIFE 數碼寶貝社':
     'NYCU LIFE, National Yang Ming Chiao Tung University',
-  'NYCU LIFE 數碼寶貝社 社長': 'President, NYCU LIFE',
+  'NYCU LIFE 數碼寶貝社・社長': 'President, NYCU LIFE',
   社長: 'President',
   獎助學金: 'Scholarship',
   張俊彥校長紀念獎助學金: 'President Chang Chun-Yen Memorial Scholarship',
@@ -83,7 +83,7 @@ const translations: Record<string, string> = {
   '通過校內交換甄選，預計於 2027 年春季前往匈牙利布達佩斯進行交換學習':
     'Selected through NYCU’s internal exchange program; scheduled to study in Budapest, Hungary, in spring 2027',
   研究: 'Research',
-  '國立陽明交通大學人文社會學系 研究獎助生':
+  '國立陽明交通大學人文社會學系・研究獎助生':
     'Research Assistant, Department of Humanities and Social Sciences, National Yang Ming Chiao Tung University',
   '新竹・人類學': 'Hsinchu · Anthropology',
   '研究計畫：「從櫻花蝦到下雜魚：臺灣近海拖網漁業的價值階序與公共性建構」':
@@ -94,7 +94,7 @@ const translations: Record<string, string> = {
   新北市政府青年局: 'New Taipei City Government Youth Department',
   競賽: 'Competition',
   實習: 'Internship',
-  '台灣冤獄平反協會 實習生': 'Intern, Taiwan Innocence Project',
+  '台灣冤獄平反協會・實習生': 'Intern, Taiwan Innocence Project',
   '台北・刑事司法／人權倡議':
     'Taipei · Criminal Justice / Human Rights Advocacy',
   獎學金: 'Scholarship',
@@ -118,7 +118,7 @@ const translations: Record<string, string> = {
   '新竹・數位開發': 'Hsinchu · Digital Development',
   '推動「NYCU LIFE 校園資訊整合平台」專案，致力於改善陽明交大學生所面臨的資訊落差':
     'Led the NYCU LIFE campus information platform initiative to reduce information gaps among NYCU students.',
-  '韓國漢陽大學 線上交換': 'Online Exchange, Hanyang University',
+  '韓國漢陽大學・線上交換': 'Online Exchange, Hanyang University',
   '한양대학교（Hanyang University）': 'Hanyang University',
   'Hanyang Online Pre-Exchange Program': 'Hanyang Online Pre-Exchange Program',
   'Eötvös Loránd University・Budapest, Hungary':
@@ -145,11 +145,11 @@ const translations: Record<string, string> = {
   新竹縣政府教育局: 'Education Bureau, Hsinchu County Government',
   秋季獎助學金: 'Autumn Scholarship',
   正德社會福利慈善基金會: 'Chengte Social Welfare and Charity Foundation',
-  '台灣積體電路製造股份有限公司 校園服務代表':
+  '台灣積體電路製造股份有限公司・校園服務代表':
     'Campus Service Representative, Taiwan Semiconductor Manufacturing Company (TSMC)',
   '新竹・半導體製造': 'Hsinchu · Semiconductor Manufacturing',
   志工: 'Volunteer Service',
-  '惠瑜慈善協會 教學志工': 'Teaching Volunteer, Michelle Chiou Foundation',
+  '惠瑜慈善協會・教學志工': 'Teaching Volunteer, Michelle Chiou Foundation',
   '線上・教育陪伴／公益服務':
     'Online · Educational Support / Community Service',
   '以線上一對一的形式，為偏鄉弱勢學童提供課後輔導及長期陪伴':
@@ -168,7 +168,7 @@ const translations: Record<string, string> = {
     'EP Books 10th Anniversary Summer Reading Festival Submission Contest · Reading Quote Award',
   財團法人戴水教育基金會: 'DS Foundation',
   國立暨南國際大學: 'National Chi Nan University',
-  '第 15 屆 336 愛奇兒家庭日 攝影志工':
+  '第 15 屆 336 愛奇兒家庭日・攝影志工':
     'Photography Volunteer, 15th 336 Angel Family Day',
   財團法人天使心家族社會福利基金會:
     'Angel Heart Family Social Welfare Foundation',
@@ -215,7 +215,7 @@ const selectedHonors = [
   {
     category: '校園領導',
     date: 'Jun. 2026 — Present',
-    title: 'NYCU LIFE 數碼寶貝社 社長',
+    title: 'NYCU LIFE 數碼寶貝社・社長',
     distinction: '國立陽明交通大學',
   },
   {
@@ -264,7 +264,7 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Aug. — Present',
         category: '研究',
-        title: '國立陽明交通大學人文社會學系 研究獎助生',
+        title: '國立陽明交通大學人文社會學系・研究獎助生',
         location: '新竹・人類學',
         bullets: [
           '研究計畫：「從櫻花蝦到下雜魚：臺灣近海拖網漁業的價值階序與公共性建構」',
@@ -280,7 +280,7 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Jul. — Sep.',
         category: '實習',
-        title: '台灣冤獄平反協會 實習生',
+        title: '台灣冤獄平反協會・實習生',
         location: '台北・刑事司法／人權倡議',
       },
       {
@@ -304,7 +304,7 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Jun. — Present',
         category: '領導',
-        title: 'NYCU LIFE 數碼寶貝社 社長',
+        title: 'NYCU LIFE 數碼寶貝社・社長',
         organization: '國立陽明交通大學',
         location: '新竹・數位開發',
         bullets: [
@@ -357,7 +357,7 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Feb. — Aug.',
         category: '交換',
-        title: '韓國漢陽大學 線上交換',
+        title: '韓國漢陽大學・線上交換',
         organization: '한양대학교（Hanyang University）',
         description: 'Hanyang Online Pre-Exchange Program',
       },
@@ -396,13 +396,13 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Oct. — Present',
         category: '工作',
-        title: '台灣積體電路製造股份有限公司 校園服務代表',
+        title: '台灣積體電路製造股份有限公司・校園服務代表',
         location: '新竹・半導體製造',
       },
       {
         date: 'Jun. — Dec.',
         category: '志工',
-        title: '惠瑜慈善協會 教學志工',
+        title: '惠瑜慈善協會・教學志工',
         location: '線上・教育陪伴／公益服務',
         bullets: ['以線上一對一的形式，為偏鄉弱勢學童提供課後輔導及長期陪伴'],
       },
@@ -432,7 +432,7 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Mar.',
         category: '志工',
-        title: '第 15 屆 336 愛奇兒家庭日 攝影志工',
+        title: '第 15 屆 336 愛奇兒家庭日・攝影志工',
         organization: '財團法人天使心家族社會福利基金會',
       },
     ],
