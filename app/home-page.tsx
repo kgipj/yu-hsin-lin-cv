@@ -127,6 +127,7 @@ const translations: Record<string, string> = {
   '新北・地方創生／文化推廣':
     'New Taipei · Regional Revitalization / Cultural Promotion',
   台北市關渡宮獎助學金: 'Taipei Guandu Temple Scholarship',
+  財團法人台北市關渡宮: 'Guandu Temple Foundation, Taipei City',
   '2025 年藍花楹創作獎・小說組首獎':
     '2025 Jacaranda Creative Writing Award · First Prize in Fiction',
   民主小火青年培力營: 'Democracy Spark Youth Development Camp',
@@ -338,6 +339,7 @@ const timeline: TimelineGroup[] = [
         date: 'Apr.',
         category: '獎學金',
         title: '台北市關渡宮獎助學金',
+        organization: '財團法人台北市關渡宮',
       },
       {
         date: 'Mar.',
