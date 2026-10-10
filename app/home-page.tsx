@@ -377,7 +377,6 @@ const timeline: TimelineGroup[] = [
         date: 'Dec.',
         category: '競賽',
         title: '司法院 114 年度大專校院法治教育創新行動方案競賽・全國銀獎',
-        organization: '司法院',
         bullets: [
           '作品名稱：「網」顧兒少－我國數位性剝削下的無法可依',
           '指導老師：劉邦揚教授',
