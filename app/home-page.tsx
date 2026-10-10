@@ -161,8 +161,8 @@ const translations: Record<string, string> = {
   實踐大學: 'Shih Chien University',
   '第二十三屆水煙紗漣文學獎・圖文組參獎':
     '23rd Shui Sha Lian Literary Award · Third Prize in Illustrated Works',
-  '益品書屋 10 週年夏日閱讀祭徵件活動・獲獎':
-    'EP Books 10th Anniversary Summer Reading Festival Submission Contest · Award Recipient',
+  '益品書屋 10 週年夏日閱讀祭徵件活動・閱讀金句賞':
+    'EP Books 10th Anniversary Summer Reading Festival Submission Contest · Reading Quote Award',
   財團法人戴水教育基金會: 'DS Foundation',
   國立暨南國際大學: 'National Chi Nan University',
   '第 15 屆 336 愛奇兒家庭日 攝影志工':
@@ -255,7 +255,7 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Oct.',
         category: '徵文',
-        title: '益品書屋 10 週年夏日閱讀祭徵件活動・獲獎',
+        title: '益品書屋 10 週年夏日閱讀祭徵件活動・閱讀金句賞',
         organization: '財團法人戴水教育基金會',
       },
       {
