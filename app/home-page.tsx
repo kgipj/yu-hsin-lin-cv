@@ -70,6 +70,8 @@ const translations: Record<string, string> = {
   校園領導: 'Campus Leadership',
   '國立陽明交通大學 NYCU LIFE 數碼寶貝社':
     'NYCU LIFE, National Yang Ming Chiao Tung University',
+  '國立陽明交通大學 NYCU LIFE 數碼寶貝社・社長':
+    'President, NYCU LIFE, National Yang Ming Chiao Tung University',
   'NYCU LIFE 數碼寶貝社・社長': 'President, NYCU LIFE',
   社長: 'President',
   獎助學金: 'Scholarship',
@@ -216,8 +218,8 @@ const selectedHonors = [
   {
     category: '校園領導',
     date: 'Jun. 2026 — Present',
-    title: '國立陽明交通大學 NYCU LIFE 數碼寶貝社',
-    distinction: '社長',
+    title: '國立陽明交通大學 NYCU LIFE 數碼寶貝社・社長',
+    distinction: '',
   },
   {
     category: '獎助學金',
@@ -595,8 +597,12 @@ export default function Home() {
                   <h3>{t(honor.title)}</h3>
                   <p className="honor-details">
                     <time>{honor.date}</time>
-                    <span aria-hidden="true">・</span>
-                    <span>{t(honor.distinction)}</span>
+                    {honor.distinction && (
+                      <>
+                        <span aria-hidden="true">・</span>
+                        <span>{t(honor.distinction)}</span>
+                      </>
+                    )}
                   </p>
                 </li>
               ))}
