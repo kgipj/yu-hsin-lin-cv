@@ -216,8 +216,8 @@ const selectedHonors = [
   {
     category: '校園領導',
     date: 'Jun. 2026 — Present',
-    title: 'NYCU LIFE 數碼寶貝社・社長',
-    distinction: '國立陽明交通大學',
+    title: '國立陽明交通大學 NYCU LIFE 數碼寶貝社',
+    distinction: '社長',
   },
   {
     category: '獎助學金',
