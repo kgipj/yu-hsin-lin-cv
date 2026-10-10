@@ -57,6 +57,8 @@ const translations: Record<string, string> = {
     '2026 Youth Impact Star: Action Challenge',
   '入圍複賽・大專組全國前十名':
     'Semifinalist · National Top 10, University Division',
+  '2026 Impact Star 青年影響力啟動賽・入圍複賽・大專組全國前十名':
+    '2026 Youth Impact Star: Action Challenge · Semifinalist · National Top 10, University Division',
   '出題組織：Teach for Taiwan 為台灣而教':
     'Challenge Provider: Teach For Taiwan',
   '作品名稱：起跑線上的共鳴': 'Project: “Resonance at the Starting Line”',
@@ -327,8 +329,7 @@ const timeline: TimelineGroup[] = [
       {
         date: 'May',
         category: '競賽',
-        title: '2026 Impact Star 青年影響力啟動賽',
-        organization: '入圍複賽・大專組全國前十名',
+        title: '2026 Impact Star 青年影響力啟動賽・入圍複賽・大專組全國前十名',
         bullets: [
           '出題組織：Teach for Taiwan 為台灣而教',
           '作品名稱：起跑線上的共鳴',
