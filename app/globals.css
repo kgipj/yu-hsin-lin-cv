@@ -711,7 +711,6 @@ nav a.active::after {
 .ranking-badge {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
   margin-top: 9px;
   padding: 3px 9px;
   border: 1px solid rgba(23, 111, 175, 0.2);
@@ -722,16 +721,6 @@ nav a.active::after {
   font-weight: 680;
   line-height: 1.5;
   letter-spacing: 0.035em;
-  transition:
-    color 220ms ease,
-    border-color 220ms ease,
-    background-color 220ms ease;
-}
-
-.ranking-badge:hover {
-  border-color: rgba(23, 111, 175, 0.34);
-  color: var(--accent-dark);
-  background: rgba(23, 111, 175, 0.075);
 }
 
 .description {
