@@ -11,7 +11,6 @@ type TimelineItem = {
   category: string;
   title: string;
   organization?: string;
-  rankingLabel?: string;
   location?: string;
   description?: string;
   bullets?: string[];
@@ -47,8 +46,6 @@ const translations: Record<string, string> = {
     'Arete Honors Program · Legal Studies Core\nMinor in Humanities and Social Sciences',
   韓國漢陽大學: 'Hanyang University',
   社會學系: 'Department of Sociology',
-  匈牙利羅蘭大學: 'Eötvös Loránd University',
-  社會科學院交換學生: 'Exchange Student · Faculty of Social Sciences',
   法治教育: 'Legal Education',
   '司法院 114 年度大專校院法治教育創新行動方案競賽':
     '2025 Judicial Yuan Legal Education and Innovation Project Competition for University Students',
@@ -83,9 +80,6 @@ const translations: Record<string, string> = {
   第二十三屆水煙紗漣文學獎: '23rd Shui Sha Lian Literary Award',
   圖文組參獎: 'Third Prize · Illustrated Works',
   交換: 'Exchange',
-  赴匈牙利羅蘭大學交換: 'Exchange at Eötvös Loránd University',
-  '通過校內交換甄選，預計於 2027 年春季前往匈牙利布達佩斯進行交換學習':
-    'Selected through NYCU’s internal exchange program; scheduled to study in Budapest, Hungary, in spring 2027',
   研究: 'Research',
   '國立陽明交通大學人文社會學系・研究獎助生':
     'Research Assistant, Department of Humanities and Social Sciences, National Yang Ming Chiao Tung University',
@@ -125,8 +119,6 @@ const translations: Record<string, string> = {
   '韓國漢陽大學・線上交換': 'Online Exchange, Hanyang University',
   '한양대학교（Hanyang University）': 'Hanyang University',
   'Hanyang Online Pre-Exchange Program': 'Hanyang Online Pre-Exchange Program',
-  'Eötvös Loránd University・Budapest, Hungary':
-    'Eötvös Loránd University · Budapest, Hungary',
   公共參與: 'Public Engagement',
   新北文化大使: 'New Taipei Culture Ambassador',
   新北市文化局: 'Cultural Affairs Department, New Taipei City Government',
@@ -243,20 +235,6 @@ const selectedHonors = [
 ];
 
 const timeline: TimelineGroup[] = [
-  {
-    year: '2027',
-    items: [
-      {
-        date: 'Spring',
-        category: '交換',
-        title: '赴匈牙利羅蘭大學交換',
-        organization: 'Eötvös Loránd University・Budapest, Hungary',
-        rankingLabel: 'Ranking No. 1 in Hungary',
-        description:
-          '通過校內交換甄選，預計於 2027 年春季前往匈牙利布達佩斯進行交換學習',
-      },
-    ],
-  },
   {
     year: '2026',
     items: [
@@ -700,11 +678,6 @@ export default function Home() {
                         ) : null}
                         {item.organization ? (
                           <p className="organization">{t(item.organization)}</p>
-                        ) : null}
-                        {item.rankingLabel ? (
-                          <span className="ranking-badge">
-                            {t(item.rankingLabel)}
-                          </span>
                         ) : null}
                         {item.description ? (
                           <p className="description">{t(item.description)}</p>
