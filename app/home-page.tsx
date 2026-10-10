@@ -11,6 +11,8 @@ type TimelineItem = {
   category: string;
   title: string;
   organization?: string;
+  rankingLabel?: string;
+  rankingUrl?: string;
   location?: string;
   description?: string;
   bullets?: string[];
@@ -126,6 +128,7 @@ const translations: Record<string, string> = {
   'Hanyang Online Pre-Exchange Program': 'Hanyang Online Pre-Exchange Program',
   'Eötvös Loránd University・Budapest, Hungary':
     'Eötvös Loránd University · Budapest, Hungary',
+  'QS 2027・匈牙利第 1': 'QS 2027 · No. 1 in Hungary',
   公共參與: 'Public Engagement',
   新北文化大使: 'New Taipei Culture Ambassador',
   新北市文化局: 'Cultural Affairs Department, New Taipei City Government',
@@ -250,6 +253,9 @@ const timeline: TimelineGroup[] = [
         category: '交換',
         title: '赴匈牙利羅蘭大學交換',
         organization: 'Eötvös Loránd University・Budapest, Hungary',
+        rankingLabel: 'QS 2027・匈牙利第 1',
+        rankingUrl:
+          'https://www.elte.hu/en/qs-ranking-elte-regained-the-lead-in-hungary',
         description:
           '通過校內交換甄選，預計於 2027 年春季前往匈牙利布達佩斯進行交換學習',
       },
@@ -698,6 +704,17 @@ export default function Home() {
                         ) : null}
                         {item.organization ? (
                           <p className="organization">{t(item.organization)}</p>
+                        ) : null}
+                        {item.rankingLabel && item.rankingUrl ? (
+                          <a
+                            className="ranking-badge"
+                            href={item.rankingUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {t(item.rankingLabel)}
+                            <span aria-hidden="true">↗</span>
+                          </a>
                         ) : null}
                         {item.description ? (
                           <p className="description">{t(item.description)}</p>
