@@ -163,6 +163,7 @@ const translations: Record<string, string> = {
     '23rd Shui Sha Lian Literary Award · Third Prize in Illustrated Works',
   '益品書屋 10 週年夏日閱讀祭徵件活動・獲獎':
     'EP Books 10th Anniversary Summer Reading Festival Submission Contest · Award Recipient',
+  財團法人戴水教育基金會: 'DS Foundation',
   國立暨南國際大學: 'National Chi Nan University',
   '第 15 屆 336 愛奇兒家庭日 攝影志工':
     'Photography Volunteer, 15th 336 Angel Family Day',
@@ -255,6 +256,7 @@ const timeline: TimelineGroup[] = [
         date: 'Oct.',
         category: '徵文',
         title: '益品書屋 10 週年夏日閱讀祭徵件活動・獲獎',
+        organization: '財團法人戴水教育基金會',
       },
       {
         date: 'Aug. — Present',
