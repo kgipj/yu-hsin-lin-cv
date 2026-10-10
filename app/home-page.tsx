@@ -306,7 +306,6 @@ const timeline: TimelineGroup[] = [
         date: 'Jun. — Present',
         category: '領導',
         title: '國立陽明交通大學 NYCU LIFE 數碼寶貝社',
-        organization: '社長',
         location: '新竹・數位開發',
         bullets: [
           '推動「NYCU LIFE 校園資訊整合平台」專案，致力於改善陽明交大學生所面臨的資訊落差',
