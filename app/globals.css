@@ -1278,7 +1278,10 @@ nav a.active::after {
     --header-height: 60px;
   }
 
-  .shell,
+  .shell {
+    width: min(100% - 48px, 1100px);
+  }
+
   .header-inner {
     width: min(100% - 40px, 1100px);
   }
