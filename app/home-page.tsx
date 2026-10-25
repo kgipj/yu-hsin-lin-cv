@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, type CSSProperties } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Mail } from 'lucide-react';
 import SiteHeader from './site-header';
 import Image from 'next/image';
@@ -441,8 +441,135 @@ function SectionHeading({
   );
 }
 
+function EntryGate({
+  language,
+  leaving,
+  onEnter,
+}: {
+  language: Language;
+  leaving: boolean;
+  onEnter: () => void;
+}) {
+  const isEnglish = language === 'en';
+
+  return (
+    <section
+      className={`entry-gate${leaving ? ' is-leaving' : ''}`}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="entry-title"
+    >
+      <div className="entry-gate-inner">
+        <header className="entry-gate-heading">
+          <p className="entry-gate-kicker">YU-HSIN LIN · PROFILE 2026</p>
+          <h2 id="entry-title">
+            {isEnglish ? 'Open my profile folder' : '打開我的履歷資料夾'}
+          </h2>
+          <p>
+            {isEnglish
+              ? 'Law · Humanities and Social Sciences'
+              : '法律・人文與社會科學'}
+          </p>
+        </header>
+
+        <button
+          className="entry-folder"
+          type="button"
+          onClick={onEnter}
+          aria-label={isEnglish ? 'Open the full website' : '開啟完整網站'}
+          autoFocus
+        >
+          <span className="entry-sheet entry-sheet-contact" aria-hidden="true">
+            <span className="entry-sheet-tab">CONTACT</span>
+            <span className="entry-sheet-lines">
+              <i />
+              <i />
+              <i />
+            </span>
+          </span>
+          <span className="entry-sheet entry-sheet-experience" aria-hidden="true">
+            <span className="entry-sheet-tab">EXPERIENCE</span>
+            <span className="entry-sheet-lines">
+              <i />
+              <i />
+              <i />
+            </span>
+          </span>
+          <span className="entry-sheet entry-sheet-education" aria-hidden="true">
+            <span className="entry-sheet-tab">EDUCATION</span>
+            <span className="entry-sheet-lines">
+              <i />
+              <i />
+              <i />
+            </span>
+          </span>
+          <span className="entry-sheet entry-sheet-honors" aria-hidden="true">
+            <span className="entry-sheet-tab">HONORS</span>
+            <span className="entry-sheet-lines">
+              <i />
+              <i />
+              <i />
+            </span>
+          </span>
+          <span className="entry-folder-cover" aria-hidden="true">
+            <span className="entry-folder-label">YU-HSIN LIN</span>
+            <strong>CURRICULUM VITAE</strong>
+            <span className="entry-folder-action">
+              {isEnglish ? 'Enter site' : '開啟履歷'}
+              <span>↗</span>
+            </span>
+          </span>
+        </button>
+
+        <p className="entry-gate-hint">
+          {isEnglish ? 'Click the folder to continue' : '點擊資料夾進入網站'}
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const [language, setLanguage] = usePersistentLanguage();
+  const [introVisible, setIntroVisible] = useState(true);
+  const [introLeaving, setIntroLeaving] = useState(false);
+  const introTimer = useRef<number | null>(null);
+
+  const enterSite = () => {
+    if (introLeaving) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setIntroVisible(false);
+      return;
+    }
+    setIntroLeaving(true);
+    introTimer.current = window.setTimeout(() => {
+      setIntroVisible(false);
+      setIntroLeaving(false);
+    }, 680);
+  };
+
+  useEffect(() => {
+    if (!introVisible) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      if (introTimer.current !== null) window.clearTimeout(introTimer.current);
+    };
+  }, [introVisible]);
+
+  useEffect(() => {
+    if (!introVisible) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') enterSite();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [introVisible, introLeaving]);
 
   useEffect(() => {
     const targets = Array.from(
@@ -486,6 +613,13 @@ export default function Home() {
 
   return (
     <main>
+      {introVisible ? (
+        <EntryGate
+          language={language}
+          leaving={introLeaving}
+          onEnter={enterSite}
+        />
+      ) : null}
       <SiteHeader language={language} onLanguageChange={setLanguage} />
 
       <section className="hero-section" id="top" aria-labelledby="page-title">
