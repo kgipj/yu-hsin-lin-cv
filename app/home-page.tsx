@@ -1,6 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type PointerEvent as ReactPointerEvent,
+} from 'react';
 import { Mail } from 'lucide-react';
 import SiteHeader from './site-header';
 import Image from 'next/image';
@@ -448,9 +454,55 @@ function EntryGate({
 }: {
   language: Language;
   leaving: boolean;
-  onEnter: () => void;
+  onEnter: (target?: string) => void;
 }) {
   const isEnglish = language === 'en';
+  const [opened, setOpened] = useState(false);
+  const [rotation, setRotation] = useState({ x: -7, y: -8 });
+  const drag = useRef({ active: false, moved: false, x: 0, y: 0 });
+
+  const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    drag.current = {
+      active: true,
+      moved: false,
+      x: event.clientX,
+      y: event.clientY,
+    };
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
+
+  const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!drag.current.active) return;
+    const dx = event.clientX - drag.current.x;
+    const dy = event.clientY - drag.current.y;
+    if (Math.abs(dx) + Math.abs(dy) > 5) drag.current.moved = true;
+    setRotation((current) => ({
+      x: Math.max(-20, Math.min(16, current.x - dy * 0.18)),
+      y: Math.max(-28, Math.min(28, current.y + dx * 0.2)),
+    }));
+    drag.current.x = event.clientX;
+    drag.current.y = event.clientY;
+  };
+
+  const handlePointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
+    drag.current.active = false;
+    event.currentTarget.releasePointerCapture(event.pointerId);
+  };
+
+  const toggleFolder = () => {
+    if (drag.current.moved) {
+      drag.current.moved = false;
+      return;
+    }
+    setOpened((value) => !value);
+  };
+
+  const pages = [
+    { id: 'contact', label: 'CONTACT', className: 'contact' },
+    { id: 'experience', label: 'EXPERIENCE', className: 'experience' },
+    { id: 'education', label: 'EDUCATION', className: 'education' },
+    { id: 'honors', label: 'HONORS', className: 'honors' },
+  ];
 
   return (
     <section
@@ -472,57 +524,86 @@ function EntryGate({
           </p>
         </header>
 
-        <button
-          className="entry-folder"
-          type="button"
-          onClick={onEnter}
-          aria-label={isEnglish ? 'Open the full website' : '開啟完整網站'}
-          autoFocus
+        <div
+          className={`entry-folder-scene${opened ? ' is-open' : ''}`}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerUp}
+          style={
+            {
+              '--folder-rotate-x': `${rotation.x}deg`,
+              '--folder-rotate-y': `${rotation.y}deg`,
+            } as CSSProperties
+          }
         >
-          <span className="entry-sheet entry-sheet-contact" aria-hidden="true">
-            <span className="entry-sheet-tab">CONTACT</span>
-            <span className="entry-sheet-lines">
-              <i />
-              <i />
-              <i />
-            </span>
-          </span>
-          <span className="entry-sheet entry-sheet-experience" aria-hidden="true">
-            <span className="entry-sheet-tab">EXPERIENCE</span>
-            <span className="entry-sheet-lines">
-              <i />
-              <i />
-              <i />
-            </span>
-          </span>
-          <span className="entry-sheet entry-sheet-education" aria-hidden="true">
-            <span className="entry-sheet-tab">EDUCATION</span>
-            <span className="entry-sheet-lines">
-              <i />
-              <i />
-              <i />
-            </span>
-          </span>
-          <span className="entry-sheet entry-sheet-honors" aria-hidden="true">
-            <span className="entry-sheet-tab">HONORS</span>
-            <span className="entry-sheet-lines">
-              <i />
-              <i />
-              <i />
-            </span>
-          </span>
-          <span className="entry-folder-cover" aria-hidden="true">
-            <span className="entry-folder-label">YU-HSIN LIN</span>
-            <strong>CURRICULUM VITAE</strong>
-            <span className="entry-folder-action">
-              {isEnglish ? 'Enter site' : '開啟履歷'}
-              <span>↗</span>
-            </span>
-          </span>
-        </button>
+          <div className="entry-folder" onClick={toggleFolder} role="presentation">
+            <span className="entry-folder-back" aria-hidden="true" />
+            {pages.map((page, index) => (
+              <button
+                className={`entry-sheet entry-sheet-${page.className}`}
+                type="button"
+                key={page.id}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  if (!opened) {
+                    setOpened(true);
+                    return;
+                  }
+                  onEnter(page.id);
+                }}
+                aria-label={
+                  opened
+                    ? `${isEnglish ? 'Enter' : '前往'} ${page.label}`
+                    : isEnglish
+                      ? 'Open folder'
+                      : '打開資料夾'
+                }
+                style={{ '--page-index': index } as CSSProperties}
+              >
+                <span className="entry-sheet-tab">{page.label}</span>
+                <span className="entry-sheet-number">0{pages.length - index}</span>
+                <span className="entry-sheet-lines" aria-hidden="true">
+                  <i />
+                  <i />
+                  <i />
+                </span>
+              </button>
+            ))}
+            <button
+              className="entry-folder-cover"
+              type="button"
+              onClick={(event) => {
+                event.stopPropagation();
+                toggleFolder();
+              }}
+              aria-expanded={opened}
+              autoFocus
+            >
+              <span className="entry-folder-label">YU-HSIN LIN</span>
+              <strong>CURRICULUM VITAE</strong>
+              <span className="entry-folder-action">
+                {opened
+                  ? isEnglish
+                    ? 'Choose a section'
+                    : '選擇分類進入'
+                  : isEnglish
+                    ? 'Open folder'
+                    : '打開資料夾'}
+                <span>{opened ? '↑' : '↗'}</span>
+              </span>
+            </button>
+          </div>
+        </div>
 
         <p className="entry-gate-hint">
-          {isEnglish ? 'Click the folder to continue' : '點擊資料夾進入網站'}
+          {opened
+            ? isEnglish
+              ? 'Select a page · drag to rotate · Esc to enter'
+              : '點選頁面進入・拖曳旋轉・Esc 直接進入'
+            : isEnglish
+              ? 'Drag to rotate · click to open'
+              : '按住拖曳旋轉・點一下展開'}
         </p>
       </div>
     </section>
@@ -535,7 +616,7 @@ export default function Home() {
   const [introLeaving, setIntroLeaving] = useState(false);
   const introTimer = useRef<number | null>(null);
 
-  const enterSite = () => {
+  const enterSite = (target?: string) => {
     if (introLeaving) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setIntroVisible(false);
@@ -545,6 +626,11 @@ export default function Home() {
     introTimer.current = window.setTimeout(() => {
       setIntroVisible(false);
       setIntroLeaving(false);
+      if (target) {
+        window.setTimeout(() => {
+          document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' });
+        }, 40);
+      }
     }, 680);
   };
 
