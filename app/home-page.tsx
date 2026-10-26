@@ -575,7 +575,15 @@ function EntryGate({
               type="button"
               onClick={(event) => {
                 event.stopPropagation();
-                toggleFolder();
+                if (drag.current.moved) {
+                  drag.current.moved = false;
+                  return;
+                }
+                if (opened) {
+                  onEnter();
+                } else {
+                  setOpened(true);
+                }
               }}
               aria-expanded={opened}
               autoFocus
@@ -595,6 +603,11 @@ function EntryGate({
             </button>
           </div>
         </div>
+
+        <button className="entry-direct-button" type="button" onClick={() => onEnter()}>
+          {isEnglish ? 'Enter website' : '直接進入網站'}
+          <span aria-hidden="true">→</span>
+        </button>
 
         <p className="entry-gate-hint">
           {opened

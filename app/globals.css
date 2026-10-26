@@ -347,6 +347,43 @@ time {
   letter-spacing: 0.05em;
 }
 
+.entry-direct-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 172px;
+  margin: 14px auto 12px;
+  padding: 12px 20px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: #fff;
+  background: var(--accent);
+  box-shadow: 0 8px 22px rgba(23, 111, 175, 0.18);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 720;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.entry-direct-button:hover,
+.entry-direct-button:focus-visible {
+  background: var(--accent-dark);
+  box-shadow: 0 10px 26px rgba(23, 111, 175, 0.25);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.entry-direct-button span {
+  font-size: 18px;
+  line-height: 1;
+}
+
 @keyframes entry-gate-in {
   from {
     opacity: 0;
@@ -1850,6 +1887,13 @@ nav a.active::after {
   .entry-gate-hint {
     margin-top: -8px;
     font-size: 10px;
+  }
+
+  .entry-direct-button {
+    width: min(230px, 78%);
+    min-height: 46px;
+    margin-top: 6px;
+    font-size: 13px;
   }
 
   .shell {
