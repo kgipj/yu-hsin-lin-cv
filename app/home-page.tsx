@@ -478,7 +478,7 @@ function EntryGate({
     if (Math.abs(dx) + Math.abs(dy) > 5) drag.current.moved = true;
     setRotation((current) => ({
       x: Math.max(-20, Math.min(16, current.x - dy * 0.18)),
-      y: Math.max(-28, Math.min(28, current.y + dx * 0.2)),
+      y: Math.max(-90, Math.min(90, current.y + dx * 0.32)),
     }));
     drag.current.x = event.clientX;
     drag.current.y = event.clientY;
@@ -540,35 +540,30 @@ function EntryGate({
           <div className="entry-folder" onClick={toggleFolder} role="presentation">
             <span className="entry-folder-back" aria-hidden="true" />
             {pages.map((page, index) => (
-              <button
+              <div
                 className={`entry-sheet entry-sheet-${page.className}`}
-                type="button"
                 key={page.id}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  if (!opened) {
-                    setOpened(true);
-                    return;
-                  }
-                  onEnter(page.id);
-                }}
-                aria-label={
-                  opened
-                    ? `${isEnglish ? 'Enter' : '前往'} ${page.label}`
-                    : isEnglish
-                      ? 'Open folder'
-                      : '打開資料夾'
-                }
                 style={{ '--page-index': index } as CSSProperties}
               >
-                <span className="entry-sheet-tab">{page.label}</span>
+                <button
+                  className="entry-sheet-tab"
+                  type="button"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    onEnter(page.id);
+                  }}
+                  aria-label={`${isEnglish ? 'Enter' : '前往'} ${page.label}`}
+                  tabIndex={opened ? 0 : -1}
+                >
+                  {page.label}
+                </button>
                 <span className="entry-sheet-number">0{pages.length - index}</span>
                 <span className="entry-sheet-lines" aria-hidden="true">
                   <i />
                   <i />
                   <i />
                 </span>
-              </button>
+              </div>
             ))}
             <button
               className="entry-folder-cover"
@@ -579,11 +574,7 @@ function EntryGate({
                   drag.current.moved = false;
                   return;
                 }
-                if (opened) {
-                  onEnter();
-                } else {
-                  setOpened(true);
-                }
+                setOpened((value) => !value);
               }}
               aria-expanded={opened}
               autoFocus
@@ -603,11 +594,6 @@ function EntryGate({
             </button>
           </div>
         </div>
-
-        <button className="entry-direct-button" type="button" onClick={() => onEnter()}>
-          {isEnglish ? 'Enter website' : '直接進入網站'}
-          <span aria-hidden="true">→</span>
-        </button>
 
         <p className="entry-gate-hint">
           {opened

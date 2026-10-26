@@ -347,43 +347,6 @@ time {
   letter-spacing: 0.05em;
 }
 
-.entry-direct-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  min-width: 172px;
-  margin: 14px auto 12px;
-  padding: 12px 20px;
-  border: 1px solid var(--accent);
-  border-radius: 999px;
-  color: #fff;
-  background: var(--accent);
-  box-shadow: 0 8px 22px rgba(23, 111, 175, 0.18);
-  font: inherit;
-  font-size: 14px;
-  font-weight: 720;
-  letter-spacing: 0.03em;
-  cursor: pointer;
-  transition:
-    transform 180ms ease,
-    background-color 180ms ease,
-    box-shadow 180ms ease;
-}
-
-.entry-direct-button:hover,
-.entry-direct-button:focus-visible {
-  background: var(--accent-dark);
-  box-shadow: 0 10px 26px rgba(23, 111, 175, 0.25);
-  transform: translateY(-2px);
-  outline: none;
-}
-
-.entry-direct-button span {
-  font-size: 18px;
-  line-height: 1;
-}
-
 @keyframes entry-gate-in {
   from {
     opacity: 0;
@@ -449,13 +412,31 @@ time {
     transform 620ms cubic-bezier(0.2, 0.72, 0.2, 1),
     filter 240ms ease,
     box-shadow 240ms ease;
+  pointer-events: none;
 }
 
-.entry-folder-scene .entry-sheet:hover,
-.entry-folder-scene .entry-sheet:focus-visible {
+.entry-folder-scene .entry-sheet:has(.entry-sheet-tab:hover),
+.entry-folder-scene .entry-sheet:has(.entry-sheet-tab:focus-visible) {
   filter: saturate(1.06);
   box-shadow: 0 26px 48px rgba(30, 41, 59, 0.15);
   outline: none;
+}
+
+.entry-folder-scene .entry-sheet-tab {
+  appearance: none;
+  border: 0;
+  font: inherit;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.entry-folder-scene.is-open .entry-sheet-tab {
+  pointer-events: auto;
+}
+
+.entry-folder-scene .entry-sheet-tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .entry-folder-scene .entry-sheet-number {
@@ -477,10 +458,6 @@ time {
     transform 680ms cubic-bezier(0.2, 0.72, 0.2, 1),
     opacity 380ms ease,
     box-shadow 380ms ease;
-}
-
-.entry-folder-scene:not(.is-open) .entry-sheet {
-  pointer-events: none;
 }
 
 .entry-folder-scene.is-open .entry-folder-cover {
@@ -508,8 +485,8 @@ time {
     rotateX(-10deg) rotateZ(-2.5deg) scale(1);
 }
 
-.entry-folder-scene.is-open .entry-sheet:hover,
-.entry-folder-scene.is-open .entry-sheet:focus-visible {
+.entry-folder-scene.is-open .entry-sheet:has(.entry-sheet-tab:hover),
+.entry-folder-scene.is-open .entry-sheet:has(.entry-sheet-tab:focus-visible) {
   z-index: 9;
   transform: translateY(-205px) translateX(0) translateZ(95px)
     rotateX(-5deg) rotateZ(0) scale(0.96);
@@ -1889,13 +1866,6 @@ nav a.active::after {
     font-size: 10px;
   }
 
-  .entry-direct-button {
-    width: min(230px, 78%);
-    min-height: 46px;
-    margin-top: 6px;
-    font-size: 13px;
-  }
-
   .shell {
     width: min(100% - 48px, 1100px);
   }
@@ -2173,8 +2143,8 @@ nav a.active::after {
       rotateX(-9deg) rotateZ(-2deg) scale(0.98);
   }
 
-  .entry-folder-scene.is-open .entry-sheet:hover,
-  .entry-folder-scene.is-open .entry-sheet:focus-visible {
+  .entry-folder-scene.is-open .entry-sheet:has(.entry-sheet-tab:hover),
+  .entry-folder-scene.is-open .entry-sheet:has(.entry-sheet-tab:focus-visible) {
     transform: translateY(-132px) translateX(0) translateZ(68px)
       rotateX(-4deg) rotateZ(0) scale(0.93);
   }
