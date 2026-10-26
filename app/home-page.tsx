@@ -2,10 +2,8 @@
 
 import {
   useEffect,
-  useRef,
   useState,
   type CSSProperties,
-  type PointerEvent as ReactPointerEvent,
 } from 'react';
 import { Mail } from 'lucide-react';
 import SiteHeader from './site-header';
@@ -447,214 +445,8 @@ function SectionHeading({
   );
 }
 
-function EntryGate({
-  language,
-  leaving,
-  onEnter,
-}: {
-  language: Language;
-  leaving: boolean;
-  onEnter: (target?: string) => void;
-}) {
-  const isEnglish = language === 'en';
-  const [opened, setOpened] = useState(false);
-  const [rotation, setRotation] = useState({ x: -7, y: -8 });
-  const drag = useRef({ active: false, moved: false, x: 0, y: 0 });
-
-  const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
-    drag.current = {
-      active: true,
-      moved: false,
-      x: event.clientX,
-      y: event.clientY,
-    };
-    event.currentTarget.setPointerCapture(event.pointerId);
-  };
-
-  const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (!drag.current.active) return;
-    const dx = event.clientX - drag.current.x;
-    const dy = event.clientY - drag.current.y;
-    if (Math.abs(dx) + Math.abs(dy) > 5) drag.current.moved = true;
-    setRotation((current) => ({
-      x: Math.max(-20, Math.min(16, current.x - dy * 0.18)),
-      y: Math.max(-90, Math.min(90, current.y + dx * 0.32)),
-    }));
-    drag.current.x = event.clientX;
-    drag.current.y = event.clientY;
-  };
-
-  const handlePointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
-    drag.current.active = false;
-    event.currentTarget.releasePointerCapture(event.pointerId);
-  };
-
-  const toggleFolder = () => {
-    if (drag.current.moved) {
-      drag.current.moved = false;
-      return;
-    }
-    setOpened((value) => !value);
-  };
-
-  const pages = [
-    { id: 'contact', label: 'CONTACT', className: 'contact' },
-    { id: 'experience', label: 'EXPERIENCE', className: 'experience' },
-    { id: 'education', label: 'EDUCATION', className: 'education' },
-    { id: 'honors', label: 'HONORS', className: 'honors' },
-  ];
-
-  return (
-    <section
-      className={`entry-gate${leaving ? ' is-leaving' : ''}`}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="entry-title"
-    >
-      <div className="entry-gate-inner">
-        <header className="entry-gate-heading">
-          <p className="entry-gate-kicker">YU-HSIN LIN · PROFILE 2026</p>
-          <h2 id="entry-title">
-            {isEnglish ? 'Open my profile folder' : '打開我的履歷資料夾'}
-          </h2>
-          <p>
-            {isEnglish
-              ? 'Law · Humanities and Social Sciences'
-              : '法律・人文與社會科學'}
-          </p>
-        </header>
-
-        <div
-          className={`entry-folder-scene${opened ? ' is-open' : ''}`}
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
-          onPointerCancel={handlePointerUp}
-          style={
-            {
-              '--folder-rotate-x': `${rotation.x}deg`,
-              '--folder-rotate-y': `${rotation.y}deg`,
-            } as CSSProperties
-          }
-        >
-          <div className="entry-folder" onClick={toggleFolder} role="presentation">
-            <span className="entry-folder-back" aria-hidden="true" />
-            {pages.map((page, index) => (
-              <div
-                className={`entry-sheet entry-sheet-${page.className}`}
-                key={page.id}
-                style={{ '--page-index': index } as CSSProperties}
-              >
-                <button
-                  className="entry-sheet-tab"
-                  type="button"
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    onEnter(page.id);
-                  }}
-                  aria-label={`${isEnglish ? 'Enter' : '前往'} ${page.label}`}
-                  tabIndex={opened ? 0 : -1}
-                >
-                  {page.label}
-                </button>
-                <span className="entry-sheet-number">0{pages.length - index}</span>
-                <span className="entry-sheet-lines" aria-hidden="true">
-                  <i />
-                  <i />
-                  <i />
-                </span>
-              </div>
-            ))}
-            <button
-              className="entry-folder-cover"
-              type="button"
-              onClick={(event) => {
-                event.stopPropagation();
-                if (drag.current.moved) {
-                  drag.current.moved = false;
-                  return;
-                }
-                setOpened((value) => !value);
-              }}
-              aria-expanded={opened}
-              autoFocus
-            >
-              <span className="entry-folder-label">YU-HSIN LIN</span>
-              <strong>CURRICULUM VITAE</strong>
-              <span className="entry-folder-action">
-                {opened
-                  ? isEnglish
-                    ? 'Choose a section'
-                    : '選擇分類進入'
-                  : isEnglish
-                    ? 'Open folder'
-                    : '打開資料夾'}
-                <span>{opened ? '↑' : '↗'}</span>
-              </span>
-            </button>
-          </div>
-        </div>
-
-        <p className="entry-gate-hint">
-          {opened
-            ? isEnglish
-              ? 'Select a page · drag to rotate · Esc to enter'
-              : '點選頁面進入・拖曳旋轉・Esc 直接進入'
-            : isEnglish
-              ? 'Drag to rotate · click to open'
-              : '按住拖曳旋轉・點一下展開'}
-        </p>
-      </div>
-    </section>
-  );
-}
-
 export default function Home() {
   const [language, setLanguage] = usePersistentLanguage();
-  const [introVisible, setIntroVisible] = useState(true);
-  const [introLeaving, setIntroLeaving] = useState(false);
-  const introTimer = useRef<number | null>(null);
-
-  const enterSite = (target?: string) => {
-    if (introLeaving) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setIntroVisible(false);
-      return;
-    }
-    setIntroLeaving(true);
-    introTimer.current = window.setTimeout(() => {
-      setIntroVisible(false);
-      setIntroLeaving(false);
-      if (target) {
-        window.setTimeout(() => {
-          document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' });
-        }, 40);
-      }
-    }, 680);
-  };
-
-  useEffect(() => {
-    if (!introVisible) return;
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      if (introTimer.current !== null) window.clearTimeout(introTimer.current);
-    };
-  }, [introVisible]);
-
-  useEffect(() => {
-    if (!introVisible) return;
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') enterSite();
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [introVisible, introLeaving]);
 
   useEffect(() => {
     const targets = Array.from(
@@ -698,13 +490,6 @@ export default function Home() {
 
   return (
     <main>
-      {introVisible ? (
-        <EntryGate
-          language={language}
-          leaving={introLeaving}
-          onEnter={enterSite}
-        />
-      ) : null}
       <SiteHeader language={language} onLanguageChange={setLanguage} />
 
       <section className="hero-section" id="top" aria-labelledby="page-title">
