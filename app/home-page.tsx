@@ -149,10 +149,9 @@ const translations: Record<string, string> = {
     'Campus Service Representative, Taiwan Semiconductor Manufacturing Company (TSMC)',
   '新竹・半導體製造': 'Hsinchu · Semiconductor Manufacturing',
   志工: 'Volunteer Service',
-  '2026 貧窮人的台北《去到遠方之前》・靜態展區佈撤展志工':
-    'Volunteer, 2026 Taipei Poverty Exhibition “Before Going Far Away” · Exhibition Setup and Dismantling',
+  '2026 貧窮人的台北《去到遠方之前》・靜態展區撤展志工':
+    'Volunteer, 2026 Taipei Poverty Exhibition “Before Going Far Away” · Exhibition Dismantling',
   '社團法人暖暖 Sunshine 協會': 'Sunshine Association',
-  '服務時數：2 小時': 'Service hours: 2',
   '惠瑜慈善協會・教學志工': 'Teaching Volunteer, Michelle Chiou Foundation',
   '線上・教育陪伴／公益服務':
     'Online · Educational Support / Community Service',
@@ -249,9 +248,8 @@ const timeline: TimelineGroup[] = [
       {
         date: 'Oct. 26',
         category: '志工',
-        title: '2026 貧窮人的台北《去到遠方之前》・靜態展區佈撤展志工',
+        title: '2026 貧窮人的台北《去到遠方之前》・靜態展區撤展志工',
         organization: '社團法人暖暖 Sunshine 協會',
-        bullets: ['服務時數：2 小時'],
       },
       {
         date: 'Oct.',
