@@ -246,7 +246,7 @@ const timeline: TimelineGroup[] = [
     year: '2026',
     items: [
       {
-        date: 'Oct. 26',
+        date: 'Oct.',
         category: '志工',
         title: '2026 貧窮人的台北《去到遠方之前》・靜態展區撤展志工',
         organization: '社團法人暖暖 Sunshine 協會',
