@@ -248,7 +248,7 @@ const timeline: TimelineGroup[] = [
     year: '2026',
     items: [
       {
-        date: '2026',
+        date: 'Nov.',
         category: '競賽',
         title: '聯合國發展目標 SDGs 短影音競賽・網路人氣獎第三名',
         organization: '國立陽明交通大學',
