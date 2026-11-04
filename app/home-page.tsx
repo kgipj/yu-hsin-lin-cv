@@ -95,6 +95,8 @@ const translations: Record<string, string> = {
   國際青年人才培育計畫: 'International Youth Talent Development Program',
   新北市政府青年局: 'New Taipei City Government Youth Department',
   競賽: 'Competition',
+  '2026 國立陽明交通大學聯合國發展目標SDGs 短影音競賽｜網路人氣獎第三名':
+    '2026 National Yang Ming Chiao Tung University UN Sustainable Development Goals (SDGs) Short Video Competition · Third Place, Online Popularity Award',
   實習: 'Internship',
   '台灣冤獄平反協會・實習生': 'Intern, Taiwan Innocence Project',
   '台北・刑事司法／人權倡議':
@@ -245,6 +247,11 @@ const timeline: TimelineGroup[] = [
   {
     year: '2026',
     items: [
+      {
+        date: '2026',
+        category: '競賽',
+        title: '2026 國立陽明交通大學聯合國發展目標SDGs 短影音競賽｜網路人氣獎第三名',
+      },
       {
         date: 'Oct.',
         category: '志工',
